@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Apply basic reset styles to remove default margins and paddings */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+/* Apply Roboto font globally */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f7f7f7; /* Example background, change as needed */
+  color: #333; /* Example text color, change as needed */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+button {
+  font-family: inherit; 
+}
