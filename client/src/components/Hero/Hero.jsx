@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Hero.module.css';
-import heroImage from '../../assets/hero-image.jpg'; // Replace with your actual image path
+import heroImage from '../../assets/hero-image.jpg'; 
 
 function Hero() {
   return (

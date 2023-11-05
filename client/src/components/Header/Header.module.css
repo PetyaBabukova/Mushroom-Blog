@@ -20,7 +20,7 @@
 .navBar {
   background-color: #222;
   padding: 0;
-  margin-top: -20px; /* Adjust based on the height of your logo */
+  margin-top: -20px; 
 }
 
 .navList {
@@ -44,8 +44,8 @@
 
 .logoContainer {
   position: absolute;
-  top: 50%; /* Adjust as necessary */
-  left: 20px; /* Adjust based on your layout */
+  top: 50%; 
+  left: 20px; 
   transform: translateY(-50%);
 }
 

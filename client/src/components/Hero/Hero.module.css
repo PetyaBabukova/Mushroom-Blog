@@ -14,7 +14,7 @@
   
   .slogan {
     position: absolute;
-    top: 53%; /* Adjusted from 50% to move it up */
+    top: 53%; 
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
