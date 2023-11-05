@@ -1,0 +1,63 @@
+{
+    "Creamy Mushroom and Onion Pasta": {
+        "_id": 1,
+        "author": "Chef Petya",
+        "image": "https://www.kitchensanctuary.com/wp-content/uploads/2021/10/Creamy-Mushroom-Pasta-wide-FS-and-foodporn-58-1.jpg",
+        "title": "Creamy Mushroom and Onion Pasta",
+        "subtitle": "A Luscious and Heartwarming Pasta Dish",
+        "shortDescription": "A classic pasta dish featuring a rich creamy sauce, sautéed mushrooms and onions, and a sprinkle of fresh parsley.",
+        "ingredients": "500g pasta, 2 tablespoons olive oil, 1 large onion, 3 cloves garlic, 400g mushrooms, Salt, pepper, 1 teaspoon thyme, 200ml heavy cream, 50g grated Parmesan cheese, Fresh parsley",
+        "optionalExtras": "White wine, Chicken breast, Spinach",
+        "description": "Cook the pasta according to package instructions until al dente. In a pan, sauté onions, garlic, and mushrooms, then create a creamy sauce with heavy cream and Parmesan. Combine with pasta and serve with a garnish of parsley."
+    },
+    "Mushroom Risotto": {
+        "_id": 2,
+        "author": "Chef Petya",
+        "image": "https://realfood.tesco.com/media/images/Risotto-HERO-e01a72c1-a4af-427c-9909-6333de581bda-0-472x310.jpg",
+        "title": "Mushroom Risotto",
+        "subtitle": "A Creamy and Comforting Italian Classic",
+        "shortDescription": "This Mushroom Risotto is a creamy, savory dish, with perfectly cooked Arborio rice and flavorful sautéed mushrooms.",
+        "ingredients": "1 cup Arborio rice, 1/2 cup white wine, 4 cups chicken stock, 1 cup mushrooms, 1 small onion, 2 cloves garlic, 2 tablespoons olive oil, 1/4 cup grated Parmesan cheese, Salt, pepper, 1 tablespoon butter",
+        "description": "Simmer chicken stock, and separately sauté onions, garlic, and mushrooms. Toast Arborio rice, add wine, then slowly incorporate the stock until creamy. Finish with butter and Parmesan."
+    },
+    "Mushroom Soup": {
+        "_id": 3,
+        "author": "Chef Stefan",
+        "image": "https://assets.epicurious.com/photos/5761cbaa9644034b690ea91d/master/pass/mushroom-soup.jpg",
+        "title": "Mushroom Soup",
+        "subtitle": "A Rich and Earthy Soup for the Soul",
+        "shortDescription": "A hearty and comforting soup made with a blend of mushrooms, root vegetables, and a touch of cream for richness.",
+        "ingredients": "500g mixed mushrooms, 1 large carrot, 1 potato, 1 celery stalk, 1 onion, 2 cloves garlic, 1 litre vegetable stock, 200ml heavy cream, Salt, pepper, 2 tablespoons olive oil, Fresh herbs for garnish",
+        "description": "Sauté vegetables and mushrooms, add stock and simmer. Blend until smooth, stir in cream, and serve with fresh herbs."
+    },
+    "Mushroom Stroganoff": {
+        "_id": 4,
+        "author": "Chef Stefan",
+        "image": "https://veggiedesserts.com/wp-content/uploads/2020/07/mushroom-stroganoff-featured.jpg",
+        "title": "Mushroom Stroganoff",
+        "subtitle": "A Hearty Vegetarian Twist on a Russian Classic",
+        "shortDescription": "This Mushroom Stroganoff offers a meat-free alternative to the traditional dish, featuring a rich, savory sauce and tender mushrooms.",
+        "ingredients": "600g mushrooms, 2 tablespoons butter, 1 onion, 1 clove garlic, 1 teaspoon paprika, 2 tablespoons flour, 300ml beef stock, 1 tablespoon mustard, 200ml sour cream, Salt, pepper, Chopped parsley, Cooked rice or pasta to serve",
+        "description": "Cook mushrooms with onions and spices, thicken with flour, then add stock and mustard. Finish with sour cream and serve over your choice of rice or pasta."
+    },
+    "Mushroom Quiche": {
+        "_id": 5,
+        "author": "Chef Sophie",
+        "image": "https://australianmushrooms.com.au/wp-content/uploads/2016/04/Mushroom-Quiche.jpg",
+        "title": "Mushroom Quiche",
+        "subtitle": "A Savory and Elegant Brunch Classic",
+        "shortDescription": "A delightful quiche filled with sautéed mushrooms, onions, and creamy Gruyere cheese, baked to perfection.",
+        "ingredients": "1 pie crust, 300g mushrooms, 4 large eggs, 200ml heavy cream, 1 cup grated Gruyere cheese, 1 small onion, Salt, pepper, 1 tablespoon olive oil, Nutmeg",
+        "description": "Sauté onions and mushrooms, blend eggs with cream and cheese, and bake in a crust until golden."
+    },
+    "Garlic Butter Mushrooms": {
+        "_id": 6,
+        "author": "Chef Sophie",
+        "image": "https://www.allrecipes.com/thmb/DzoQpeGybS2MhEwGYsKnCM6M_FU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8429504-fd95636e868f41149dedbe32c33527c4.jpg",
+        "title": "Garlic Butter Mushrooms",
+        "subtitle": "A Simple and Flavorful Side Dish",
+        "shortDescription": "Sautéed cremini mushrooms tossed in a rich garlic butter sauce, perfect as a side or topping for steaks and burgers.",
+        "ingredients": "500g cremini mushrooms, 4 tablespoons butter, 5 cloves garlic, 1 tablespoon soy sauce, 1 tablespoon balsamic vinegar, Salt, pepper, Chopped chives for garnish",
+        "description": "Brown mushrooms in garlic and butter, then flavor with soy sauce and balsamic vinegar. Garnish with chives to serve."
+    }
+}

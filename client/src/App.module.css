@@ -16,8 +16,8 @@ body,
 /* Apply Roboto font globally */
 body {
   font-family: 'Roboto', sans-serif;
-  background: #f7f7f7; /* Example background, change as needed */
-  color: #333; /* Example text color, change as needed */
+  background: #e3dfdf; 
+  color: #333; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
