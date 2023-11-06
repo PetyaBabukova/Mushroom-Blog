@@ -44,11 +44,13 @@ button[type="submit"] {
     border: none;
     border-radius: 4px;
     background-color: #ffa500;
-    color: #333; ;
+    color: rgb(85, 83, 83);
     cursor: pointer;
 }
 
 button[type="submit"]:hover {
-    background-color:  #007bff;
+    background-color: #ffbf00; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
     color: white;
 }

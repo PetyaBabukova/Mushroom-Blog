@@ -4,7 +4,7 @@ import Search from '../Search/Search';
 import logo from '../../assets/wild-mushrooms-logo.png';
 
 function Header() {
-
+ 
 
   return (
     <header className={styles.header}>
@@ -22,11 +22,12 @@ function Header() {
       <nav className={styles.navBar}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>HOME</li>
-          <li className={styles.navItem}>ABOUT US</li>
-          <li className={styles.navItem}>ADD NEW DISH</li>
-          <li className={styles.navItem}>MASTER CHEFS</li>
-          <li className={styles.navItem}>PAGES</li>
-          <li className={styles.navItem}>CONTACT US</li>
+          <li className={styles.navItem}>SALADS</li>
+          <li className={styles.navItem}>APPETIZER</li>
+          <li className={styles.navItem}>SOUPS</li>
+          <li className={styles.navItem}>MAIN DISHES</li>
+          <li className={styles.navItem}>DESSERTS</li>
+          <li className={styles.navItem}>OUR TEAM</li>
         </ul>
       </nav>
     </header>

@@ -1,13 +1,17 @@
 import React from 'react';
 import Profile from '../Profile/Profile';
 import BlogArticles from '../BlogArticles/BlogArticles';
-import styles from './Main.module.css';
+import styles from './MainSection.module.css';
+import OurTeam from '../OurTeam/OurTeam';
 
-function Main() {
+function Main({
+}) {
   return (
     <div className={styles.mainContainer}>
-      <Profile />
-      <BlogArticles />
+      <Profile  />
+      {/* <BlogArticles /> */}
+      <OurTeam />
+      
     </div>
   );
 }

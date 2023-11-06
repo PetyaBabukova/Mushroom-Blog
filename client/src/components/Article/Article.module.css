@@ -1,6 +1,6 @@
 .article {
   flex: 0 0 32%;
-  margin: 10px;
+  /* margin: 10px; */
   width: 30%;
   height: auto;
   margin-bottom: 20px;
@@ -8,6 +8,7 @@
   font-size: 1.2rem;
   background-color: white;
   padding: 15px;
+  color: rgb(85, 83, 83);
 }
 
 .article img {

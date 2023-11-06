@@ -5,6 +5,8 @@
   font-family: 'Arial', sans-serif; /* Use a preferred font */
   background-color: #fff;
   margin: 20px;
+  margin-top: 0;
+  padding: 10px;
 }
 
 .banner {

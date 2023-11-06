@@ -1,0 +1,29 @@
+{
+    "Chef Petya": {
+        "_id": "chef-1",
+        "firstName": "Petya",
+        "lastName": "Babukova",
+        "email": "petya@abv.com",
+        "phoneNumber": "0899999999",
+        "image": "https://cdn4.vectorstock.com/i/1000x1000/35/53/person-icon-female-user-profile-avatar-vector-18833553.jpg",
+        "bio": "Chef Petya, renowned for her innovative approach to traditional Balkan cuisine, has earned accolades worldwide. With a passion for organic ingredients and a farm-to-table philosophy, she brings a fresh twist to classic dishes."
+    },
+    "Chef Stefan": {
+        "_id": "chef-2",
+        "firstName": "Stefan",
+        "lastName": "Babukov",
+        "email": "stefan@abv.com",
+        "phoneNumber": "1234567890",
+        "image": "https://icons.veryicon.com/png/o/miscellaneous/practical-life-icon/man-22.png",
+        "bio": "Chef Stefan's culinary journey began in the cobblestone streets of old Europe and led him to the fusion kitchens of Tokyo. Combining precision and artistry, his sushi rolls are as visually stunning as they are delicious."
+    },
+    "Chef Sophie": {
+        "_id": "chef-3",
+        "firstName": "Sophie",
+        "lastName": "Babukova",
+        "email": "sophie@abv.bg",
+        "phoneNumber": "9876543210",
+        "image": "https://cdn4.vectorstock.com/i/1000x1000/35/53/person-icon-female-user-profile-avatar-vector-18833553.jpg",
+        "bio": "Sophie's desserts tell a story of her travels from Paris to Patagonia. Specializing in pastry arts, she whips up delectable sweets that are a symphony of flavors, textures, and aromas, delighting the senses with every bite."
+    }
+}

@@ -1,6 +1,6 @@
-const baseUrl = "http://localhost:3030/jsonstore/articles";
+const baseUrl = "http://localhost:3030/jsonstore/chefs";
 
-export const getAll = async ()=>{
+export const getAll = async () => {
     const response = await fetch(baseUrl);
     const result = await response.json();
 

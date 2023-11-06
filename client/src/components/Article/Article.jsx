@@ -13,7 +13,7 @@ function Article({
   return (
     <article className={styles.article}>
 
-      <img src={image} alt="Description" />
+      <img src={image} alt="Image" />
       <h2>{title}</h2>
       <h3>{subtitle}</h3>
       <h4>{author}</h4>
