@@ -1,4 +1,4 @@
-import './OurTeam.module.css';
+import styles from './OurTeam.module.css';
 import { useState, useEffect } from 'react';
 import * as chefService from '../../services/chefServise'
 import OurTeamCard from '../OurTeamCard/OurTeamCard'
@@ -18,7 +18,9 @@ function OurTeam() {
             })
     }, []);
 
-    return (chefs.map(chef => (
+    return ( <div className={styles.ourTeamContainer}>
+
+        {chefs.map(chef => (
             <OurTeamCard
                 key={chef._id}
                 firstName={chef.firstName}
@@ -27,8 +29,11 @@ function OurTeam() {
                 phoneNumber={chef.phoneNumber}
                 image={chef.image}
                 bio={chef.bio}
-            />
-        )));
+                motto={chef.motto}
+                />
+        ))}
+                </div>
+        );
 };
 
 

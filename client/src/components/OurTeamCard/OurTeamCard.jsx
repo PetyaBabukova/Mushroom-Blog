@@ -6,15 +6,16 @@ function OurTeamCard({
     email,
     phoneNumber,
     image,
-    bio
+    bio,
+    motto
 }) {
   return (
     <div className={styles.chefCard}>
 
       <img src={image} alt="Image" />
       <h2>{firstName} {lastName}</h2>
+      <h4>{motto}</h4>
       <h3>{email}</h3>
-      {/* <h4>{author}</h4> */}
       <p>{bio}</p>
     </div>
   );

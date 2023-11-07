@@ -1,8 +1,8 @@
-.blogArticles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-    gap: 10px; /* This sets the gap between articles */
-    /* Rest of your styling */
-  }
-  
+.ourTeamContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start; 
+    padding: 0 10px; 
+    gap: 20px; 
+}
