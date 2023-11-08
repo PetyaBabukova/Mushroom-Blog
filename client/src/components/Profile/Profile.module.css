@@ -2,12 +2,13 @@
   flex: 0 0 15%;
   width: 20%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif; /* Use a preferred font */
+  font-family: 'Arial', sans-serif; 
   background-color: #fff;
   margin: 20px;
   margin-top: 0;
   padding: 10px;
 }
+
 
 .banner {
   text-align: center;
@@ -23,7 +24,7 @@
   height: 150px;
   border-radius: 50%;
   display: block;
-  margin: -60px auto 10px; /* Adjust as needed to center */
+  margin: -60px auto 10px; 
   border: 3px solid #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

@@ -3,28 +3,26 @@
 .mainContainer {
   display: flex;
   margin: 20px;
-  /* margin: 0 20px; */
+  
 }
 
-.profile {
+/* .profile {
   flex: 0 0 30%;
-  background-color: #ffff00; /* Yellow color for the profile area */
-  /* Rest of your styling for the profile */
-}
+  background-color: #ffff00; 
+  
+} */
 
 .blogArticles {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Adjust the space between articles */
-  padding-left: 20px; /* To create space between profile and articles */
+  padding-left: 20px;
 }
 
 .article {
   width: 45%;
   height: 500px;
-  background-color: #ffffff; /* White color for the articles */
-  /* Rest of your styling for the article */
+  background-color: #ffffff; 
 }
 
 .ourTeamTitle {

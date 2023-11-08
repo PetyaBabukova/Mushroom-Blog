@@ -10,7 +10,7 @@ function Hero() {
       <div className={styles.slogan}>
         Discover the Unexplored Flavors of Nature
       </div>
-      <div className={styles.createDishBtnContainer}> {/* Add this div */}
+      <div className={styles.createDishBtnContainer}> 
         <CreateDishBtn />
       </div>
     </div>

@@ -1,4 +1,3 @@
-import {useState, useEffect} from 'react';
 import styles from './Header.module.css';
 import Search from '../Search/Search';
 import logo from '../../assets/wild-mushrooms-logo.png';

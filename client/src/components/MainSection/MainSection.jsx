@@ -1,4 +1,3 @@
-import React from 'react';
 import Profile from '../Profile/Profile';
 import BlogDishes from '../BlogDishes/BlogDishes';
 import styles from './MainSection.module.css';
@@ -12,8 +11,8 @@ function MainSection({
       <h2 className={styles.ourTeamTitle}>Dishes</h2>
     <div className={styles.mainContainer}>
       <Profile  />
-      <BlogDishes />
-      {/* <OurTeam /> */}
+      {/* <BlogDishes /> */}
+      <OurTeam />
       
     </div>
     </>

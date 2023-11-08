@@ -28,9 +28,8 @@
   text-align: center;
 }
 
-/* Add this new CSS for the button */
 .createDishBtnContainer {
   position: absolute;
-  bottom: 30px; /* Distance from bottom */
-  right: 30px; /* Distance from right */
+  bottom: 30px; 
+  right: 30px;
 }
