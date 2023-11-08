@@ -7,6 +7,7 @@ import Hero from './components/Hero/Hero';
 import MainSection from './components/MainSection/MainSection.jsx';
 import OurTeam from './components/OurTeam/OurTeam.jsx';
 import * as chefService from './services/chefServise.js'
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
       <MainSection />
 
       {/* <CreateDishForm /> */}
+
+      <Footer />
      
     </div>
   )

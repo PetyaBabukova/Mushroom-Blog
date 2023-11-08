@@ -13,7 +13,7 @@ function OurTeam() {
     useEffect(() => {
         chefService.getAll()
             .then(chefs => {
-                console.log(Object.values(chefs))
+                // console.log(Object.values(chefs))
                 setChefs(Object.values(chefs))
             })
     }, []);

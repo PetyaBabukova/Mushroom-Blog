@@ -1,0 +1,12 @@
+.footer{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 15px auto 10px 10px;
+	color: rgb(74, 23, 23);
+    background-color:  #ffbf00;
+    padding: 1px;
+}
+
+.footer p{
+    margin-left: 45px;
+}

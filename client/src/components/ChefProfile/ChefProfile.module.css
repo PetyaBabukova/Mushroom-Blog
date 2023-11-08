@@ -1,0 +1,70 @@
+.chefProfile {
+    display: flex;
+    /* border: 1px solid #ccc; */
+    margin-bottom: 20px;
+    margin-left: 5%;
+    background-color: white;
+    padding: 20px;
+
+  }
+  
+  .imageContainer {
+    flex: 1;
+    text-align: center;
+    margin-right: 5%;
+  }
+  
+  .image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .details {
+    flex: 2;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+  }
+  
+  .motto {
+    font-style: italic;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  
+  .bio {
+    font-size: 1.2em;
+    flex-grow: 1;
+    /* border: 1px solid #eee; */
+    /* padding: 10px; */
+    margin-bottom: 10px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 30px;
+  }
+   
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .rating {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .dishes {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  .chefProfileBtn{
+    margin-left: 15px;
+  }
+  
+   

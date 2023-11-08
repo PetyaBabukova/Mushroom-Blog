@@ -13,17 +13,27 @@
     padding: 30px;
     color: rgb(85, 83, 83);
   }
+
+  .chefCard:hover {
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
+  }
   
   .chefCard img {
     width: 50%;
     border: 5px solid #ffbf00;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   }
+
+  h2{
+    color: rgb(74, 23, 23);
+  }
   
   h3 {
     color: rgb(74, 23, 23);
     background-color: #ffbf00; 
-    padding: 10px 25%;
+    padding: 10px 5%;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 

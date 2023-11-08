@@ -10,13 +10,13 @@ function OurTeamCard({
     motto,
     spec
 }) {
-  return (
-    <div className={styles.chefCard}>
 
+  return (
+    <div className={styles.chefCard} >
       <img src={image} alt="Image" />
       <h2>{firstName} {lastName}</h2>
       <h4 className={styles.motto}>{motto}</h4>
-      <h3>{spec}</h3>
+      {/* <h3>{spec}</h3> */}
       <p>{bio}</p>
     </div>
   );
