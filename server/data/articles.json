@@ -2,7 +2,7 @@
     "Creamy Mushroom and Onion Pasta": {
         "_id": 1,
         "author": "Chef Petya",
-        "image": "https://www.kitchensanctuary.com/wp-content/uploads/2021/10/Creamy-Mushroom-Pasta-wide-FS-and-foodporn-58-1.jpg",
+        "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/creamy_mashroom_and_onion_pasta.png",
         "title": "Creamy Mushroom and Onion Pasta",
         "subtitle": "A Luscious and Heartwarming Pasta Dish",
         "shortDescription": "A classic pasta dish featuring a rich creamy sauce, sautéed mushrooms and onions, and a sprinkle of fresh parsley.",
@@ -13,7 +13,7 @@
     "Mushroom Risotto": {
         "_id": 2,
         "author": "Chef Petya",
-        "image": "https://realfood.tesco.com/media/images/Risotto-HERO-e01a72c1-a4af-427c-9909-6333de581bda-0-472x310.jpg",
+        "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/risotto.png",
         "title": "Mushroom Risotto",
         "subtitle": "A Creamy and Comforting Italian Classic",
         "shortDescription": "This Mushroom Risotto is a creamy, savory dish, with perfectly cooked Arborio rice and flavorful sautéed mushrooms.",
@@ -23,7 +23,7 @@
     "Mushroom Soup": {
         "_id": 3,
         "author": "Chef Stefan",
-        "image": "https://assets.epicurious.com/photos/5761cbaa9644034b690ea91d/master/pass/mushroom-soup.jpg",
+        "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/soup.png",
         "title": "Mushroom Soup",
         "subtitle": "A Rich and Earthy Soup for the Soul",
         "shortDescription": "A hearty and comforting soup made with a blend of mushrooms, root vegetables, and a touch of cream for richness.",
@@ -33,7 +33,7 @@
     "Mushroom Stroganoff": {
         "_id": 4,
         "author": "Chef Stefan",
-        "image": "https://veggiedesserts.com/wp-content/uploads/2020/07/mushroom-stroganoff-featured.jpg",
+        "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/stroganoff.png",
         "title": "Mushroom Stroganoff",
         "subtitle": "A Hearty Vegetarian Twist on a Russian Classic",
         "shortDescription": "This Mushroom Stroganoff offers a meat-free alternative to the traditional dish, featuring a rich, savory sauce and tender mushrooms.",
@@ -43,7 +43,7 @@
     "Mushroom Quiche": {
         "_id": 5,
         "author": "Chef Sophie",
-        "image": "https://australianmushrooms.com.au/wp-content/uploads/2016/04/Mushroom-Quiche.jpg",
+        "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/quiche.png",
         "title": "Mushroom Quiche",
         "subtitle": "A Savory and Elegant Brunch Classic",
         "shortDescription": "A delightful quiche filled with sautéed mushrooms, onions, and creamy Gruyere cheese, baked to perfection.",
@@ -53,7 +53,7 @@
     "Garlic Butter Mushrooms": {
         "_id": 6,
         "author": "Chef Sophie",
-        "image": "https://www.allrecipes.com/thmb/DzoQpeGybS2MhEwGYsKnCM6M_FU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8429504-fd95636e868f41149dedbe32c33527c4.jpg",
+        "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/mushrooms_with_butter.png",
         "title": "Garlic Butter Mushrooms",
         "subtitle": "A Simple and Flavorful Side Dish",
         "shortDescription": "Sautéed cremini mushrooms tossed in a rich garlic butter sauce, perfect as a side or topping for steaks and burgers.",

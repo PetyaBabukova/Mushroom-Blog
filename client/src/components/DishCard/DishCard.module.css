@@ -1,0 +1,38 @@
+.dish {
+    flex: 0 0 32%;
+    width: 30%;
+    height: auto;
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+    font-size: 1.2rem;
+    background-color: white;
+    padding: 15px;
+    color: rgb(85, 83, 83);
+}
+
+.dish img {
+    width: 100%;
+}
+
+.title {
+    color: rgb(74, 23, 23);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    color: rgb(74, 23, 23);
+    padding: 10px;
+    background-color: white;
+    box-shadow: none;
+    text-align: center;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+h4 {
+    font-style: italic;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 25px;
+}

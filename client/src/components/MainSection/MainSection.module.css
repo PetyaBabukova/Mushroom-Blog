@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 .mainContainer {
   display: flex;
   margin: 20px;
@@ -23,4 +25,11 @@
   height: 500px;
   background-color: #ffffff; /* White color for the articles */
   /* Rest of your styling for the article */
+}
+
+.ourTeamTitle {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 4em;
+  color: rgb(74, 23, 23);
 }

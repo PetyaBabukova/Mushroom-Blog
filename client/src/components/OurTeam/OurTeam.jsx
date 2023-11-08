@@ -18,21 +18,27 @@ function OurTeam() {
             })
     }, []);
 
-    return ( <div className={styles.ourTeamContainer}>
+    return ( 
+    <>
+    
+    
+    <div className={styles.ourTeamContainer}>
 
         {chefs.map(chef => (
             <OurTeamCard
-                key={chef._id}
-                firstName={chef.firstName}
-                lastName={chef.lastName}
-                email={chef.email}
-                phoneNumber={chef.phoneNumber}
-                image={chef.image}
-                bio={chef.bio}
-                motto={chef.motto}
-                />
-        ))}
+            key={chef._id}
+            firstName={chef.firstName}
+            lastName={chef.lastName}
+            email={chef.email}
+            phoneNumber={chef.phoneNumber}
+            image={chef.image}
+            bio={chef.bio}
+            motto={chef.motto}
+            spec={chef.specializing}
+            />
+            ))}
                 </div>
+            </>
         );
 };
 

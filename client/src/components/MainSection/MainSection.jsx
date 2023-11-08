@@ -1,19 +1,23 @@
 import React from 'react';
 import Profile from '../Profile/Profile';
-import BlogArticles from '../BlogArticles/BlogArticles';
+import BlogDishes from '../BlogDishes/BlogDishes';
 import styles from './MainSection.module.css';
 import OurTeam from '../OurTeam/OurTeam';
 
-function Main({
+function MainSection({
 }) {
   return (
+    <>
+      {/* <h2 className={styles.ourTeamTitle}>Our chefs</h2> */}
+      <h2 className={styles.ourTeamTitle}>Dishes</h2>
     <div className={styles.mainContainer}>
       <Profile  />
-      {/* <BlogArticles /> */}
-      <OurTeam />
+      <BlogDishes />
+      {/* <OurTeam /> */}
       
     </div>
+    </>
   );
 }
 
-export default Main;
+export default MainSection;

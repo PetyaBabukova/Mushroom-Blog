@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import './App.module.css';
-import CreateArticle from './components/CreateArticle/CreateArticle.jsx';
+import styles from './App.module.css';
+import CreateDishForm from './components/CreateDishForm/CreateDishForm.jsx';
 import CreateDishBtn from './components/CreateDishBtn/CreateDishBtn.jsx';
 import Header from "./components/Header/Header"
 import Hero from './components/Hero/Hero';
@@ -18,7 +18,7 @@ function App() {
       {/* <CreateDishBtn /> */}
       <MainSection />
 
-      {/* <CreateArticle /> */}
+      {/* <CreateDishForm /> */}
      
     </div>
   )
