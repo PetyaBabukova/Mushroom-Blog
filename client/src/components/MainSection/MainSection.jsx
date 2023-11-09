@@ -3,6 +3,7 @@ import BlogDishes from '../BlogDishes/BlogDishes';
 import styles from './MainSection.module.css';
 import OurTeam from '../OurTeam/OurTeam';
 import ChefProfile from '../ChefProfile/ChefProfile';
+import DishDetails from '../DishDetails/DishDetails';
 
 function MainSection({
 }) {
@@ -14,7 +15,8 @@ function MainSection({
       <Profile  />
       {/* <BlogDishes /> */}
       {/* <OurTeam /> */}
-      <ChefProfile />
+      {/* <ChefProfile /> */}
+      <DishDetails />
       
     </div>
     </>

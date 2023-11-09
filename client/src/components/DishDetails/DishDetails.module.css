@@ -1,0 +1,76 @@
+.dishDetailsContainer {
+    display: flex;
+    margin: 0 3% 20px;
+    background-color: white;
+    padding: 20px;
+
+  }
+  
+  .imageContainer {
+    flex: 1;
+    text-align: center;
+    margin-right: 5%;
+  }
+  
+  .image {
+    max-width: 70%;
+    height: auto;
+  }
+
+  .dishTitle{
+    margin-top: 0;
+  }
+  
+  .details {
+    flex: 2;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+  }
+  
+  .ingradients {
+    font-style: italic;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .ingradientsWord{
+    font-weight: bold;
+  }
+  
+  .description {
+    font-size: 1.2em;
+    flex-grow: 1;
+    /* border: 1px solid #eee; */
+    /* padding: 10px; */
+    margin-bottom: 10px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 30px;
+  }
+   
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .rating {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .dishes {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  .chefProfileBtn{
+    margin-left: 15px;
+  }
+  
+   
