@@ -1,7 +1,7 @@
 {
     "Creamy Mushroom and Onion Pasta": {
         "_id": 1,
-        "category": "main-dish",
+        "category": "main-dishes",
         "author": "Chef Petya",
         "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/creamy_mashroom_and_onion_pasta.png",
         "title": "Creamy Mushroom and Onion Pasta",
@@ -13,7 +13,7 @@
     },
     "Mushroom Risotto": {
         "_id": 2,
-        "category": "main-dish",
+        "category": "main-dishes",
         "author": "Chef Petya",
         "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/risotto.png",
         "title": "Mushroom Risotto",
@@ -35,7 +35,7 @@
     },
     "Mushroom Stroganoff": {
         "_id": 4,
-        "category": "main-dish",
+        "category": "main-dishes",
         "author": "Chef Stefan",
         "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/stroganoff.png",
         "title": "Mushroom Stroganoff",
@@ -69,7 +69,7 @@
     
         "Wild Mushroom and Arugula Salad": {
             "_id": 7,
-          "category": "salad",
+          "category": "salads",
           "author": "Chef Petya",
           "image" : "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/salad_with_cherryes.png",
           "title": "Wild Mushroom and Arugula Salad",
@@ -80,7 +80,7 @@
         },
         "Mushroom and Goat Cheese Salad": {
             "_id": 8,
-          "category": "salad",
+          "category": "salads",
           "author": "Chef Stefan",
           "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/green_mushrooma_salad.png",
           "title": "Mushroom and Goat Cheese Salad",
@@ -91,7 +91,7 @@
         },
         "Mushroom and Beef Stew": {
             "_id": 9,
-          "category": "main-dish",
+          "category": "main-dishes",
           "author": "Chef Petya",
           "image" : "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/mushroom_beef_stew.png",
           "title": "Mushroom and Beef Stew",
@@ -101,7 +101,7 @@
           "description": "Brown beef, sauté mushrooms, onions, and garlic. Add chopped carrots, potatoes, stock, and tomato paste. Simmer until beef is tender. Garnish with fresh herbs."
         },
         "Chocolate and Mushroom Tart": {
-          "category": "dessert",
+          "category": "desserts",
           "_id": 10,
           "author": "Chef Sophie",
           "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/cchokolate_mushroom_tart.png",
@@ -114,7 +114,7 @@
 
           "Mushroom Meringue Pie": {
               "_id": 11,
-            "category": "dessert",
+            "category": "desserts",
             "author": "Chef Sophie",
             "image" : "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/mushroom_mereng_tart.png",
             "title": "Mushroom Meringue Pie",

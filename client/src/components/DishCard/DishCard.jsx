@@ -17,7 +17,7 @@ function DishCard({
 
 
       <img src={image} alt="Image" />
-      <h2 as className={styles.title}>{title}</h2>
+      <h2 className={styles.title}>{title}</h2>
       <h4 className={styles.subtitle}>{subtitle}</h4>
       <p>{shortDescription}</p>
       <p className={styles.author}>{author}</p>

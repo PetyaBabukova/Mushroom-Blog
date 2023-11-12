@@ -23,11 +23,8 @@ function App() {
       <Profile />
       <Routes>
         <Route path='/' element={<BlogDishes />} />
-        <Route path='/:salads' element={<BlogDishes />} />
-        <Route path='/:appetizers' element={<BlogDishes />} />
-        <Route path='/:soups' element={<BlogDishes />} />
-        <Route path='/:main-dishes' element={<BlogDishes />} />
-        <Route path='/:desserts' element={<BlogDishes />} />
+        <Route path='/:category' element={<BlogDishes />} />
+
         <Route path='/our-team' element={<OurTeam />} />
         <Route path='/create-dish' element={<CreateDishForm />} />
         <Route path='/:id/details' element={<DishDetails />} />
