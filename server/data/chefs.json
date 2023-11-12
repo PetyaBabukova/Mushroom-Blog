@@ -7,7 +7,7 @@
       "phoneNumber": "0899999999",
       "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/Petya.jpg",
       "specializing" : "Balkan dishes",
-      "bio": "Chef Petya, renowned for her innovative approach to traditional Balkan cuisine, has earned accolades worldwide. With a passion for organic ingredients and a farm-to-table philosophy, she brings a fresh twist to classic dishes.",
+      "bio": "Chef Petya, renowned for her innovative approach to traditional Balkan cuisine, has earned accolades worldwide. With a passion for organic ingredients and a farm-to-table philosophy, she brings a fresh twist to classic dishes",
       "motto": "Cooking is an art, flavored with passion and served with love"
     },
     "Chef Stefan": {
@@ -18,7 +18,7 @@
       "phoneNumber": "1234567890",
       "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/Stefan.jpg",
       "specializing" : "Europian gourmet",
-      "bio": "Chef Stefan's culinary journey began in the cobblestone streets of old Europe and led him to the fusion kitchens of Tokyo. Combining precision and artistry, his sushi rolls are as visually stunning as they are delicious.",
+      "bio": "Chef Stefan's culinary journey began in the cobblestone streets of old Europe and led him to the fusion kitchens of Tokyo. Combining precision and artistry, his sushi rolls are as visually stunning as they are delicious",
       "motto": "Simplicity is the ultimate sophistication in the kitchen"
     },
     "Chef Sophie": {
@@ -29,7 +29,7 @@
       "phoneNumber": "9876543210",
       "specializing" : "Desserts",
       "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/Sophie.jpg",
-      "bio": "Sophie's desserts tell a story of her travels from Paris to Patagonia. Specializing in pastry arts, she whips up delectable sweets that are a symphony of flavors, textures, and aromas, delighting the senses with every bite.",
+      "bio": "Sophie's desserts tell a story of her travels from Paris to Patagonia. Specializing in pastry arts, she whips up delectable sweets that are a symphony of flavors, textures, and aromas, delighting the senses with every bite",
       "motto": "Bake the world a better place, one dessert at a time"
     }
   }

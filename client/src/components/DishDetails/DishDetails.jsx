@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState,  } from 'react';
 import styles from './DishDetails.module.css';
-import * as dishService from '../../services/dishService'
+import {useParams} from 'react-router-dom';
+import * as dishService from '../../services/dishService';
 
 function DishDetails() {
     const [dish, setDish] = useState({});
+    const {id} = useParams()
+    console.log(id);
 
     useEffect(() => {
-        dishService.getOne(1)
+        dishService.getOne(id)
             .then(searchedDish=>setDish(searchedDish[0]))
             console.log(dish);
            
-    }, [])
+    }, [id])
 
     return (
         <div className={styles.dishDetailsContainer}>

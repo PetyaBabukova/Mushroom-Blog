@@ -12,7 +12,7 @@ function MainSection({
       {/* <h2 className={styles.ourTeamTitle}>Our chefs</h2> */}
       {/* <h2 className={styles.ourTeamTitle}>Dishes</h2> */}
     <div className={styles.mainContainer}>
-      <Profile  />
+      {/* <Profile  /> */}
       {/* <BlogDishes /> */}
       {/* <OurTeam /> */}
       {/* <ChefProfile /> */}

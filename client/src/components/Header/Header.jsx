@@ -2,8 +2,11 @@ import styles from './Header.module.css';
 import Search from '../Search/Search';
 import logo from '../../assets/wild-mushrooms-logo.png';
 
+import { Link } from 'react-router-dom';
+
 function Header() {
  
+  const navItems = ['Dishes', 'Salads', 'Appetizers', 'Soups', 'Main Dishes', 'Desserts', 'Our Team'];
 
   return (
     <header className={styles.header}>
@@ -20,13 +23,13 @@ function Header() {
       </div>
       <nav className={styles.navBar}>
         <ul className={styles.navList}>
-          <li className={styles.navItem}>HOME</li>
-          <li className={styles.navItem}>SALADS</li>
-          <li className={styles.navItem}>APPETIZER</li>
-          <li className={styles.navItem}>SOUPS</li>
-          <li className={styles.navItem}>MAIN DISHES</li>
-          <li className={styles.navItem}>DESSERTS</li>
-          <li className={styles.navItem}>OUR TEAM</li>
+          <Link to='/' className={styles.navItem}>Dishes</Link>
+          <Link to='/salads' className={styles.navItem}>Salads</Link>
+          <Link to='/appetizers' className={styles.navItem}>Appetizers</Link>
+          <Link to='/soups' className={styles.navItem}>Soups</Link>
+          <Link to='/main-dishes' className={styles.navItem}>Main Dishes</Link>
+          <Link to='/desserts' className={styles.navItem}>Desserts</Link>
+          <Link to='/our-team' className={styles.navItem}>Our Team</Link>
         </ul>
       </nav>
     </header>

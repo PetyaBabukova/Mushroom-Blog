@@ -1,5 +1,6 @@
 {
     "Creamy Mushroom and Onion Pasta": {
+        "category" : "main-dish",
         "_id": 1,
         "author": "Chef Petya",
         "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/creamy_mashroom_and_onion_pasta.png",
@@ -11,6 +12,7 @@
         "description": "Cook the pasta according to package instructions until al dente. In a pan, sauté onions, garlic, and mushrooms, then create a creamy sauce with heavy cream and Parmesan. Combine with pasta and serve with a garnish of parsley."
     },
     "Mushroom Risotto": {
+        "category" : "main-dish",
         "_id": 2,
         "author": "Chef Petya",
         "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/risotto.png",
@@ -21,6 +23,7 @@
         "description": "Simmer chicken stock, and separately sauté onions, garlic, and mushrooms. Toast Arborio rice, add wine, then slowly incorporate the stock until creamy. Finish with butter and Parmesan."
     },
     "Mushroom Soup": {
+        "category" : "soups",
         "_id": 3,
         "author": "Chef Stefan",
         "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/soup.png",
@@ -31,6 +34,7 @@
         "description": "Sauté vegetables and mushrooms, add stock and simmer. Blend until smooth, stir in cream, and serve with fresh herbs."
     },
     "Mushroom Stroganoff": {
+        "category" : "main-dish",
         "_id": 4,
         "author": "Chef Stefan",
         "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/stroganoff.png",
@@ -41,6 +45,7 @@
         "description": "Cook mushrooms with onions and spices, thicken with flour, then add stock and mustard. Finish with sour cream and serve over your choice of rice or pasta."
     },
     "Mushroom Quiche": {
+        "category" : "appetizers",
         "_id": 5,
         "author": "Chef Sophie",
         "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/quiche.png",
@@ -51,6 +56,7 @@
         "description": "Sauté onions and mushrooms, blend eggs with cream and cheese, and bake in a crust until golden."
     },
     "Garlic Butter Mushrooms": {
+        "category" : "appetizers",
         "_id": 6,
         "author": "Chef Sophie",
         "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/mushrooms_with_butter.png",

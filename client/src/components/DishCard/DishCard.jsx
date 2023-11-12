@@ -1,4 +1,5 @@
 import styles from './DishCard.module.css';
+import { Link } from 'react-router-dom';
 
 function DishCard({
   title,
@@ -8,17 +9,19 @@ function DishCard({
   image,
   optionalExtras,
   subtitle,
-  shortDescription
+  shortDescription,
+  id
 }) {
   return (
-    <article className={styles.dish}>
+    <Link to={`/${id}/details`} className={styles.dish}>
+
 
       <img src={image} alt="Image" />
-      <h2 className={styles.title}>{title}</h2>
-      <h3 className={styles.subtitle}>{subtitle}</h3>
+      <h2 as className={styles.title}>{title}</h2>
+      <h4 className={styles.subtitle}>{subtitle}</h4>
       <p>{shortDescription}</p>
-      <h4>{author}</h4>
-    </article>
+      <p className={styles.author}>{author}</p>
+    </Link>
   );
 }
 

@@ -1,4 +1,31 @@
-.createDish {
+.createNewDishFormContainer{
+    width: 40%;
+    margin: auto;
+}
+
+h2{
+    margin-bottom: 15px;
+    
+}
+
+.buttonSubmit{
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: auto;
+
+}
+
+
+
+
+
+
+/* .createDish {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
@@ -46,5 +73,5 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
+} */
 

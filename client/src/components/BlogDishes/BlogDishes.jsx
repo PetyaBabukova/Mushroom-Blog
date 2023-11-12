@@ -18,6 +18,7 @@ function BlogDishes() {
       {dishes.map((dish) => (
         <DishCard
 			key={dish._id}
+      id={dish._id}
 			title={dish.title}
 			ingredients={dish.ingredients}
 			description={dish.description}
