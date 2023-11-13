@@ -1,6 +1,6 @@
 {
     "Chef Petya": {
-      "_id": "chef-1",
+      "_id": 1,
       "firstName": "Petya",
       "lastName": "Babukova",
       "email": "petya@abv.com",
@@ -11,7 +11,7 @@
       "motto": "Cooking is an art, flavored with passion and served with love"
     },
     "Chef Stefan": {
-      "_id": "chef-2",
+      "_id": 2,
       "firstName": "Stefan",
       "lastName": "Babukov",
       "email": "stefan@abv.com",
@@ -22,7 +22,7 @@
       "motto": "Simplicity is the ultimate sophistication in the kitchen"
     },
     "Chef Sophie": {
-      "_id": "7b3143e1-d6df-4e67-bd7e-5f8b03f2fd3f",
+      "_id": 3,
       "firstName": "Sophie",
       "lastName": "Babukova",
       "email": "sophie@abv.bg",

@@ -14,6 +14,6 @@ export const getOne = async (chefId) =>{
     const chefsArray = Object.values(result)
     const searchedChef = chefsArray.filter(c=>c._id==chefId)
     // console.log(chefsArray);
-    console.log(searchedChef);
+    // console.log(searchedChef);
     return searchedChef;
 }

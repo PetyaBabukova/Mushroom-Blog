@@ -1,27 +1,34 @@
-import { useEffect, useState,  } from 'react';
+import { useEffect, useState, } from 'react';
 import styles from './DishDetails.module.css';
-import {useParams} from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import * as dishService from '../../services/dishService';
+import { Button } from 'bootstrap';
 
 function DishDetails() {
 
-    const [dish, setDish] = useState({});
-    const {id} = useParams()
-    console.log(id);
+  const [dish, setDish] = useState({});
+  const { id } = useParams()
+  const navigate = useNavigate()
 
-    useEffect(() => {
-        dishService.getOne(id)
-            .then(searchedDish=>setDish(searchedDish[0]))
-            console.log(dish);
-    }, [id]);
+  useEffect(() => {
+    dishService.getOne(id)
+      .then(searchedDish => setDish(searchedDish[0]))
+    // console.log(dish);
+  }, [id]);
 
-    const editBtnClickHandler = ()=>{
-      
-    }
+  const deleteBtnClickHandler = (id) => {
+    dishService.deleteDish(id)
+    .then((res)=> res.json() )
+      .then((result) => {
+        setDish({})
+        console.log(result);
+        navigate('/')
+      })
+  }
 
-    return (
-        <div className={styles.dishDetailsContainer}>
-            <div className={styles.imageContainer}>
+  return (
+    <div className={styles.dishDetailsContainer}>
+      <div className={styles.imageContainer}>
         <img src={dish.image} alt='Dish Image' />
       </div>
       <div className={styles.details}>
@@ -30,18 +37,18 @@ function DishDetails() {
         <p className={styles.ingradients}><span className={styles.ingradientsWord}>Instructions: </span>{dish.description}</p>
         <h4 className={styles.author}>{dish.author}</h4>
         <div className={styles.actions}>
-          <button className={styles.actionBtn}>Create</button>
-          <button className={styles.actionBtn}>Edit</button>
-          <button className={styles.actionBtn}>Delete</button>
-          <button className={styles.actionBtn}>Like</button>
+          <Link to='/create-dish' className={styles.actionBtn}>Create</Link>
+          <Link to={`/${dish._id}/edit-dish`} className={styles.actionBtn}>Edit</Link>
+          <button className={styles.actionBtn} onClick={deleteBtnClickHandler}>Delete</button>
+        <button className={styles.actionBtn}>Like</button>
         </div>
         <div className={styles.rating}>
           <span className={styles.ratingContent}>Likes: {dish.rating}</span>
           {/* <span className={styles.dishes}>Dishes</span> */}
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 }
 
 export default DishDetails;

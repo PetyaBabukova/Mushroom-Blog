@@ -62,3 +62,18 @@ export const create = async (data, id) => {
     }
 }
 
+export const deleteDish = async (dishId) => {
+    console.log(dishId);
+    try {
+        const response = await fetch(`${baseUrl}/${dishId}`, {
+            method: "DELETE"
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+
+    } catch (error) {
+        console.error('Error deleting the dish:', error);
+    }
+}

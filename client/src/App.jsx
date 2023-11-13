@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './App.module.css';
 import {Routes, Route} from 'react-router-dom';
 import CreateDishForm from './components/CreateDishForm/CreateDishForm.jsx';
+import EditDishForm from './components/EditDishForm/EditDishForm.jsx';
 import Header from "./components/Header/Header"
 import Hero from './components/Hero/Hero';
 import MainSection from './components/MainSection/MainSection.jsx';
@@ -11,6 +12,7 @@ import Footer from './components/Footer/Footer.jsx';
 import BlogDishes from './components/BlogDishes/BlogDishes.jsx';
 import Profile from './components/Profile/Profile.jsx';
 import DishDetails from './components/DishDetails/DishDetails.jsx';
+import ChefProfile from './components/ChefProfile/ChefProfile.jsx';
 
 function App() {
 
@@ -26,8 +28,10 @@ function App() {
         <Route path='/:category' element={<BlogDishes />} />
 
         <Route path='/our-team' element={<OurTeam />} />
-        <Route path='/create-dish' element={<CreateDishForm />} />
+        <Route path='/:userId/profile' element={<ChefProfile />} />
         <Route path='/:id/details' element={<DishDetails />} />
+        <Route path='/create-dish' element={<CreateDishForm />} />
+        <Route path='/:id/edit-dish' element={<EditDishForm />} />
       </Routes>
       
       {/* <BlogDishes /> */}
