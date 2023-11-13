@@ -2,7 +2,7 @@
   "Creamy Mushroom and Onion Pasta": {
     "_id": 1,
     "category": "main-dishes",
-    "author": "Chef Petya",
+    "author": "Petya",
     "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/creamy_mashroom_and_onion_pasta.png",
     "title": "Creamy Mushroom and Onion Pasta",
     "subtitle": "A Luscious and Heartwarming Pasta Dish",
@@ -13,7 +13,7 @@
   "Mushroom Risotto": {
     "_id": 2,
     "category": "main-dishes",
-    "author": "Chef Petya",
+    "author": "Petya",
     "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/risotto.png",
     "title": "Mushroom Risotto",
     "subtitle": "A Creamy and Comforting Italian Classic",
@@ -24,7 +24,7 @@
   "Mushroom Soup": {
     "_id": 3,
     "category": "soups",
-    "author": "Chef Stefan",
+    "author": "Stefan",
     "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/soup.png",
     "title": "Mushroom Soup",
     "subtitle": "A Rich and Earthy Soup for the Soul",
@@ -35,7 +35,7 @@
   "Mushroom Stroganoff": {
     "_id": 4,
     "category": "main-dishes",
-    "author": "Chef Stefan",
+    "author": "Stefan",
     "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/stroganoff.png",
     "title": "Mushroom Stroganoff",
     "subtitle": "A Hearty Vegetarian Twist on a Russian Classic",
@@ -46,7 +46,7 @@
   "Mushroom Quiche": {
     "_id": 5,
     "category": "appetizers",
-    "author": "Chef Sophie",
+    "author": "Sophie",
     "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/quiche.png",
     "title": "Mushroom Quiche",
     "subtitle": "A Savory and Elegant Brunch Classic",
@@ -57,7 +57,7 @@
   "Garlic Butter Mushrooms": {
     "_id": 6,
     "category": "appetizers",
-    "author": "Chef Sophie",
+    "author": "Sophie",
     "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/mushrooms_with_butter.png",
     "title": "Garlic Butter Mushrooms",
     "subtitle": "A Simple and Flavorful Side Dish",
@@ -68,7 +68,7 @@
   "Wild Mushroom and Arugula Salad": {
     "_id": 7,
     "category": "salads",
-    "author": "Chef Petya",
+    "author": "Petya",
     "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/salad_with_cherryes.png",
     "title": "Wild Mushroom and Arugula Salad",
     "subtitle": "A Fresh and Earthy Delight",
@@ -79,7 +79,7 @@
   "Mushroom and Goat Cheese Salad": {
     "_id": 8,
     "category": "salads",
-    "author": "Chef Stefan",
+    "author": "Stefan",
     "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/green_mushrooma_salad.png",
     "title": "Mushroom and Goat Cheese Salad",
     "subtitle": "A Rich and Creamy Salad Experience",
@@ -90,7 +90,7 @@
   "Mushroom and Beef Stew": {
     "_id": 9,
     "category": "main-dishes",
-    "author": "Chef Petya",
+    "author": "Petya",
     "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/mushroom_beef_stew.png",
     "title": "Mushroom and Beef Stew",
     "subtitle": "A Hearty and Flavorful Comfort Dish",
@@ -101,7 +101,7 @@
   "Chocolate and Mushroom Tart": {
     "category": "desserts",
     "_id": 10,
-    "author": "Chef Sophie",
+    "author": "Sophie",
     "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/cchokolate_mushroom_tart.png",
     "title": "Chocolate and Mushroom Tart",
     "subtitle": "An Unexpected Sweet Surprise",
@@ -112,7 +112,7 @@
   "Mushroom Meringue Pie": {
     "_id": 11,
     "category": "desserts",
-    "author": "Chef Sophie",
+    "author": "Sophie",
     "image": "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/mushroom_mereng_tart.png",
     "title": "Mushroom Meringue Pie",
     "subtitle": "A Delightful Fusion of Earthy and Sweet",

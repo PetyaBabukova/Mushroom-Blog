@@ -4,11 +4,15 @@ import {useParams} from 'react-router-dom';
 import DishCard from '../DishCard/DishCard';
 import styles from './BlogDishes.module.css';
 
-import * as dishService from '../../services/dishService'
+import * as dishService from '../../services/dishService';
+import * as chefService from '../../services/chefServise';
+
 
 function BlogDishes() {
   const [dishes, setDishes] = useState([]);
   const {category} = useParams();
+  const {userFirstName} = useParams();
+  console.log(userFirstName);
   // console.log("category from BlogDishes", category);
 
   useEffect(() => {
@@ -17,7 +21,15 @@ function BlogDishes() {
         setDishes(Object.values(dishes))
         // console.log(dishes);
       })
-  }, [category])
+  }, [category]);
+
+  useEffect(() => {
+    chefService.getChefRecipies(userFirstName)
+      .then(dishes => {
+        setDishes(Object.values(dishes))
+        console.log(dishes);
+      })
+  }, [userFirstName]);
 
   
   return (

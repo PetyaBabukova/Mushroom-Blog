@@ -29,6 +29,8 @@ function App() {
 
         <Route path='/our-team' element={<OurTeam />} />
         <Route path='/:userId/profile' element={<ChefProfile />} />
+        <Route path='/:userFirstName/dishes' element={<BlogDishes/>} />
+        <Route path='/:userId/dishes' element={<BlogDishes />} />
         <Route path='/:id/details' element={<DishDetails />} />
         <Route path='/create-dish' element={<CreateDishForm />} />
         <Route path='/:id/edit-dish' element={<EditDishForm />} />

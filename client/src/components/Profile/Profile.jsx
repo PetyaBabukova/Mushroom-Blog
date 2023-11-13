@@ -8,7 +8,7 @@ function Profile() {
     const [currentUser, setCurrentUser] = useState({})
 
     useEffect(() => {
-        chefService.getOne(1)
+        chefService.getOne(2)
             .then((result) => {
                 setCurrentUser(result[0])
             })
@@ -25,6 +25,11 @@ function Profile() {
             <div className={styles.description}>
                 <p><span className={styles.boldedPiece}>Motto: </span>{currentUser.motto}</p>
             </div>
+
+            <div className={styles.chefProfileLinkContainer}>
+                <Link to={`/${currentUser.firstName}/dishes`} className={styles.chefProfileLink}> View Chef {currentUser.firstName} recipies</Link>
+            </div>
+
             <div className={styles.chefProfileLinkContainer}>
                 <Link to={`/${currentUser._id}/profile`} className={styles.chefProfileLink}> View Chef {currentUser.firstName} profile</Link>
             </div>
