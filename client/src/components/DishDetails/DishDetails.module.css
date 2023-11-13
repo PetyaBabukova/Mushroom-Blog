@@ -3,6 +3,7 @@
     margin: 0 3% 20px;
     background-color: white;
     padding: 20px;
+    padding-top: 0;
 
   }
   
@@ -18,12 +19,13 @@
   }
 
   .dishTitle{
-    margin-top: 0;
+    margin-bottom: 20px;
   }
   
   .details {
     flex: 2;
     padding: 10px;
+    padding-top: 0;
     display: flex;
     flex-direction: column;
     max-width: 1000px;
@@ -51,17 +53,15 @@
   .actions {
     display: flex;
     justify-content: end;
-    margin-bottom: 30px;
+    margin-top: 30px;
   }
    
-  .footer {
-    display: flex;
-    justify-content: space-between;
+  .rating {
+    margin-top: 20px;
   }
   
   .rating {
     font-weight: bold;
-    font-size: 1.2em;
   }
   
   .dishes {
@@ -69,8 +69,18 @@
     font-size: 1.2em;
   }
 
-  .chefProfileBtn{
-    margin-left: 15px;
+  .author{
+    font-size: 1em;
+    margin-left: auto;
+    font-style: italic;
+  }
+
+  .actionBtn{
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-weight: 500;
+
   }
   
    
