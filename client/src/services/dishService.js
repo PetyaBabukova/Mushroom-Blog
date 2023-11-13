@@ -6,14 +6,10 @@ export const getAll = async (searchedCategory) => {
     const result = await response.json();
     const dishesArray = Object.values(result);
     // console.log("dishesArray: ", dishesArray);
-    // console.log("searchedCategory: ", searchedCategory);
 
-    
-    // const filteredDishes = dishesArray.filter((d) => d.category == searchedCategory);
-
-if (searchedCategory) {
-    return dishesArray.filter((d) => d.category == searchedCategory);
-}
+    if (searchedCategory) {
+        return dishesArray.filter((d) => d.category == searchedCategory);
+    }
     return dishesArray;
 }
 
@@ -25,3 +21,44 @@ export const getOne = async (dishId) => {
     const searchedDish = dishesArray.filter(d => d._id == dishId)
     return searchedDish;
 }
+
+export const create = async (data, id) => {
+
+    const body = {
+        _id: id,
+        category: data.category,
+        author: data.author,
+        image: data.image,
+        title: data.title,
+        subtitle: data.subtitle,
+        shortDescription: data.shortDescription,
+        ingredients: data.ingredients,
+        description: data.description
+    }
+
+    console.log(body);
+
+    try {
+
+        const response = await fetch(baseUrl,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            })
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        return result;
+
+    } catch (error) {
+        console.error('Error creating:', error);
+    }
+}
+
