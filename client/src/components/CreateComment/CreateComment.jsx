@@ -20,7 +20,7 @@ function CreateComment() {
     // console.log(comment);
 
 
-    const newComment = await commentService.create(dishId, 'Petya', comment.comment)
+    const newComment = await commentService.create(dishId, 'Stefan', comment.comment)
     .then(setComments(comments => [...comments, newComment]))
     .then(navigate(`/${dishId}/details`))
 
