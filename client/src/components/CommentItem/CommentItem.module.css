@@ -1,4 +1,12 @@
 .comment{
-    border: 1px solid gray;
+    border: 1px solid rgb(211, 209, 209);
+    border-radius: 3px;
+    font-weight: normal;
+    padding: 2px 10px;
     
+}
+
+.commentLi{
+    list-style-type: none;
+
 }

@@ -6,8 +6,8 @@ function CommentItem({comment, chef}) {
 
     return (
       
-            <li>
-                <p className="comment">{chef}: {comment}</p>
+            <li className={styles.commentLi}>
+                <p>{chef}: <span className={styles.comment}>{comment}</span> </p>
             </li>
         
 

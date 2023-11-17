@@ -54,10 +54,10 @@ function DishDetails() {
           {/* <button className={styles.actionBtn}>Like</button> */}
         </div>
         <div className={styles.comments}>
-          <h5 className={styles.ratingContent}>Comments: {dish.rating}</h5>
-          <ul>
+          <h5 className={styles.commentsHeading}>Comments: {dish.rating}</h5>
+          <ul className={styles.commentsContainer}>
           {comments.map(comment => (<CommentItem key={comment._id} {...comment} />))}
-          </ul>
+          </ul >
           {/* <span className={styles.dishes}>Dishes</span> */}
         </div>
       </div>

@@ -93,3 +93,12 @@
 	transform: translateY(-2px);
 	color: white;
 }
+
+.commentsHeading{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.commentsContainer{
+	padding-left: 0;
+}
