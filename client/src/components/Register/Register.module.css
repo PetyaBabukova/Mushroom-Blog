@@ -5,6 +5,10 @@
     margin-left: 10%;
 }
 
+.heading{
+    margin-bottom: 20px;
+}
+
 .loginBtn{
 	background-color: #ffbf00;
     border-radius: 5px;

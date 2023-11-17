@@ -37,13 +37,21 @@ function DishDetails() {
         <p className={styles.ingradients}><span className={styles.ingradientsWord}>Instructions: </span>{dish.description}</p>
         <h4 className={styles.author}>{dish.author}</h4>
         <div className={styles.actions}>
-          <Link to='/create-dish' className={styles.actionBtn}>Create</Link>
+          <Link to='/create-comment' className={styles.actionBtn}>Comment</Link>
           <Link to={`/${dish._id}/edit-dish`} className={styles.actionBtn}>Edit</Link>
           <button className={styles.actionBtn} onClick={deleteBtnClickHandler}>Delete</button>
-        <button className={styles.actionBtn}>Like</button>
+        {/* <button className={styles.actionBtn}>Like</button> */}
         </div>
-        <div className={styles.rating}>
-          <span className={styles.ratingContent}>Likes: {dish.rating}</span>
+        <div className={styles.comments}>
+          <h5 className={styles.ratingContent}>Comments: {dish.rating}</h5>
+          <ul>
+           
+           <li>
+               <p>Pesho: Very delisious!</p>
+           </li>
+
+  
+   </ul>
           {/* <span className={styles.dishes}>Dishes</span> */}
         </div>
       </div>

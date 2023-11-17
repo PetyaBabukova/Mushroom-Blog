@@ -15,6 +15,7 @@ import DishDetails from './components/DishDetails/DishDetails.jsx';
 import ChefProfile from './components/ChefProfile/ChefProfile.jsx';
 import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
+import CreateComment from './components/CreateComment/CreateComment.jsx';
 
 function App() {
 
@@ -35,8 +36,9 @@ function App() {
         <Route path='/:userFirstName/dishes' element={<BlogDishes/>} />
         <Route path='/:userId/dishes' element={<BlogDishes />} />
         <Route path='/:id/details' element={<DishDetails />} />
-        <Route path='/create-dish' element={<CreateDishForm />} />
         <Route path='/:id/edit-dish' element={<EditDishForm />} />
+        <Route path='/create-dish' element={<CreateDishForm />} />
+        <Route path='/create-comment' element={<CreateComment />} />
       </Routes>
       
       {/* <BlogDishes /> */}
