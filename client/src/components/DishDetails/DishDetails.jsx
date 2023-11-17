@@ -7,17 +7,18 @@ import { Button } from 'bootstrap';
 function DishDetails() {
 
   const [dish, setDish] = useState({});
-  const { id } = useParams()
+  const { dishId } = useParams()
+  console.log(dishId);
   const navigate = useNavigate()
 
   useEffect(() => {
-    dishService.getOne(id)
+    dishService.getOne(dishId)
       .then(searchedDish => setDish(searchedDish[0]))
     // console.log(dish);
-  }, [id]);
+  }, [dishId]);
 
-  const deleteBtnClickHandler = (id) => {
-    dishService.deleteDish(id)
+  const deleteBtnClickHandler = (dishId) => {
+    dishService.deleteDish(dishId)
     .then((res)=> res.json() )
       .then((result) => {
         setDish({})
@@ -37,9 +38,9 @@ function DishDetails() {
         <p className={styles.ingradients}><span className={styles.ingradientsWord}>Instructions: </span>{dish.description}</p>
         <h4 className={styles.author}>{dish.author}</h4>
         <div className={styles.actions}>
-          <Link to='/create-comment' className={styles.actionBtn}>Comment</Link>
-          <Link to={`/${dish._id}/edit-dish`} className={styles.actionBtn}>Edit</Link>
-          <button className={styles.actionBtn} onClick={deleteBtnClickHandler}>Delete</button>
+          <Link to={`/${dish._id}/create-comment`} className={styles.actionBtn}>Comment</Link>
+          <Link to={`/${dish._id}/edit-dish`} className={styles.actionBtn} >Edit</Link>
+          <button className={styles.actionBtn} onClick={deleteBtnClickHandler}>Delete</button >
         {/* <button className={styles.actionBtn}>Like</button> */}
         </div>
         <div className={styles.comments}>

@@ -1,5 +1,5 @@
 {
-    "Chef Petya": {
+    "1": {
       "_id": 1,
       "firstName": "Petya",
       "lastName": "Babukova",
@@ -10,7 +10,7 @@
       "bio": "Chef Petya, renowned for her innovative approach to traditional Balkan cuisine, has earned accolades worldwide. With a passion for organic ingredients and a farm-to-table philosophy, she brings a fresh twist to classic dishes",
       "motto": "Cooking is an art, flavored with passion and served with love"
     },
-    "Chef Stefan": {
+    "2": {
       "_id": 2,
       "firstName": "Stefan",
       "lastName": "Babukov",
@@ -21,7 +21,7 @@
       "bio": "Chef Stefan's culinary journey began in the cobblestone streets of old Europe and led him to the fusion kitchens of Tokyo. Combining precision and artistry, his sushi rolls are as visually stunning as they are delicious",
       "motto": "Simplicity is the ultimate sophistication in the kitchen"
     },
-    "Chef Sophie": {
+    "3": {
       "_id": 3,
       "firstName": "Sophie",
       "lastName": "Babukova",

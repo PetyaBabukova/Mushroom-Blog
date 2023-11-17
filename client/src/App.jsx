@@ -35,10 +35,10 @@ function App() {
         <Route path='/:userId/profile' element={<ChefProfile />} />
         <Route path='/:userFirstName/dishes' element={<BlogDishes/>} />
         <Route path='/:userId/dishes' element={<BlogDishes />} />
-        <Route path='/:id/details' element={<DishDetails />} />
+        <Route path='/:dishId/details' element={<DishDetails />} />
         <Route path='/:id/edit-dish' element={<EditDishForm />} />
         <Route path='/create-dish' element={<CreateDishForm />} />
-        <Route path='/create-comment' element={<CreateComment />} />
+        <Route path='/:dishId/create-comment' element={<CreateComment />} />
       </Routes>
       
       {/* <BlogDishes /> */}

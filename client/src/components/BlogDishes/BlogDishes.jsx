@@ -27,7 +27,7 @@ function BlogDishes() {
     chefService.getChefRecipies(userFirstName)
       .then(dishes => {
         setDishes(Object.values(dishes))
-        console.log(dishes);
+        // console.log(dishes);
       })
   }, [userFirstName]);
 
