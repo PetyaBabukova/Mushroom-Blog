@@ -15,7 +15,7 @@ function Header() {
           <Search />
         </div>
         <div className={styles.authLinks}>
-          <a href="/register">Register</a> / <a href="/login">Login</a>
+          <a href="/register">Register</a> / <Link to="/login">Login</Link>
         </div>
       </div>
       <div className={styles.logoContainer}>

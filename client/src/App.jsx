@@ -13,6 +13,8 @@ import BlogDishes from './components/BlogDishes/BlogDishes.jsx';
 import Profile from './components/Profile/Profile.jsx';
 import DishDetails from './components/DishDetails/DishDetails.jsx';
 import ChefProfile from './components/ChefProfile/ChefProfile.jsx';
+import Login from './components/Login/Login.jsx';
+import Register from './components/Register/Register.jsx';
 
 function App() {
 
@@ -25,8 +27,9 @@ function App() {
       <Profile />
       <Routes>
         <Route path='/' element={<BlogDishes />} />
+        <Route path='/register' element={<Register/>} />
+        <Route path='/login' element={<Login/>} />
         <Route path='/:category' element={<BlogDishes />} />
-
         <Route path='/our-team' element={<OurTeam />} />
         <Route path='/:userId/profile' element={<ChefProfile />} />
         <Route path='/:userFirstName/dishes' element={<BlogDishes/>} />
