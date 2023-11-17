@@ -1,12 +1,17 @@
 import styles from './CommentItem.module.css'
 
-function CommentItem({ chef, text }) {
+function CommentItem({comment, chef}) {
+
+    console.log(comment);
+
     return (
-        <ul>
-            <li key={_id} >
-                <p className="comment">{chef}: {text}</p>
+      
+            <li>
+                <p className="comment">{chef}: {comment}</p>
             </li>
-        </ul>
+        
 
     )
-}
+};
+
+export default CommentItem;

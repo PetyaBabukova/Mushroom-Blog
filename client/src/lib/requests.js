@@ -19,9 +19,7 @@ const request = async (method, url, data) => {
         method,
     });
 
-
     const result = (await response).json();
-
     return result;
 };
 

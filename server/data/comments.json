@@ -1,16 +1,23 @@
 { "11":
     {
         "dishId": "11",
-        "username": "Petya",
+        "chef": "Petya",
          "comment": "Very nice dish!",
         "_id": "73da84dd-f619-479e-9384-ab5a498d3ef1"
     },
 
     "10": 
     {
-        "dishId": "11",
-        "username": "Petya",
+        "dishId": "10",
+        "chef": "Petya",
         "comment": "A paradise in my mouth!",
         "_id": "687faee7-9e76-451d-ba33-01f6ad326304"
+    },
+    "11":
+    {
+        "dishId": "11",
+        "chef": "Petya",
+        "comment": "New comment",
+        "_id": "caf10a9c-f11a-4cfc-8e5b-dd985ee52ca3"
     }
 }

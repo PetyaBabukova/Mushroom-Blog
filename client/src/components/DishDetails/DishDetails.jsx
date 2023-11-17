@@ -2,24 +2,34 @@ import { useEffect, useState, } from 'react';
 import styles from './DishDetails.module.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import * as dishService from '../../services/dishService';
-import { Button } from 'bootstrap';
+import * as commentService from '../../services/commentService';
+
+import CommentItem from '../CommentItem/CommentItem';
 
 function DishDetails() {
 
   const [dish, setDish] = useState({});
+  const [comments, setComments] = useState([])
   const { dishId } = useParams()
-  console.log(dishId);
+  // console.log(dishId);
   const navigate = useNavigate()
 
   useEffect(() => {
     dishService.getOne(dishId)
       .then(searchedDish => setDish(searchedDish[0]))
     // console.log(dish);
-  }, [dishId]);
+
+    commentService.getAll(dishId)
+      .then((comments) => {
+        setComments(comments)
+      })
+    }, [dishId]);
+    
+    // console.log(comments);
 
   const deleteBtnClickHandler = (dishId) => {
     dishService.deleteDish(dishId)
-    .then((res)=> res.json() )
+      .then((res) => res.json())
       .then((result) => {
         setDish({})
         console.log(result);
@@ -41,18 +51,13 @@ function DishDetails() {
           <Link to={`/${dish._id}/create-comment`} className={styles.actionBtn}>Comment</Link>
           <Link to={`/${dish._id}/edit-dish`} className={styles.actionBtn} >Edit</Link>
           <button className={styles.actionBtn} onClick={deleteBtnClickHandler}>Delete</button >
-        {/* <button className={styles.actionBtn}>Like</button> */}
+          {/* <button className={styles.actionBtn}>Like</button> */}
         </div>
         <div className={styles.comments}>
           <h5 className={styles.ratingContent}>Comments: {dish.rating}</h5>
           <ul>
-           
-           <li>
-               <p>Pesho: Very delisious!</p>
-           </li>
-
-  
-   </ul>
+          {comments.map(comment => (<CommentItem key={comment._id} {...comment} />))}
+          </ul>
           {/* <span className={styles.dishes}>Dishes</span> */}
         </div>
       </div>
