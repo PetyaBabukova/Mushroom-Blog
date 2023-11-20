@@ -1,21 +1,20 @@
 import { useEffect, useState } from 'react';
 import styles from './App.module.css';
 import {Routes, Route} from 'react-router-dom';
-import CreateDishForm from './components/CreateDishForm/CreateDishForm.jsx';
-import EditDishForm from './components/EditDishForm/EditDishForm.jsx';
+import CreateDishForm from './components/dishes/createDishForm/CreateDishForm.jsx';
+import EditDishForm from './components/dishes/editDishForm/EditDishForm.jsx';
 import Header from "./components/Header/Header"
 import Hero from './components/Hero/Hero';
-import MainSection from './components/MainSection/MainSection.jsx';
-import OurTeam from './components/OurTeam/OurTeam.jsx';
+import OurTeam from './components/chefs/team/OurTeam.jsx';
 import * as chefService from './services/chefServise.js'
 import Footer from './components/Footer/Footer.jsx';
-import BlogDishes from './components/BlogDishes/BlogDishes.jsx';
-import Profile from './components/Profile/Profile.jsx';
-import DishDetails from './components/DishDetails/DishDetails.jsx';
-import ChefProfile from './components/ChefProfile/ChefProfile.jsx';
-import Login from './components/Login/Login.jsx';
-import Register from './components/Register/Register.jsx';
-import CreateComment from './components/CreateComment/CreateComment.jsx';
+import BlogDishes from './components/dishes/blogDishes/BlogDishes.jsx';
+import Profile from './components/chefs/profile/Profile.jsx';
+import DishDetails from './components/dishes/DishDetails/DishDetails.jsx';
+import ChefProfile from './components/chefs/chefProfilePage/ChefProfile.jsx';
+import Login from './components/chefs/login/Login.jsx';
+import Register from './components/chefs/register/Register.jsx';
+import CreateComment from './components/comments/createComment/CreateComment.jsx';
 
 function App() {
 
@@ -33,6 +32,7 @@ function App() {
         <Route path='/:category' element={<BlogDishes />} />
         <Route path='/our-team' element={<OurTeam />} />
         <Route path='/:userId/profile' element={<ChefProfile />} />
+        <Route path='/:userId/edit-profile' element={<ChefProfile />} />
         <Route path='/:userFirstName/dishes' element={<BlogDishes/>} />
         <Route path='/:userId/dishes' element={<BlogDishes />} />
         <Route path='/:dishId/details' element={<DishDetails />} />

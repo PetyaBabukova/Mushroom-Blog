@@ -1,11 +1,11 @@
-import styles from './EditDishForm.module.css';
+import styles from './CreateDishForm.module.css';
 
-import * as dishService from '../../services/dishService';
+import * as dishService from '../../../services/dishService';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-function EditDishForm() {
+function CreateDishForm() {
 	const navigate = useNavigate()
 	const [dishes, setDishes] = useState({});
 	const [values, setValues] = useState(
@@ -53,7 +53,7 @@ function EditDishForm() {
 
 	return (
 		<div className={styles.createDish}>
-			<h2 className={styles.h2}>Edit Dish</h2>
+			<h2 className={styles.h2}>Create Dish</h2>
 			<form onSubmit={createDishSubmitHandler}>
 
 				<div className={styles.formInput}>
@@ -104,7 +104,7 @@ function EditDishForm() {
 
 
 				<div className={styles.buttonContainer}>
-					<button className={styles.buttonSubmit} type="submit">Edit</button>
+					<button className={styles.buttonSubmit} type="submit">Create</button>
 				</div>
 			</form>
 		</div>
@@ -112,5 +112,5 @@ function EditDishForm() {
 }
 
 
-export default EditDishForm;
+export default CreateDishForm;
 

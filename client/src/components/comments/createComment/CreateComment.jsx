@@ -4,9 +4,9 @@ import styles from './CreateComment.module.css';
 
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useForm } from '../../hooks/useForm';
+import { useForm } from '../../../hooks/useForm';
 
-import * as commentService from '../../services/commentService';
+import * as commentService from '../../../services/commentService';
 
 function CreateComment() {
 

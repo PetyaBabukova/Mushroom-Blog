@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './Profile.module.css';
-import * as chefService from '../../services/chefServise';
+import * as chefService from '../../../services/chefServise';
 import { Link } from 'react-router-dom';
 
 function Profile() {

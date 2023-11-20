@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 
 import styles from './Register.module.css'
 import { useState } from 'react';
-import { useForm } from '../../hooks/useForm';
+import { useForm } from '../../../hooks/useForm';
 
 
 function Register() {

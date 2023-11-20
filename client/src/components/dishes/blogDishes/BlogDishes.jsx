@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
 
-import DishCard from '../DishCard/DishCard';
+import DishCard from '../dishViewCard/DishCard';
 import styles from './BlogDishes.module.css';
 
-import * as dishService from '../../services/dishService';
-import * as chefService from '../../services/chefServise';
+import * as dishService from '../../../services/dishService';
+import * as chefService from '../../../services/chefServise';
 
 
 function BlogDishes() {

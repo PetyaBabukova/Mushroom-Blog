@@ -1,10 +1,10 @@
 import { useEffect, useState, } from 'react';
 import styles from './DishDetails.module.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import * as dishService from '../../services/dishService';
-import * as commentService from '../../services/commentService';
+import * as dishService from '../../../services/dishService';
+import * as commentService from '../../../services/commentService';
 
-import CommentItem from '../CommentItem/CommentItem';
+import CommentItem from '../../comments/commentItem/CommentItem';
 
 function DishDetails() {
 

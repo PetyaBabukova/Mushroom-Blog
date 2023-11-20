@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Hero.module.css';
 import heroImage from '../../assets/hero-image_lower.jpg'; 
-import CreateDishBtn from '../CreateDishBtn/CreateDishBtn';
+import CreateDishBtn from '../dishes/createDishBtn/CreateDishBtn';
 
 function Hero() {
   return (

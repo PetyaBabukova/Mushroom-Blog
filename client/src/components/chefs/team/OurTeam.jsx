@@ -1,7 +1,7 @@
 import styles from './OurTeam.module.css';
 import { useState, useEffect } from 'react';
-import * as chefService from '../../services/chefServise'
-import OurTeamCard from '../OurTeamCard/OurTeamCard'
+import * as chefService from '../../../services/chefServise'
+import OurTeamCard from '../teamCard/OurTeamCard';
 
 
 
