@@ -3,67 +3,73 @@ import Form from 'react-bootstrap/Form';
 
 import styles from './Register.module.css'
 import { useState } from 'react';
+import { useForm } from '../../hooks/useForm';
+
 
 function Register() {
 
-    const onRegisterSubmitHandler = ()=>{
+  const onRegisterSubmit = () => {
 
-        const initialValues = {
-            email: '',
-            password: '',
-            repeatPassword: ''
-        }
-        const [registerValues, setRegisterValues] = useState(initialValues);
-    }
-  
+    
+  }
+
+  const initialValues = {
+    email: '',
+    password: '',
+    repeatPassword: ''
+  }
+
+  const { formValues, onChangeHandler, onSubmit } = useForm(initialValues, onRegisterSubmit);
+
+
   return (
-    <Form className={styles.formContainer}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <h2 className={styles.heading}>Register</h2>
-        <Form.Label>Email address</Form.Label>
 
-        <Form.Control 
-        type="email" 
-        placeholder="Enter email" 
-        name='email'
-        // value={email}
+    <form className={styles.formContainer} onSubmit={onRegisterSubmit}>
+      <h2>Register</h2>
+
+      <div className={styles.registerFormDiv}>
+        <label htmlFor="email">Email</label>
+        <input className={styles.registerFormInputs}
+          type="email"
+          name='email'
+          id='email'
+          placeholder="Enter email"
+          value={formValues.email}
+          onChange={onChangeHandler}
         />
+      </div>
 
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-
-        <Form.Control 
-        type="password" 
-        placeholder="Password" 
-        name='password'
-        // value={password}
+      <div className={styles.registerFormDiv}>
+        <label htmlFor="password">Password</label>
+        <input className={styles.registerFormInputs}
+          type="password"
+          name='password'
+          id='password'
+          placeholder="Enter password"
+          value={formValues.password}
+          onChange={onChangeHandler}
         />
-      </Form.Group>
+      </div>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Repeat Password</Form.Label>
-
-        <Form.Control 
-        type="password" 
-        placeholder="Repeat Password" 
-        name='repeatPassword'
-        // value={repeatPassword}
+      <div className={styles.registerFormDiv}>
+        <label htmlFor="repeatPassword">Repeat Password</label>
+        <input className={styles.registerFormInputs}
+          type="password"
+          name='repeatPassword'
+          id='repeatPassword'
+          placeholder="Enter Repeat Password"
+          value={formValues.repeatPassword}
+          onChange={onChangeHandler}
         />
-      </Form.Group>
+      </div>
 
-      <button 
-      className={styles.loginBtn} 
-      variant="primary" 
-      type="submit"
-      >
-        Register
-      </button>
-    </Form>
+      <div className={styles.registerFormDiv}>
+        <button className={styles.regButton} type="submit" >Register</button>
+      </div>
+
+    </form>
+
   );
 }
 

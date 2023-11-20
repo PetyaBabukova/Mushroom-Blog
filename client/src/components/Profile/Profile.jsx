@@ -33,6 +33,10 @@ function Profile() {
             <div className={styles.chefProfileLinkContainer}>
                 <Link to={`/${currentUser._id}/profile`} className={styles.chefProfileLink}> View Chef {currentUser.firstName} profile</Link>
             </div>
+
+            <div className={styles.chefProfileLinkContainer}>
+                <Link to={`/${currentUser._id}/edit-profile`} className={styles.chefProfileLink}> Edit Profile </Link>
+            </div>
         </div>
     );
 }

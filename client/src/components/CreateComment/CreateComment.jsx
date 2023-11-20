@@ -1,14 +1,16 @@
 import Form from 'react-bootstrap/Form';
 
-import styles from './CreateComment.module.css'
+import styles from './CreateComment.module.css';
+
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useForm } from '../../hooks/useForm';
 
 import * as commentService from '../../services/commentService';
 
 function CreateComment() {
 
-  const {dishId} = useParams();
+  const { dishId } = useParams();
   const navigate = useNavigate();
   const [comments, setComments] = useState([]);
 
@@ -16,19 +18,19 @@ function CreateComment() {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
-		const comment = Object.fromEntries(formData);
+    const comment = Object.fromEntries(formData);
     // console.log(comment);
 
 
     const newComment = await commentService.create(dishId, 'Stefan', comment.comment)
-    .then(setComments(comments => [...comments, newComment]))
-    .then(navigate(`/${dishId}/details`))
+      .then(setComments(comments => [...comments, newComment]))
+      .then(navigate(`/${dishId}/details`))
 
     setComments(state => [...state, newComment])
-        console.log(newComment);
+    console.log(newComment);
   }
 
-  const changeHandler = (e) =>{
+  const changeHandler = (e) => {
     console.log(e.target.value);
     setComments(state => ({
       ...state,
