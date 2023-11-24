@@ -16,6 +16,7 @@ import ChefProfile from './components/chefs/chefProfilePage/ChefProfile.jsx';
 import Login from './components/chefs/login/Login.jsx';
 import Register from './components/chefs/register/Register.jsx';
 import CreateComment from './components/comments/CreateComment/CreateComment.jsx';
+import AuthContext from './contexts/authContext.js';
 
 function App() {
 
@@ -24,7 +25,13 @@ function App() {
     
   }
 
+  const values = {
+    onRegisterSubmit,
+  }
+
   return (
+    <AuthContext.Provider value={values} >
+
     <div className="App">
 
       <Header />
@@ -60,6 +67,7 @@ function App() {
       <Footer />
      
     </div>
+    </AuthContext.Provider>
   )
 };
 
