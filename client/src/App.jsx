@@ -1,22 +1,28 @@
 import { useEffect, useState } from 'react';
 import styles from './App.module.css';
+import * as chefService from './services/chefServise.js'
 import {Routes, Route} from 'react-router-dom';
-import CreateDishForm from './components/dishes/createDishForm/CreateDishForm.jsx';
+
+import CreateDishForm from './components/dishes/CreateDishForm/CreateDishForm.jsx';
 import EditDishForm from './components/dishes/editDishForm/EditDishForm.jsx';
-import Header from "./components/Header/Header"
+import Header from "./components/header/Header.jsx"
 import Hero from './components/Hero/Hero';
 import OurTeam from './components/chefs/team/OurTeam.jsx';
-import * as chefService from './services/chefServise.js'
-import Footer from './components/Footer/Footer.jsx';
+import Footer from './components/footer/Footer.jsx';
 import BlogDishes from './components/dishes/blogDishes/BlogDishes.jsx';
 import Profile from './components/chefs/profile/Profile.jsx';
-import DishDetails from './components/dishes/DishDetails/DishDetails.jsx';
+import DishDetails from './components/dishes/dishDetails/DishDetails.jsx';
 import ChefProfile from './components/chefs/chefProfilePage/ChefProfile.jsx';
 import Login from './components/chefs/login/Login.jsx';
 import Register from './components/chefs/register/Register.jsx';
-import CreateComment from './components/comments/createComment/CreateComment.jsx';
+import CreateComment from './components/comments/CreateComment/CreateComment.jsx';
 
 function App() {
+
+  const onRegisterSubmit = () => {
+    
+    
+  }
 
   return (
     <div className="App">

@@ -32,21 +32,3 @@ export const getChefRecipies = async (currentAuthor) => {
     return allDishes;
 
 };
-
-export const register = async ({email, password, repeatPassword})=>{
-    if (data.password !== data.repeatPassword) {
-        throw new Error ({message: 'Password missmatch'});
-    }
-
-    try {
-        const newChef = await request.post(chefsUrl, {email, password});
-        console.log(newChef);
-        if (!newChef) {
-            throw new Error ({message: 'Creating new Chef faled'});
-        }
-    } catch (err) {
-        if (err) {
-            console.log(err);
-        }
-    }
-}
