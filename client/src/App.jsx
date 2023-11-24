@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import styles from './App.module.css';
 import * as chefService from './services/chefServise.js'
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import AuthContext from './contexts/authContext.js';
+import Path from './paths.js'
 
 import CreateDishForm from './components/dishes/CreateDishForm/CreateDishForm.jsx';
 import EditDishForm from './components/dishes/editDishForm/EditDishForm.jsx';
@@ -20,66 +21,80 @@ import Register from './components/chefs/register/Register.jsx';
 import CreateComment from './components/comments/CreateComment/CreateComment.jsx';
 
 function App() {
+	const navigate = useNavigate();
 
-  const [auth, setAuth] = useState();
+	const [auth, setAuth] = useState();
 
-  const onRegisterSubmit = async (values) => {
-    try {
-      const result = await chefService.register(values.email, values.username, values.password);
-      console.log(result);
-      setAuth(result);
-      localStorage.setItem('accessToken', result.accessToken)
-      
-    } catch (error) {
-      console.log('Unsuccessful register', error);
-    }
-    
-  }
+	const onRegisterSubmit = async (values) => {
+		try {
+			const result = await chefService.register(values.email, values.username, values.password);
+			console.log(result);
+			setAuth(result);
+			localStorage.setItem('accessToken', result.accessToken);
 
-  const values = {
-    onRegisterSubmit,
-  }
+		} catch (error) {
+			console.log('Unsuccessful register', error);
+		}
 
-  return (
-    <AuthContext.Provider value={values} >
+	};
 
-    <div className="App">
+	const onLoginSubmit = async (values) => {
+		try {
+			const result = await chefService.login(values.email, values.password);
+			setAuth(result);
+			localStorage.setItem('accessToken', result.accessToken);
+			navigate(Path.Home);
 
-      <Header />
-      <Hero />
-      <div className={styles.container}>
-      <Profile />
-      <Routes>
-        <Route path='/' element={<BlogDishes />} />
-        <Route path='/register' element={<Register/>} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/:category' element={<BlogDishes />} />
-        <Route path='/our-team' element={<OurTeam />} />
-        <Route path='/:userId/profile' element={<ChefProfile />} />
-        <Route path='/:userId/edit-profile' element={<ChefProfile />} />
-        <Route path='/:userFirstName/dishes' element={<BlogDishes/>} />
-        <Route path='/:userId/dishes' element={<BlogDishes />} />
-        <Route path='/:dishId/details' element={<DishDetails />} />
-        <Route path='/:id/edit-dish' element={<EditDishForm />} />
-        <Route path='/create-dish' element={<CreateDishForm />} />
-        <Route path='/:dishId/create-comment' element={<CreateComment />} />
-      </Routes>
-      
-      {/* <BlogDishes /> */}
-      {/* <MainSection /> */}
+		} catch (error) {
+			console.log("Unsuccessful login!", error);
+		}
+	}
+
+	const values = {
+		onRegisterSubmit,
+		onLoginSubmit,
+	}
+
+	return (
+		<AuthContext.Provider value={values} >
+
+			<div className="App">
+
+				<Header />
+				<Hero />
+				<div className={styles.container}>
+					<Profile />
+					<Routes>
+						<Route path='/' element={<BlogDishes />} />
+						<Route path='/register' element={<Register />} />
+						<Route path='/login' element={<Login />} />
+						<Route path='/:category' element={<BlogDishes />} />
+						<Route path='/our-team' element={<OurTeam />} />
+						<Route path='/:userId/profile' element={<ChefProfile />} />
+						<Route path='/:userId/edit-profile' element={<ChefProfile />} />
+						<Route path='/:userFirstName/dishes' element={<BlogDishes />} />
+						<Route path='/:userId/dishes' element={<BlogDishes />} />
+						<Route path='/:dishId/details' element={<DishDetails />} />
+						<Route path='/:id/edit-dish' element={<EditDishForm />} />
+						<Route path='/create-dish' element={<CreateDishForm />} />
+						<Route path='/:dishId/create-comment' element={<CreateComment />} />
+					</Routes>
+
+					{/* <BlogDishes /> */}
+					{/* <MainSection /> */}
 
 
-      </div>
+				</div>
 
-      {/* <CreateDishBtn /> */}
+				{/* <CreateDishBtn /> */}
 
-      {/* <CreateDishForm /> */}
+				{/* <CreateDishForm /> */}
 
-      <Footer />
-     
-    </div>
-    </AuthContext.Provider>
-  )
+				<Footer />
+
+			</div>
+		</AuthContext.Provider>
+	)
 };
 
 export default App;

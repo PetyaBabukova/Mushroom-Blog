@@ -37,6 +37,15 @@ export const getChefRecipies = async (currentAuthor) => {
 
 export const register = (email, password, repeatPassword,) => request.post(`${authUrl}/register`, { email, password });
 
+export const login = async (email, password) => {
+    const result = await request.post(`${authUrl}/login`,{
+        email,
+        password
+    });
+
+    return result;
+}
+
 
 
 
