@@ -1,7 +1,8 @@
-const chefsUrl = "http://localhost:3030/jsonstore/chefs";
+const chefsUrl = "http://localhost:3030/users";
 const dishesUrl = "http://localhost:3030/jsonstore/dishes";
 
 import * as dishService from './dishService';
+import * as request from '../lib/requests';
 
 
 export const getAll = async () => {
@@ -32,3 +33,22 @@ export const getChefRecipies = async (currentAuthor) => {
     return allDishes;
 
 };
+
+export const register = (email,
+    password,
+    repeatPassword,
+    name,
+    imageUrl,
+    spec,
+    bio,
+    motto
+) => request.post(`${chefsUrl}/register`, {
+    email,
+    password,
+    repeatPassword,
+    name,
+    imageUrl,
+    spec,
+    bio,
+    motto
+});

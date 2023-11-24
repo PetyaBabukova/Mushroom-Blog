@@ -3,6 +3,8 @@ import styles from './App.module.css';
 import * as chefService from './services/chefServise.js'
 import {Routes, Route} from 'react-router-dom';
 
+import AuthContext from './contexts/authContext.js';
+
 import CreateDishForm from './components/dishes/CreateDishForm/CreateDishForm.jsx';
 import EditDishForm from './components/dishes/editDishForm/EditDishForm.jsx';
 import Header from "./components/header/Header.jsx"
@@ -16,12 +18,21 @@ import ChefProfile from './components/chefs/chefProfilePage/ChefProfile.jsx';
 import Login from './components/chefs/login/Login.jsx';
 import Register from './components/chefs/register/Register.jsx';
 import CreateComment from './components/comments/CreateComment/CreateComment.jsx';
-import AuthContext from './contexts/authContext.js';
 
 function App() {
 
-  const onRegisterSubmit = () => {
-    
+  const [auth, setAuth] = useState();
+
+  const onRegisterSubmit = async (values) => {
+    try {
+      const result = await chefService.register(values.email, values.username, values.password);
+      console.log(result);
+      setAuth(result);
+      localStorage.setItem('accessToken', result.accessToken)
+      
+    } catch (error) {
+      console.log('Unsuccessful register', error);
+    }
     
   }
 

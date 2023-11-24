@@ -15,7 +15,7 @@ function Register() {
 		email: '',
 		password: '',
 		repeatPassword: '',
-		name: '',
+		username: '',
 		imageUrl: '',
 		spec: '',
 		bio: '',
@@ -68,13 +68,13 @@ function Register() {
 			</div>
 
 			<div className={styles.registerFormDiv}>
-				<label htmlFor="name">Name</label>
+				<label htmlFor="username">Name</label>
 				<input className={styles.registerFormInputs}
 					type="text"
-					name='name'
-					id='name'
-					placeholder="Enter your name"
-					value={values.name}
+					name='username'
+					id='username'
+					placeholder="Enter your username"
+					value={values.username}
 					onChange={changeHandler}
 				/>
 			</div>
@@ -92,7 +92,7 @@ function Register() {
 			</div>
 
 			<div className={styles.registerFormDiv}>
-				<label htmlFor="spec">ImageUrl</label>
+				<label htmlFor="spec">Specialization</label>
 				<input className={styles.registerFormInputs}
 					type="text"
 					name='spec'
@@ -104,7 +104,7 @@ function Register() {
 			</div>
 
 			<div className={styles.registerFormDiv}>
-				<label htmlFor="bio">ImageUrl</label>
+				<label htmlFor="bio">BIO</label>
 				<input className={styles.registerFormInputs}
 					type="text"
 					name='bio'
@@ -116,7 +116,7 @@ function Register() {
 			</div>
 
 			<div className={styles.registerFormDiv}>
-				<label htmlFor="motto">ImageUrl</label>
+				<label htmlFor="motto">Motto</label>
 				<input className={styles.registerFormInputs}
 					type="text"
 					name='motto'

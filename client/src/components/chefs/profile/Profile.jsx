@@ -19,7 +19,7 @@ function Profile() {
         <div className={styles.profile}>
             {/* <CreateDishBtn /> */}
             <div className={styles.banner}>
-                <p>Chef {currentUser.firstName} {currentUser.lastName}</p>
+                <p>Chef {currentUser.username}</p>
             </div>
             <img src={currentUser.image} alt="Profile" className={styles.photo} />
             <div className={styles.description}>
