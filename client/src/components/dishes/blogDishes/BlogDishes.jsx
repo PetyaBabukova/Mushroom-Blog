@@ -12,7 +12,6 @@ function BlogDishes() {
   const [dishes, setDishes] = useState([]);
   const {category} = useParams();
   const {userFirstName} = useParams();
-  console.log(userFirstName);
   // console.log("category from BlogDishes", category);
 
   useEffect(() => {

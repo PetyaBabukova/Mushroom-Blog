@@ -1,4 +1,5 @@
-const chefsUrl = "http://localhost:3030/users";
+const authUrl = "http://localhost:3030/users";
+const profileUrl = 'http://localhost/data/profiles';
 const dishesUrl = "http://localhost:3030/jsonstore/dishes";
 
 import * as dishService from './dishService';
@@ -14,7 +15,7 @@ export const getAll = async () => {
 };
 
 export const getOne = async (chefId) => {
-    const response = await fetch(chefsUrl);
+    const response = await fetch(authUrl);
     const result = await response.json();
     const chefsArray = Object.values(result)
     const searchedChef = chefsArray.filter(c => c._id == chefId)
@@ -34,21 +35,9 @@ export const getChefRecipies = async (currentAuthor) => {
 
 };
 
-export const register = (email,
-    password,
-    repeatPassword,
-    name,
-    imageUrl,
-    spec,
-    bio,
-    motto
-) => request.post(`${chefsUrl}/register`, {
-    email,
-    password,
-    repeatPassword,
-    name,
-    imageUrl,
-    spec,
-    bio,
-    motto
-});
+export const register = (email, password, repeatPassword,) => request.post(`${authUrl}/register`, { email, password });
+
+
+
+
+

@@ -12,14 +12,11 @@ function Register() {
 	const {onRegisterSubmit} = useContext(AuthContext);
 
 	const initialValues = {
+		username: '',
 		email: '',
 		password: '',
 		repeatPassword: '',
-		username: '',
-		imageUrl: '',
-		spec: '',
-		bio: '',
-		motto: '',
+		
 	}
 
 	const { values, changeHandler, onSubmit } = useForm(initialValues, onRegisterSubmit);
@@ -29,6 +26,18 @@ function Register() {
 
 		<form className={styles.formContainer} onSubmit={onSubmit}>
 			<h2>Register</h2>
+
+			<div className={styles.registerFormDiv}>
+				<label htmlFor="username">Name</label>
+				<input className={styles.registerFormInputs}
+					type="text"
+					name='username'
+					id='username'
+					placeholder="Enter your username"
+					value={values.username}
+					onChange={changeHandler}
+				/>
+			</div>
 
 			<div className={styles.registerFormDiv}>
 				<label htmlFor="email">Email</label>
@@ -67,19 +76,9 @@ function Register() {
 				/>
 			</div>
 
-			<div className={styles.registerFormDiv}>
-				<label htmlFor="username">Name</label>
-				<input className={styles.registerFormInputs}
-					type="text"
-					name='username'
-					id='username'
-					placeholder="Enter your username"
-					value={values.username}
-					onChange={changeHandler}
-				/>
-			</div>
 
-			<div className={styles.registerFormDiv}>
+
+			{/* <div className={styles.registerFormDiv}>
 				<label htmlFor="imageUrl">ImageUrl</label>
 				<input className={styles.registerFormInputs}
 					type="text"
@@ -125,7 +124,7 @@ function Register() {
 					value={values.motto}
 					onChange={changeHandler}
 				/>
-			</div>
+			</div> */}
 
 			<div className={styles.registerFormDiv}>
 				<button className={styles.regButton} type="submit" >Register</button>

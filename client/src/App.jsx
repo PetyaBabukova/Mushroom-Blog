@@ -10,7 +10,7 @@ import EditDishForm from './components/dishes/editDishForm/EditDishForm.jsx';
 import Header from "./components/header/Header.jsx"
 import Hero from './components/Hero/Hero';
 import OurTeam from './components/chefs/team/OurTeam.jsx';
-import Footer from './components/footer/Footer.jsx';
+import Footer from './components/Footer/Footer.jsx';
 import BlogDishes from './components/dishes/blogDishes/BlogDishes.jsx';
 import Profile from './components/chefs/profile/Profile.jsx';
 import DishDetails from './components/dishes/dishDetails/DishDetails.jsx';
