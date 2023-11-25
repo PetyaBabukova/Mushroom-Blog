@@ -1323,20 +1323,26 @@ const http = require('http');
     var protectedData = {
     	users: {
     		"35c62d76-8152-4626-8712-eeb96381bea8": {
-    			email: "peter@abv.bg",
-    			username: "Peter",
+    			email: "petya@abv.bg",
+    			username: "Petya",
     			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
     		},
-    		"847ec027-f659-4086-8032-5173e2f9c93a": {
-    			email: "george@abv.bg",
-    			username: "George",
+            "847ec027-f659-4086-8032-5173e2f9c93a": {
+    			email: "sofi@abv.bg",
+    			username: "Sophie",
+    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+    		},
+            "48c08256-8034-4ea7-90ea-c87a04180714": {
+    			email: "stefan@abv.bg",
+    			username: "Stefan",
     			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
     		},
     		"60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
     			email: "admin@abv.bg",
     			username: "Admin",
     			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
-    		}
+    		},
+            
     	},
     	sessions: {
     	}
@@ -1646,7 +1652,7 @@ const http = require('http');
     			_updatedOn: 1616237293676
     		}
     	},
-        
+
     };
     var rules$1 = {
     	users: {

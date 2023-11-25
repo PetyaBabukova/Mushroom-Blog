@@ -10,7 +10,7 @@ import AuthContext from '../../contexts/authContext';
 
 
 function Header() {
-	const { isAuthenticated } = useContext(AuthContext)
+	const { isAuthenticated, username } = useContext(AuthContext)
 	// console.log(isAuthenticated);
 
 	const navItems = ['Dishes', 'Salads', 'Appetizers', 'Soups', 'Main Dishes', 'Desserts', 'Our Team'];
@@ -31,7 +31,7 @@ function Header() {
 						</>
 					)}
 					{isAuthenticated && (
-						<Link to={Path.LOGOUT} >Logout</Link>
+						<Link to={Path.LOGOUT} >{username} | Logout</Link>
 					)}
 				</div>
 			</div>
