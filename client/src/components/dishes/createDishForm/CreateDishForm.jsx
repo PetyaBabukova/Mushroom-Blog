@@ -71,7 +71,7 @@ function CreateDishForm() {
 					<input className={styles.input} type="text" name="category" value={values.category} onChange={changeHandler} />
 				</div>
 
-				<div className={styles.formInput}>
+				{/* <div className={styles.formInput}>
 					<label className={styles.label}>Author:</label>
 					<select className={styles.selectAuthor} name='author' value={values.author} onChange={changeHandler}>
 						<option value="null">Select Author</option>
@@ -79,7 +79,7 @@ function CreateDishForm() {
 						<option value="Chef Stefan">Chef Stefan</option>
 						<option value="Chef Sophie">Chef Sophie</option>
 					</select>
-				</div>
+				</div> */}
 
 				<div className={styles.formInput}>
 					<label className={styles.label}>Image URL:</label>

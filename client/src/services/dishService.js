@@ -1,5 +1,7 @@
+import { useContext } from "react";
+import AuthContext from "../contexts/authContext";
 
-const baseUrl = "http://localhost:3030/jsonstore/dishes";
+const baseUrl = "http://localhost:3030/data/mushroomRecipes";
 
 export const getAll = async (searchedCategory) => {
     const response = await fetch(baseUrl);
@@ -24,8 +26,9 @@ export const getOne = async (dishId) => {
 
 export const create = async (data, id) => {
 
+    const {_id} = useContext(AuthContext)
+
     const body = {
-        _id: id,
         category: data.category,
         author: data.author,
         image: data.image,
@@ -33,7 +36,8 @@ export const create = async (data, id) => {
         subtitle: data.subtitle,
         shortDescription: data.shortDescription,
         ingredients: data.ingredients,
-        description: data.description
+        description: data.description,
+        _ownerId: _id
     }
 
     console.log(body);

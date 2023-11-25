@@ -73,7 +73,8 @@ function App() {
 		onLoginSubmit,
 		username: auth.username || auth.email,
 		email: auth.email,
-		isAuthenticated: !!auth.email
+		isAuthenticated: !!auth.email,
+		_id: auth._id
 	}
 	
 	// console.log(values.isAuthenticated);
@@ -86,7 +87,7 @@ function App() {
 				<Header />
 				<Hero />
 				<div className={styles.container}>
-					<Profile />
+					{/* <Profile /> */}
 					<Routes>
 						<Route path='/' element={<BlogDishes />} />
 						<Route path='/register' element={<Register />} />
