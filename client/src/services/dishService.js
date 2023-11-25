@@ -1,7 +1,8 @@
 import { useContext } from "react";
+const baseUrl = "http://localhost:3030/data/recipes";
+
 import AuthContext from "../contexts/authContext";
 
-const baseUrl = "http://localhost:3030/data/mushroomRecipes";
 
 export const getAll = async (searchedCategory) => {
     const response = await fetch(baseUrl);

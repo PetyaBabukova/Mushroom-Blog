@@ -12,7 +12,7 @@ function CreateDishForm() {
 		{
 			_id: "",
 			category: "",
-			author: "Chef Petya",
+			_ownerId: "",
 			image: "",
 			title: "",
 			subtitle: "",
@@ -66,20 +66,20 @@ function CreateDishForm() {
 					<input className={styles.input} type="text" name="subtitle" value={values.subtitle} onChange={changeHandler} />
 				</div>
 
-				<div className={styles.formInput}>
+				{/* <div className={styles.formInput}>
 					<label className={styles.label}>Category:</label>
 					<input className={styles.input} type="text" name="category" value={values.category} onChange={changeHandler} />
-				</div>
-
-				{/* <div className={styles.formInput}>
-					<label className={styles.label}>Author:</label>
-					<select className={styles.selectAuthor} name='author' value={values.author} onChange={changeHandler}>
-						<option value="null">Select Author</option>
-						<option value="Chef Petya">Chef Petya</option>
-						<option value="Chef Stefan">Chef Stefan</option>
-						<option value="Chef Sophie">Chef Sophie</option>
-					</select>
 				</div> */}
+
+				<div className={styles.formInput}>
+					<label className={styles.label}>Category:</label>
+					<select className={styles.selectAuthor} name='author' value={values.author} onChange={changeHandler}>
+						<option value="main-dishes">Main Dish</option>
+						<option value="appetizers">Appetizer</option>
+						<option value="salads">Salad</option>
+						<option value="desserts">Dessert</option>
+					</select>
+				</div>
 
 				<div className={styles.formInput}>
 					<label className={styles.label}>Image URL:</label>
