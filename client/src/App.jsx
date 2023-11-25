@@ -30,7 +30,7 @@ function App() {
 			const result = await chefService.register(values.email, values.username, values.password);
 			console.log(result);
 			setAuth(result);
-			localStorage.setItem('accessToken', result.accessToken);
+			localStorage.setItem('accessToken', result.accessToken)
 
 		} catch (error) {
 			console.log('Unsuccessful register', error);

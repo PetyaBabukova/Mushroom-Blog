@@ -4,9 +4,13 @@ import logo from '../../assets/wild-mushrooms-logo.png';
 
 import { Link } from 'react-router-dom';
 
+import Path from '../../paths'
+
+
 function Header() {
  
   const navItems = ['Dishes', 'Salads', 'Appetizers', 'Soups', 'Main Dishes', 'Desserts', 'Our Team'];
+
 
   return (
     <header className={styles.header}>
@@ -15,7 +19,7 @@ function Header() {
           <Search />
         </div>
         <div className={styles.authLinks}>
-          <a href="/register">Register</a> / <Link to="/login">Login</Link>
+          <Link to={Path.REGISTER}>Register</Link> / <Link to={Path.LOGIN}>Login</Link>
         </div>
       </div>
       <div className={styles.logoContainer}>
