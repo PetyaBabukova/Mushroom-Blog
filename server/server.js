@@ -1645,7 +1645,8 @@ const http = require('http');
     			_createdOn: 1616237272948,
     			_updatedOn: 1616237293676
     		}
-    	}
+    	},
+        
     };
     var rules$1 = {
     	users: {

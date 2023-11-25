@@ -19,17 +19,24 @@ import ChefProfile from './components/chefs/chefProfilePage/ChefProfile.jsx';
 import Login from './components/chefs/login/Login.jsx';
 import Register from './components/chefs/register/Register.jsx';
 import CreateComment from './components/comments/CreateComment/CreateComment.jsx';
+import LogoutUser from './components/chefs/logoutUser/LogoutUser.jsx';
 
 function App() {
 	const navigate = useNavigate();
 
-	const [auth, setAuth] = useState();
+	const [auth, setAuth] = useState(()=>{ 
+		localStorage.removeItem('accessToken'); //This is for asuure that the localStorrage is empty
+		return {};
+	});
+
 
 	const onRegisterSubmit = async (values) => {
 		try {
 			const result = await chefService.register(values.email, values.username, values.password);
 			console.log(result);
 			setAuth(result);
+			// console.log(auth);
+			// console.log(result.accessToken);
 			localStorage.setItem('accessToken', result.accessToken)
 
 		} catch (error) {
@@ -48,12 +55,28 @@ function App() {
 		} catch (error) {
 			console.log("Unsuccessful login!", error);
 		}
+	};
+
+	const logoutHandler =  () => {
+		
+			 localStorage.removeItem('accessToken');
+			setAuth({});
+			
+
+
 	}
 
+	
 	const values = {
+		logoutHandler,
 		onRegisterSubmit,
 		onLoginSubmit,
+		username: auth.username || auth.email,
+		email: auth.email,
+		isAuthenticated: !!auth.email
 	}
+	
+	// console.log(values.isAuthenticated);
 
 	return (
 		<AuthContext.Provider value={values} >
@@ -68,6 +91,7 @@ function App() {
 						<Route path='/' element={<BlogDishes />} />
 						<Route path='/register' element={<Register />} />
 						<Route path='/login' element={<Login />} />
+						<Route path='/logout' element={<LogoutUser />} />
 						<Route path='/:category' element={<BlogDishes />} />
 						<Route path='/our-team' element={<OurTeam />} />
 						<Route path='/:userId/profile' element={<ChefProfile />} />

@@ -1,5 +1,5 @@
 const authUrl = "http://localhost:3030/users";
-const profileUrl = 'http://localhost/data/profiles';
+const profileUrl = 'http://localhost/jsonstore/chefs';
 const dishesUrl = "http://localhost:3030/jsonstore/dishes";
 
 import * as dishService from './dishService';
@@ -15,7 +15,7 @@ export const getAll = async () => {
 };
 
 export const getOne = async (chefId) => {
-    const response = await fetch(authUrl);
+    const response = await fetch(profileUrl);
     const result = await response.json();
     const chefsArray = Object.values(result)
     const searchedChef = chefsArray.filter(c => c._id == chefId)
@@ -43,8 +43,11 @@ export const login = async (email, password) => {
         password
     });
 
+    
     return result;
-}
+};
+
+export const logout = () => request.get(`${authUrl}/logout`, null, false);
 
 
 
