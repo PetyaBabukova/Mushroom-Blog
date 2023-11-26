@@ -27,15 +27,16 @@ function DishDetails() {
     
     // console.log(comments);
 
-  const deleteBtnClickHandler = (dishId) => {
-    dishService.deleteDish(dishId)
-      .then((res) => res.json())
-      .then((result) => {
-        setDish({})
-        console.log(result);
-        navigate('/')
-      })
-  }
+    const deleteBtnClickHandler = async (dishId) => {
+      try {
+          await dishService.deleteDish(dishId);
+          navigate('/');
+      } catch (error) {
+          console.error("Error deleting dish: ", error);
+          // handle error (show error message to user, etc.)
+      }
+  };
+  
 
   return (
     <div className={styles.dishDetailsContainer}>
@@ -50,7 +51,7 @@ function DishDetails() {
         <div className={styles.actions}>
           <Link to={`/${dish._id}/create-comment`} className={styles.actionBtn}>Comment</Link>
           <Link to={`/${dish._id}/edit-dish`} className={styles.actionBtn} >Edit</Link>
-          <button className={styles.actionBtn} onClick={deleteBtnClickHandler}>Delete</button >
+          <button className={styles.actionBtn} onClick={() => deleteBtnClickHandler(dishId)}>Delete</button>
           {/* <button className={styles.actionBtn}>Like</button> */}
         </div>
         <div className={styles.comments}>
