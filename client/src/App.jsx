@@ -37,7 +37,8 @@ function App() {
 			setAuth(result);
 			// console.log(auth);
 			// console.log(result.accessToken);
-			localStorage.setItem('accessToken', result.accessToken)
+			localStorage.setItem('accessToken', result.accessToken);
+			navigate(Path.HOME);
 
 		} catch (error) {
 			console.log('Unsuccessful register', error);
@@ -50,7 +51,7 @@ function App() {
 			const result = await chefService.login(values.email, values.password);
 			setAuth(result);
 			localStorage.setItem('accessToken', result.accessToken);
-			navigate(Path.Home);
+			navigate(Path.HOME);
 
 		} catch (error) {
 			console.log("Unsuccessful login!", error);

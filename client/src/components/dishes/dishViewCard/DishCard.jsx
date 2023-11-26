@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function DishCard({
   title,
   ingredients,
-  description,
+  instructions,
   author,
   image,
   optionalExtras,

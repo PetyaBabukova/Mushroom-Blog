@@ -1,60 +1,86 @@
 import styles from './CreateDishForm.module.css';
 
 import * as dishService from '../../../services/dishService';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from '../../../hooks/useForm';
+
+import AuthContext from '../../../contexts/authContext';
 
 
 function CreateDishForm() {
+	const {_id, username} = useContext(AuthContext)
 	const navigate = useNavigate()
 	const [dishes, setDishes] = useState({});
-	const [values, setValues] = useState(
-		{
-			_id: "",
-			category: "",
-			_ownerId: "",
-			image: "",
-			title: "",
-			subtitle: "",
-			shortDescription: "",
-			ingredients: "",
-			description: ""
-		});
+	const initialValues = {
+		category: "",
+		author: "",
+		_ownerId: "",
+		image: "",
+		title: "",
+		subtitle: "",
+		shortDescription: "",
+		ingredients: "",
+		instructions: ""
+	}
+	
+	const [values, setValues] = useState(initialValues)
 
-	const createDishSubmitHandler = async (e) => {
+	// const onCreateDisdSubmit = async (values) =>{
+	// 	try {
+	// 		const result = await dishService.create({
+	// 			category: values.category,
+	// 			author: username,
+	// 			_ownerId:_id,
+	// 			image:values.image,
+	// 			title:values.title,
+	// 			subtitle: values.subtitle,
+	// 			shortDescription: values.shortDescription,
+	// 			ingredients: values.ingredients,
+	// 			description: values.description,
+	// 		})
+	// 		console.log('Created Dish:', result);
+	// 	} catch (error) {
+	// 		console.error('Error in creating dish:', error);
+	// 	}
+	// }
+
+
+	const onCreateDisdSubmit = async (e) => {
 		e.preventDefault();
-
+	
 		const formData = new FormData(e.currentTarget);
 		const data = Object.fromEntries(formData);
-
-
-		const currentItems = await dishService.getAll();
-		const _id = currentItems.length + 1;
-
-		const newDish = await dishService.create(data, _id)
-			.then(setDishes(dishes => [...dishes, newDish]))
-			.then(navigate('/'))
-
-
-		// console.log("newDish: ", newDish);
-		// console.log("_id: ", _id);
-		// console.log("dishes: ", dishes);
+		data._ownerId = _id;
+		data.author = username;
+	
+		try {
+			const newDish = await dishService.create(data);
+			console.log("newDish: ", newDish);
+			setDishes(state => [...state, newDish]);
+		} catch (error) {
+			console.error("Error creating dish: ", error);
+		} finally {
+			navigate('/');
+		}
 	};
-
+	
 	const changeHandler = (e) => {
-		// console.log(e.target.name, '-', e.target.value);
+			// console.log(e.target.name, '-', e.target.value);
+		
+			setValues(state => ({
+					...state,
+					[e.target.name]: e.target.value
+					// [e.target.name]: == "checkbox" ?e.target.checked : e.target.value //if we whant to use one handler for all, including radio btns
+				}))
+			}
+			// const { values, changeHandler, onSubmit } = useForm(initialValues, onCreateDisdSubmit);
 
-		setValues(state => ({
-			...state,
-			[e.target.name]: e.target.value
-			// [e.target.name]: == "checkbox" ?e.target.checked : e.target.value //if we whant to use one handler for all, including radio btns
-		}))
-	}
 
 	return (
 		<div className={styles.createDish}>
 			<h2 className={styles.h2}>Create Dish</h2>
-			<form onSubmit={createDishSubmitHandler}>
+			<form onSubmit={onCreateDisdSubmit}>
 
 				<div className={styles.formInput}>
 					<label className={styles.label} >Title:</label>
@@ -73,9 +99,10 @@ function CreateDishForm() {
 
 				<div className={styles.formInput}>
 					<label className={styles.label}>Category:</label>
-					<select className={styles.selectAuthor} name='author' value={values.author} onChange={changeHandler}>
+					<select className={styles.selectCategory} name='category' value={values.category} onChange={changeHandler}>
 						<option value="main-dishes">Main Dish</option>
 						<option value="appetizers">Appetizer</option>
+						<option value="soups">Soup</option>
 						<option value="salads">Salad</option>
 						<option value="desserts">Dessert</option>
 					</select>
@@ -87,8 +114,8 @@ function CreateDishForm() {
 				</div>
 
 				<div className={styles.formInput}>
-					<label className={styles.label}>Ingradients:</label>
-					<input className={styles.input} type="text" name="ingradients" value={values.ingradients} onChange={changeHandler} />
+					<label className={styles.label}>Ingredients:</label>
+					<input className={styles.input} type="text" name="ingredients" value={values.ingredients} onChange={changeHandler} />
 				</div>
 
 				<div className={styles.formInput}>
@@ -98,7 +125,7 @@ function CreateDishForm() {
 
 				<div className={styles.formInput}>
 					<label className={styles.label}>Instructions:</label>
-					<textarea className={styles.textarea} name="details" value={values.details} onChange={changeHandler} />
+					<textarea className={styles.textarea} name="instructions" value={values.instructions} onChange={changeHandler} />
 				</div>
 
 
@@ -111,6 +138,4 @@ function CreateDishForm() {
 	);
 }
 
-
 export default CreateDishForm;
-

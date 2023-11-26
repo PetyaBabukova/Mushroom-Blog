@@ -22,11 +22,10 @@
     color: #666;
 }
 
-.selectAuthor{
+.selectCategory{
     width: 50%;
     padding: 10px;
     border: 1px solid #ccc;
-
     border-radius: 5px;
 }
 

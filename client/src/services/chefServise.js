@@ -1,6 +1,6 @@
 const authUrl = "http://localhost:3030/users";
 const profileUrl = 'http://localhost/jsonstore/chefs';
-const dishesUrl = "http://localhost:3030/jsonstore/dishes";
+const dishesUrl = "http://localhost:3030/data/recipes";
 
 import * as dishService from './dishService';
 import * as request from '../lib/requests';

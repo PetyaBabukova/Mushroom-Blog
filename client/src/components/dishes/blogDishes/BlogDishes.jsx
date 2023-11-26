@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
 
 import DishCard from '../dishViewCard/DishCard';
@@ -6,6 +6,7 @@ import styles from './BlogDishes.module.css';
 
 import * as dishService from '../../../services/dishService';
 import * as chefService from '../../../services/chefServise';
+import AuthContext from '../../../contexts/authContext';
 
 
 function BlogDishes() {
@@ -30,7 +31,7 @@ function BlogDishes() {
       })
   }, [userFirstName]);
 
-  
+  const {username} = useContext(AuthContext)
   return (
     <div className={styles.blogDishes}>
       {dishes.map((dish) => (
@@ -39,7 +40,7 @@ function BlogDishes() {
       id={dish._id}
 			title={dish.title}
 			ingredients={dish.ingredients}
-			description={dish.description}
+			description={dish.instructions}
 			author={dish.author}
 			image={dish.image}
 			optionalExtras={dish.optionalExtras}

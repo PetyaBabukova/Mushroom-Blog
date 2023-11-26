@@ -1,6 +1,3 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-
 import styles from './Register.module.css'
 import { useContext, useState } from 'react';
 import { useForm } from '../../../hooks/useForm';

@@ -16,7 +16,7 @@ function DishDetails() {
 
   useEffect(() => {
     dishService.getOne(dishId)
-      .then(searchedDish => setDish(searchedDish[0]))
+      .then(searchedDish => setDish(searchedDish))
     // console.log(dish);
 
     commentService.getAll(dishId)
@@ -45,7 +45,7 @@ function DishDetails() {
       <div className={styles.details}>
         <h2 className={styles.dishTitle}> {dish.title} </h2>
         <p className={styles.ingradients}> <span className={styles.ingradientsWord}>Ingradients: </span>{dish.ingredients}</p>
-        <p className={styles.ingradients}><span className={styles.ingradientsWord}>Instructions: </span>{dish.description}</p>
+        <p className={styles.ingradients}><span className={styles.ingradientsWord}>Instructions: </span>{dish.instructions}</p>
         <h4 className={styles.author}>{dish.author}</h4>
         <div className={styles.actions}>
           <Link to={`/${dish._id}/create-comment`} className={styles.actionBtn}>Comment</Link>
