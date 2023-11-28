@@ -1,6 +1,6 @@
 import * as request from '../lib/requests';
 
-const baseUrl = 'http://localhost:3030/jsonstore/comments';
+const baseUrl = 'http://localhost:3030/data/comments';
 
 export const getAll = async (dishId)=>{
    
