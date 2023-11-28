@@ -29,6 +29,7 @@ function DishDetails() {
 
     const deleteBtnClickHandler = async (dishId) => {
       try {
+        const confirmRemoveDish = confirm(`Do you whant to delete ${dish.title}?`)
           await dishService.deleteDish(dishId);
           navigate('/');
       } catch (error) {

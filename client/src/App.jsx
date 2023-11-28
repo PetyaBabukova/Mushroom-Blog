@@ -24,7 +24,7 @@ import LogoutUser from './components/chefs/logoutUser/LogoutUser.jsx';
 function App() {
 	const navigate = useNavigate();
 
-	const [auth, setAuth] = useState(()=>{ 
+	const [auth, setAuth] = useState(() => {
 		localStorage.removeItem('accessToken'); //This is for asuure that the localStorrage is empty
 		return {};
 	});
@@ -58,16 +58,12 @@ function App() {
 		}
 	};
 
-	const logoutHandler =  () => {
-		
-			 localStorage.removeItem('accessToken');
-			setAuth({});
-			
-
-
+	const logoutHandler = () => {
+		localStorage.removeItem('accessToken');
+		setAuth({});
 	}
 
-	
+
 	const values = {
 		logoutHandler,
 		onRegisterSubmit,
@@ -77,7 +73,7 @@ function App() {
 		isAuthenticated: !!auth.email,
 		_id: auth._id
 	}
-	
+
 	// console.log(values.isAuthenticated);
 
 	return (
