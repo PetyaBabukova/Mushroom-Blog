@@ -3,7 +3,7 @@ import styles from './App.module.css';
 import * as chefService from './services/chefServise.js'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
-import AuthContext from './contexts/authContext.js';
+import { AuthProvider } from './contexts/authContext.jsx';
 import Path from './paths.js'
 
 import CreateDishForm from './components/dishes/CreateDishForm/CreateDishForm.jsx';
@@ -29,55 +29,8 @@ function App() {
 		return {};
 	});
 
-
-	const onRegisterSubmit = async (values) => {
-		try {
-			const result = await chefService.register(values.username, values.email, values.password);
-			console.log(result);
-			setAuth(result);
-			// console.log(auth);
-			// console.log(result.accessToken);
-			localStorage.setItem('accessToken', result.accessToken);
-			navigate(Path.HOME);
-
-		} catch (error) {
-			console.log('Unsuccessful register', error);
-		}
-
-	};
-
-	const onLoginSubmit = async (values) => {
-		try {
-			const result = await chefService.login(values.email, values.password);
-			setAuth(result);
-			localStorage.setItem('accessToken', result.accessToken);
-			navigate(Path.HOME);
-
-		} catch (error) {
-			console.log("Unsuccessful login!", error);
-		}
-	};
-
-	const logoutHandler = () => {
-		localStorage.removeItem('accessToken');
-		setAuth({});
-	}
-
-
-	const values = {
-		logoutHandler,
-		onRegisterSubmit,
-		onLoginSubmit,
-		username: auth.username || auth.email,
-		email: auth.email,
-		isAuthenticated: !!auth.email,
-		_id: auth._id
-	}
-
-	// console.log(values.isAuthenticated);
-
 	return (
-		<AuthContext.Provider value={values} >
+		<AuthProvider >
 
 			<div className="App">
 
@@ -101,21 +54,12 @@ function App() {
 						<Route path='/create-dish' element={<CreateDishForm />} />
 						<Route path='/:dishId/create-comment' element={<CreateComment />} />
 					</Routes>
-
-					{/* <BlogDishes /> */}
-					{/* <MainSection /> */}
-
-
 				</div>
-
-				{/* <CreateDishBtn /> */}
-
-				{/* <CreateDishForm /> */}
 
 				<Footer />
 
 			</div>
-		</AuthContext.Provider>
+		</AuthProvider>
 	)
 };
 

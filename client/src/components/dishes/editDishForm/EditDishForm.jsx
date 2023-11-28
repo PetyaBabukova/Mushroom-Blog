@@ -21,12 +21,11 @@ function EditDishForm() {
 			description: ""
 		});
 
-	const createDishSubmitHandler = async (e) => {
+	const editDischSubmit = async (e) => {
 		e.preventDefault();
 
 		const formData = new FormData(e.currentTarget);
 		const data = Object.fromEntries(formData);
-
 
 		const currentItems = await dishService.getAll();
 		const _id = currentItems.length + 1;
@@ -53,8 +52,8 @@ function EditDishForm() {
 
 	return (
 		<div className={styles.createDish}>
-			<h2 className={styles.h2}>Edit Dish</h2>
-			<form onSubmit={createDishSubmitHandler}>
+			<h2 className={styles.h2}>Create Dish</h2>
+			<form onSubmit={onCreateDisdSubmit}>
 
 				<div className={styles.formInput}>
 					<label className={styles.label} >Title:</label>
@@ -66,18 +65,19 @@ function EditDishForm() {
 					<input className={styles.input} type="text" name="subtitle" value={values.subtitle} onChange={changeHandler} />
 				</div>
 
-				<div className={styles.formInput}>
+				{/* <div className={styles.formInput}>
 					<label className={styles.label}>Category:</label>
 					<input className={styles.input} type="text" name="category" value={values.category} onChange={changeHandler} />
-				</div>
+				</div> */}
 
 				<div className={styles.formInput}>
-					<label className={styles.label}>Author:</label>
-					<select className={styles.selectAuthor} name='author' value={values.author} onChange={changeHandler}>
-						<option value="null">Select Author</option>
-						<option value="Chef Petya">Chef Petya</option>
-						<option value="Chef Stefan">Chef Stefan</option>
-						<option value="Chef Sophie">Chef Sophie</option>
+					<label className={styles.label}>Category:</label>
+					<select className={styles.selectCategory} name='category' value={values.category} onChange={changeHandler}>
+						<option value="main-dishes">Main Dish</option>
+						<option value="appetizers">Appetizer</option>
+						<option value="soups">Soup</option>
+						<option value="salads">Salad</option>
+						<option value="desserts">Dessert</option>
 					</select>
 				</div>
 
@@ -87,8 +87,8 @@ function EditDishForm() {
 				</div>
 
 				<div className={styles.formInput}>
-					<label className={styles.label}>Ingradients:</label>
-					<input className={styles.input} type="text" name="ingradients" value={values.ingradients} onChange={changeHandler} />
+					<label className={styles.label}>Ingredients:</label>
+					<input className={styles.input} type="text" name="ingredients" value={values.ingredients} onChange={changeHandler} />
 				</div>
 
 				<div className={styles.formInput}>
@@ -98,13 +98,13 @@ function EditDishForm() {
 
 				<div className={styles.formInput}>
 					<label className={styles.label}>Instructions:</label>
-					<textarea className={styles.textarea} name="details" value={values.details} onChange={changeHandler} />
+					<textarea className={styles.textarea} name="instructions" value={values.instructions} onChange={changeHandler} />
 				</div>
 
 
 
 				<div className={styles.buttonContainer}>
-					<button className={styles.buttonSubmit} type="submit">Edit</button>
+					<button className={styles.buttonSubmit} type="submit">Create</button>
 				</div>
 			</form>
 		</div>
