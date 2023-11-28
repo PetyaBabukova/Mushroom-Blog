@@ -55,14 +55,15 @@ export const AuthProvider = ({
 		onLoginSubmit,
 		username: auth.username || auth.email,
 		email: auth.email,
-		isAuthenticated: !!auth.email,
-		_id: auth._id
+		isAuthenticated: !!auth.accessToken,
+		userId: auth._id
 	}
 
-	console.log("auth: ", auth);
-	console.log("email: ", auth.email);
-	console.log("username: ", auth.username);
-	console.log("email: ", auth.email);
+	// console.log("userId: ", auth._id);
+	// console.log("email: ", auth.email);
+	// console.log("username: ", auth.username);
+	// console.log("email: ", auth.email);
+	
 
     return (
         <AuthContext.Provider value = {values}>

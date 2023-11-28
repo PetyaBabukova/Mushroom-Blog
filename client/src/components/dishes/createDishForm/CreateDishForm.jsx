@@ -9,7 +9,7 @@ import AuthContext from '../../../contexts/authContext';
 
 
 function CreateDishForm() {
-	const {_id, username} = useContext(AuthContext)
+	const {userId, username} = useContext(AuthContext)
 	const navigate = useNavigate()
 	const [dishes, setDishes] = useState({});
 	const initialValues = {
@@ -51,13 +51,13 @@ function CreateDishForm() {
 	
 		const formData = new FormData(e.currentTarget);
 		const data = Object.fromEntries(formData);
-		data._ownerId = _id;
+		data._ownerId = userId;
 		data.author = username;
 	
 		try {
 			const newDish = await dishService.create(data);
-			console.log("newDish: ", newDish);
 			setDishes(state => [...state, newDish]);
+			console.log("dishes: ", dishes);
 		} catch (error) {
 			console.error("Error creating dish: ", error);
 		} finally {
@@ -75,7 +75,7 @@ function CreateDishForm() {
 				}))
 			}
 			// const { values, changeHandler, onSubmit } = useForm(initialValues, onCreateDisdSubmit);
-
+			console.log(userId);
 
 	return (
 		<div className={styles.createDish}>

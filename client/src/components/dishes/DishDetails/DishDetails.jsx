@@ -1,18 +1,19 @@
-import { useEffect, useState, } from 'react';
+import { useContext, useEffect, useState, } from 'react';
 import styles from './DishDetails.module.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import * as dishService from '../../../services/dishService';
 import * as commentService from '../../../services/commentService';
 
 import CommentItem from '../../comments/commentItem/CommentItem';
+import AuthContext from '../../../contexts/authContext';
 
 function DishDetails() {
-
+  
+  const { dishId } = useParams();
+  const [comments, setComments] = useState([]);
+  const {userId} = useContext(AuthContext);
+  const navigate = useNavigate();
   const [dish, setDish] = useState({});
-  const [comments, setComments] = useState([])
-  const { dishId } = useParams()
-  // console.log(dishId);
-  const navigate = useNavigate()
 
   useEffect(() => {
     dishService.getOne(dishId)
@@ -38,7 +39,6 @@ function DishDetails() {
       }
   };
   
-
   return (
     <div className={styles.dishDetailsContainer}>
       <div className={styles.imageContainer}>
@@ -51,8 +51,14 @@ function DishDetails() {
         <h4 className={styles.author}>{dish.author}</h4>
         <div className={styles.actions}>
           <Link to={`/${dish._id}/create-comment`} className={styles.actionBtn}>Comment</Link>
+
+          {userId === dish._ownerId &&
+          <>
           <Link to={`/${dish._id}/edit-dish`} className={styles.actionBtn} >Edit</Link>
           <button className={styles.actionBtn} onClick={() => deleteBtnClickHandler(dishId)}>Delete</button>
+          </>
+          
+          }
           {/* <button className={styles.actionBtn}>Like</button> */}
         </div>
         <div className={styles.comments}>

@@ -16,7 +16,10 @@ function Logout() {
                 logoutHandler();
                 navigate('/');
             })
-            .catch(() => navigate('/'));
+            .catch(() => {
+                logoutHandler();
+                navigate('/')
+            });
     }, []);
 
     return null;

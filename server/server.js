@@ -1333,11 +1333,6 @@ const http = require('http');
                 username: "George",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
-            "48c08256-8034-4ea7-90ea-c87a04180714": {
-                email: "stefan@abv.bg",
-                username: "Stefan",
-                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
-            },
             "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
                 email: "admin@abv.bg",
                 username: "Admin",
@@ -1354,7 +1349,7 @@ const http = require('http');
             "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 category: "main-dishes",
-                author: "Petya",
+                author: "Peter",
                 image: "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/creamy_mashroom_and_onion_pasta.png",
                 title: "Creamy Mushroom and Onion Pasta",
                 subtitle: "A Luscious and Heartwarming Pasta Dish",
@@ -1364,11 +1359,10 @@ const http = require('http');
 
                 _createdOn: 1613551279012
             },
-            "8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
-                _ownerId: "48c08256-8034-4ea7-90ea-c87a04180714",
-
+            "3987279d-0ad4-4afb-8ca9-5b256ae3b278": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 category: "soups",
-                author: "Stefan",
+                author: "George",
                 image: "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/soup.png",
                 title: "Mushroom Soup",
                 subtitle: "A Rich and Earthy Soup for the Soul",
@@ -1380,7 +1374,7 @@ const http = require('http');
             "985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 category: "appetizers",
-                author: "Sophie",
+                author: "Peter",
                 image: "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/quiche.png",
                 title: "Mushroom Quiche",
                 subtitle: "A Savory and Elegant Brunch Classic",

@@ -22,12 +22,11 @@ import CreateComment from './components/comments/CreateComment/CreateComment.jsx
 import LogoutUser from './components/chefs/logoutUser/LogoutUser.jsx';
 
 function App() {
-	const navigate = useNavigate();
 
-	const [auth, setAuth] = useState(() => {
-		localStorage.removeItem('accessToken'); //This is for asuure that the localStorrage is empty
-		return {};
-	});
+	// const [auth, setAuth] = useState(() => {
+	// 	localStorage.removeItem('accessToken'); //This is for asuure that the localStorrage is empty
+	// 	return {};
+	// });
 
 	return (
 		<AuthProvider >
@@ -50,7 +49,7 @@ function App() {
 						<Route path='/:userFirstName/dishes' element={<BlogDishes />} />
 						<Route path='/:userId/dishes' element={<BlogDishes />} />
 						<Route path='/:dishId/details' element={<DishDetails />} />
-						<Route path='/:id/edit-dish' element={<EditDishForm />} />
+						<Route path='/:dishId/edit-dish' element={<EditDishForm />} />
 						<Route path='/create-dish' element={<CreateDishForm />} />
 						<Route path='/:dishId/create-comment' element={<CreateComment />} />
 					</Routes>

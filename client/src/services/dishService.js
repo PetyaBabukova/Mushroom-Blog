@@ -19,10 +19,12 @@ export const getAll = async (searchedCategory) => {
 export const getOne = async (dishId) => {
     const response = await fetch(`${baseUrl}/${dishId}`);
     const result = await response.json();
+    // console.log(result);
      return result;
 }
 
 export const create = async (data) => {
+    console.log(data);
     let response;
     try {
         response = await request.post(baseUrl, data);
@@ -31,11 +33,16 @@ export const create = async (data) => {
         }
         return await response.json();
     } catch (error) {
-        console.error('Error creating:', error);
-        console.error('Response:', response);
-        throw error; 
+        console.log( error);
+        console.log( response);
     }
 };
 
+
+export const update = async (dishId, data) => {
+    const result = await request.put(`${baseUrl}/${dishId}`, data);
+
+    return result;
+}; 
 
 export const deleteDish = async (dishId) => await request.del(`${baseUrl}/${dishId}`);
