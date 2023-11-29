@@ -30,11 +30,11 @@ function CreateComment() {
             .then(navigate(`/${dishId}/details`))
 
         setComments(state => [...state, newComment])
-        console.log(newComment);
+        // console.log(newComment);
     }
 
     const changeHandler = (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         setComments(state => ({
             ...state,
             [e.target.name]: e.target.value

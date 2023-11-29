@@ -26,9 +26,9 @@ function DishDetails() {
       })
     }, [dishId]);
     
-    // console.log(comments);
+    // console.log("comments: ", comments);
 
-    const deleteBtnClickHandler = async (dishId) => {
+    const deleteDishBtnClickHandler = async (dishId) => {
       try {
         const confirmRemoveDish = confirm(`Do you whant to delete ${dish.title}?`)
           await dishService.deleteDish(dishId);
@@ -38,6 +38,10 @@ function DishDetails() {
           // handle error (show error message to user, etc.)
       }
   };
+
+  const commentDeleteHandler = (commentId) => {
+    setComments(currentComments => currentComments.filter(comment => comment._id !== commentId));
+};
   
   return (
     <div className={styles.dishDetailsContainer}>
@@ -55,7 +59,7 @@ function DishDetails() {
           {userId === dish._ownerId &&
           <>
           <Link to={`/${dish._id}/edit-dish`} className={styles.actionBtn} >Edit</Link>
-          <button className={styles.actionBtn} onClick={() => deleteBtnClickHandler(dishId)}>Delete</button>
+          <button className={styles.actionBtn} onClick={() => deleteDishBtnClickHandler(dishId)}>Delete</button>
           </>
           
           }
@@ -64,7 +68,7 @@ function DishDetails() {
         <div className={styles.comments}>
           <h5 className={styles.commentsHeading}>Comments: {dish.rating}</h5>
           <ul className={styles.commentsContainer}>
-          {comments.map(comment => (<CommentItem key={comment._id} {...comment} />))}
+          {comments.map(comment => (<CommentItem key={comment._id} {...comment} onDelete={commentDeleteHandler}/>))}
           </ul >
           {/* <span className={styles.dishes}>Dishes</span> */}
         </div>

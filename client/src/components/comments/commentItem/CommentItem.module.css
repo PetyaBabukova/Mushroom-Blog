@@ -1,10 +1,29 @@
 .comment{
     font-weight: normal;
     padding: 2px 10px;
+    margin: 10px;
+    margin-top: 20px;
     
 }
 
 .commentLi{
+    display: flex;
     list-style-type: none;
+    align-content: center;
+    align-items: flex-start;
 
+}
+
+.deleteCommentBtn{
+    background-color: rgb(241, 235, 235);
+    font-size: 0.7em;
+    font-weight: normal;
+    text-decoration: none;
+    color: gray;
+    padding: 0 1% ;
+    border-radius: 2px;
+}
+
+.deleteCommentBtn:hover{
+    background-color: rgb(196, 194, 191);
 }
