@@ -2,11 +2,10 @@ import Form from 'react-bootstrap/Form';
 
 import styles from './EditComment.module.css';
 
-import { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import * as commentService from '../../../services/commentService';
-import AuthContext from '../../../contexts/authContext';
 
 function EditComment() {
 
@@ -15,11 +14,10 @@ function EditComment() {
     const [comment, setComment] = useState({
         comment: ''
     });
-    // const {username} = useContext(AuthContext)
 
 
     useEffect(() => {
-        if (commentId) { // Check if dishId is not undefined
+        if (commentId) { 
             commentService.getOne(commentId)
                 .then(result => {
                     setComment(result)
@@ -27,6 +25,13 @@ function EditComment() {
         }
     }, [commentId]);
 
+    const changeHandler = (e) => {
+        console.log(e.target.value);
+        setComment(state => ({
+            ...state,
+            [e.target.name]: e.target.value
+        }))
+    };
 
     const editCommentHandler = async (e) => {
         e.preventDefault();
@@ -38,16 +43,7 @@ function EditComment() {
         } catch (error) {
             console.log("Error updating comment:", error);
         }
-    }
-
-    const changeHandler = (e) => {
-        console.log(e.target.value);
-        setComment(state => ({
-            ...state,
-            [e.target.name]: e.target.value
-        }))
-    }
-
+    };
 
     return (
         <Form className={styles.formContainer} onSubmit={editCommentHandler}>
