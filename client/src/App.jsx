@@ -19,6 +19,7 @@ import ChefProfile from './components/chefs/chefProfilePage/ChefProfile.jsx';
 import Login from './components/chefs/login/Login.jsx';
 import Register from './components/chefs/register/Register.jsx';
 import CreateComment from './components/comments/CreateComment/CreateComment.jsx';
+import EditComment from './components/comments/editComment/EditComment.jsx';
 import LogoutUser from './components/chefs/logoutUser/LogoutUser.jsx';
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
 						<Route path='/:dishId/edit-dish' element={<EditDishForm />} />
 						<Route path='/create-dish' element={<CreateDishForm />} />
 						<Route path='/:dishId/create-comment' element={<CreateComment />} />
+						<Route path='/:commentId/edit-comment' element={<EditComment />} />
 					</Routes>
 				</div>
 
