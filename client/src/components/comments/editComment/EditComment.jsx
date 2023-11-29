@@ -30,10 +30,7 @@ function EditComment() {
 
     const editCommentHandler = async (e) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const updatedComment = {
-            comment: formData.get('comment')
-        };
+        
         try {
             await commentService.edit(commentId, comment)
             navigate(-1);
