@@ -34,7 +34,7 @@ function Profile() {
                 if(response.ok) {
                     if (response.status === 204) {
                         console.log("No content returned from the server");
-                        return null; // or return an empty object, depending on your logic
+                        return null; 
                     }
                     return response.json();
                 }
@@ -50,7 +50,8 @@ function Profile() {
         }
     }, [userId]);
 
-console.log(profile);
+// console.log(profile);
+console.log('pesho');
 
     return (
         <div className={styles.profile}>
