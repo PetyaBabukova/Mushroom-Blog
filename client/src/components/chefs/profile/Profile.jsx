@@ -6,39 +6,73 @@ import AuthContext from '../../../contexts/authContext';
 
 function Profile() {
 
-    const [currentUser, setCurrentUser] = useState({})
+    const [profile, setProfile] = useState({})
     const {username, userId} = useContext(AuthContext)
-    const currentUserId = userId
+    const token = localStorage.getItem('accessToken');
+
+    const currentUserId = userId;
+    console.log(userId);
+
+    // useEffect(() => {
+    //     chefService.getOne(currentUserId)
+    //         .then((result) => {
+    //             setCurrentUser(result[0])
+    //             console.log(result);
+    //         })
+
+    // }, [])
 
     useEffect(() => {
-        chefService.getOne(currentUserId)
-            .then((result) => {
-                setCurrentUser(result[0])
+        if (userId) {
+            fetch(`http://localhost:3030/users/${userId}`, {
+                headers: {
+                    'Content-Type': 'Application/json',
+                    'X-Authorization': token
+                }
             })
+            .then(response => {
+                if(response.ok) {
+                    if (response.status === 204) {
+                        console.log("No content returned from the server");
+                        return null; // or return an empty object, depending on your logic
+                    }
+                    return response.json();
+                }
+                throw new Error('Failed to fetch');
+            })
+            .then(profileData => {
+                if (profileData) {
+                    console.log("profile: ", profileData);
+                    setProfile(profileData);
+                }
+            })
+            .catch(error => console.error("Error fetching profile:", error));
+        }
+    }, [userId]);
 
-    }, [])
+console.log(profile);
 
     return (
         <div className={styles.profile}>
             {/* <CreateDishBtn /> */}
             <div className={styles.banner}>
-                <p>Chef {currentUser.username}</p>
+                <p>Chef {profile.username}</p>
             </div>
-            <img src={currentUser.image} alt="Chef image" className={styles.photo} />
+            <img src={profile.image} alt="Chef image" className={styles.photo} />
             <div className={styles.description}>
-                <p><span className={styles.boldedPiece}>Motto: </span>{currentUser.motto}</p>
+                <p><span className={styles.boldedPiece}>Motto: </span>{profile.motto}</p>
             </div>
 
             <div className={styles.chefProfileLinkContainer}>
-                <Link to={`/${currentUser.firstName}/dishes`} className={styles.chefProfileLink}> View Chef {currentUser.firstName} recipies</Link>
+                <Link to={`/${profile.firstName}/dishes`} className={styles.chefProfileLink}> View Chef {profile.firstName} recipies</Link>
             </div>
 
             <div className={styles.chefProfileLinkContainer}>
-                <Link to={`/${currentUser._id}/profile`} className={styles.chefProfileLink}> View Chef {currentUser.firstName} profile</Link>
+                <Link to={`/${profile._id}/profile`} className={styles.chefProfileLink}> View Chef {profile.firstName} profile</Link>
             </div>
 
             <div className={styles.chefProfileLinkContainer}>
-                <Link to={`/${currentUser._id}/edit-profile`} className={styles.chefProfileLink}> Edit Profile </Link>
+                <Link to={`/${profile._id}/edit-profile`} className={styles.chefProfileLink}> Edit Profile </Link>
             </div>
         </div>
     );

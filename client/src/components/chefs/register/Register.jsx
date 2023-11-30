@@ -6,14 +6,18 @@ import AuthContext from '../../../contexts/authContext';
 
 function Register() {
 
-	const {onRegisterSubmit} = useContext(AuthContext);
+	const { onRegisterSubmit } = useContext(AuthContext);
 
 	const initialValues = {
 		username: '',
 		email: '',
 		password: '',
 		repeatPassword: '',
-		
+		// imageUrl: '',
+		// spec: '',
+		// bio: '',
+		// motto: '',
+
 	}
 
 	const { values, changeHandler, onSubmit } = useForm(initialValues, onRegisterSubmit);

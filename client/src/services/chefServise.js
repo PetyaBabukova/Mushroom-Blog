@@ -17,12 +17,12 @@ export const getOne = async (chefId) => {
     const response = await fetch(`${authUrl}/${chefId}`);
     const result = await response.json();
     console.log(chefId);
-    // const chefsArray = Object.values(result)
-    // const searchedChef = chefsArray.filter(c => c._id == chefId)
-    // console.log(chefsArray);
-    // console.log(searchedChef);
-    // return searchedChef;
-    return result
+    const chefsArray = Object.values(result)
+    const searchedChef = chefsArray.filter(c => c._id == chefId)
+    console.log(chefsArray);
+    console.log(searchedChef);
+    return searchedChef;
+    // return result
 };
 
 export const getChefRecipies = async (currentAuthor) => {

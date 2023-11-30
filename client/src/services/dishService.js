@@ -28,10 +28,8 @@ export const create = async (data) => {
     let response;
     try {
         response = await request.post(baseUrl, data);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return await response.json();
+        // const result = await response.json();
+        return response;
     } catch (error) {
         console.log( error);
         console.log( response);

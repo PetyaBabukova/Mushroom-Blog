@@ -57,14 +57,13 @@ function CreateDishForm() {
 		try {
 			const newDish = await dishService.create(data);
 			setDishes(state => [...state, newDish]);
-			console.log("dishes: ", dishes);
 		} catch (error) {
 			console.error("Error creating dish: ", error);
 		} finally {
 			navigate('/');
 		}
 	};
-	
+
 	const changeHandler = (e) => {
 			// console.log(e.target.name, '-', e.target.value);
 		
@@ -75,7 +74,7 @@ function CreateDishForm() {
 				}))
 			}
 			// const { values, changeHandler, onSubmit } = useForm(initialValues, onCreateDisdSubmit);
-			console.log(userId);
+			// console.log(userId);
 
 	return (
 		<div className={styles.createDish}>
