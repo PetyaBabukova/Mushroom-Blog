@@ -22,6 +22,7 @@ export const getOne = async (chefId) => {
     // console.log(chefsArray);
     // console.log(searchedChef);
     // return searchedChef;
+    return result
 };
 
 export const getChefRecipies = async (currentAuthor) => {

@@ -26,6 +26,6 @@ export const del = async (commentId) => await request.del(`${baseUrl}/${commentI
 
 export const edit = async (commentId, commentData) => {
     const result = await request.put(`${baseUrl}/${commentId}`, commentData)
-    console.log(result);
+    // console.log(result);
     return result;
 }

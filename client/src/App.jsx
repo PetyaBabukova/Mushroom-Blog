@@ -37,7 +37,7 @@ function App() {
 				<Header />
 				<Hero />
 				<div className={styles.container}>
-					{/* <Profile /> */}
+					<Profile />
 					<Routes>
 						<Route path='/' element={<BlogDishes />} />
 						<Route path='/register' element={<Register />} />
