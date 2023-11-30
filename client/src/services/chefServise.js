@@ -1,5 +1,4 @@
 const authUrl = "http://localhost:3030/users";
-const profileUrl = 'http://localhost/jsonstore/chefs';
 const dishesUrl = "http://localhost:3030/data/recipes";
 
 import * as dishService from './dishService';
@@ -15,13 +14,14 @@ export const getAll = async () => {
 };
 
 export const getOne = async (chefId) => {
-    const response = await fetch(profileUrl);
+    const response = await fetch(`${authUrl}/${chefId}`);
     const result = await response.json();
-    const chefsArray = Object.values(result)
-    const searchedChef = chefsArray.filter(c => c._id == chefId)
+    console.log(chefId);
+    // const chefsArray = Object.values(result)
+    // const searchedChef = chefsArray.filter(c => c._id == chefId)
     // console.log(chefsArray);
     // console.log(searchedChef);
-    return searchedChef;
+    // return searchedChef;
 };
 
 export const getChefRecipies = async (currentAuthor) => {

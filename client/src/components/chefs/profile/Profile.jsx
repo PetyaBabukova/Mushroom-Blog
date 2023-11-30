@@ -1,14 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import styles from './Profile.module.css';
 import * as chefService from '../../../services/chefServise';
 import { Link } from 'react-router-dom';
+import AuthContext from '../../../contexts/authContext';
 
 function Profile() {
 
     const [currentUser, setCurrentUser] = useState({})
+    const {username, userId} = useContext(AuthContext)
+    const currentUserId = userId
 
     useEffect(() => {
-        chefService.getOne(2)
+        chefService.getOne(currentUserId)
             .then((result) => {
                 setCurrentUser(result[0])
             })
@@ -21,7 +24,7 @@ function Profile() {
             <div className={styles.banner}>
                 <p>Chef {currentUser.username}</p>
             </div>
-            <img src={currentUser.image} alt="Profile" className={styles.photo} />
+            <img src={currentUser.image} alt="Chef image" className={styles.photo} />
             <div className={styles.description}>
                 <p><span className={styles.boldedPiece}>Motto: </span>{currentUser.motto}</p>
             </div>

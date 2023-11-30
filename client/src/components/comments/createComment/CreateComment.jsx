@@ -12,7 +12,7 @@ function CreateComment() {
 
     const { dishId } = useParams();
     const navigate = useNavigate();
-    const [comments, setComments] = useState([]);
+    const [comments, setComments] = useState("");
     const {username} = useContext(AuthContext)
 
     const createCommentHandler = async (e) => {

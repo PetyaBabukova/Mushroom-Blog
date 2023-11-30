@@ -26,7 +26,7 @@ function EditComment() {
     }, [commentId]);
 
     const changeHandler = (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         setComment(state => ({
             ...state,
             [e.target.name]: e.target.value
