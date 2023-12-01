@@ -17,8 +17,12 @@ export const AuthProvider = ({
 
     const onRegisterSubmit = async (values) => {
 		try {
-			const result = await chefService.register(values.username, values.email, values.password);
-			// console.log(result);
+			const result = await chefService.register(
+				values.username, 
+				values.email, 
+				values.password, 
+				);
+			console.log(result);
 			setAuth(result);
 			// console.log(auth);
 			// console.log(result.accessToken);

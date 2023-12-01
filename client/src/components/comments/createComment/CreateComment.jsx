@@ -28,8 +28,6 @@ function CreateComment() {
             .then(setComments(comments => [...comments, newComment]))
             .then(navigate(`/${dishId}/details`))
 
-        setComments(state => [...state, newComment])
-        // console.log(newComment);
     }
 
     const changeHandler = (e) => {

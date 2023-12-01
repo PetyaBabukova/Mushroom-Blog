@@ -26,26 +26,6 @@ function CreateDishForm() {
 	
 	const [values, setValues] = useState(initialValues)
 
-	// const onCreateDisdSubmit = async (values) =>{
-	// 	try {
-	// 		const result = await dishService.create({
-	// 			category: values.category,
-	// 			author: username,
-	// 			_ownerId:_id,
-	// 			image:values.image,
-	// 			title:values.title,
-	// 			subtitle: values.subtitle,
-	// 			shortDescription: values.shortDescription,
-	// 			ingredients: values.ingredients,
-	// 			description: values.description,
-	// 		})
-	// 		console.log('Created Dish:', result);
-	// 	} catch (error) {
-	// 		console.error('Error in creating dish:', error);
-	// 	}
-	// }
-
-
 	const onCreateDisdSubmit = async (e) => {
 		e.preventDefault();
 	

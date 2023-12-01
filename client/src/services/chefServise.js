@@ -1,4 +1,5 @@
 const authUrl = "http://localhost:3030/users";
+const profileUrl = "http://localhost:3030/data/teams";
 const dishesUrl = "http://localhost:3030/data/recipes";
 
 import * as dishService from './dishService';
@@ -6,22 +7,22 @@ import * as request from '../lib/requests';
 
 
 export const getAll = async () => {
-    const response = await fetch(chefsUrl);
-    const result = await response.json();
+    const result = await request.get(profileUrl, "");
+    // const result = await response.json();
 
-    // console.log(result);
+    console.log(result);
     return result;
 };
 
 export const getOne = async (chefId) => {
-    const response = await fetch(`${authUrl}/${chefId}`);
-    const result = await response.json();
-    console.log(chefId);
-    const chefsArray = Object.values(result)
-    const searchedChef = chefsArray.filter(c => c._id == chefId)
-    console.log(chefsArray);
-    console.log(searchedChef);
-    return searchedChef;
+    const response = await request.get(`${profileUrl}/${_ownerId}`, "");
+    // const result = await response.json();
+    console.log(response);
+    // const chefsArray = Object.values(result)
+    // const searchedChef = chefsArray.filter(c => c._id == chefId)
+    // console.log(chefsArray);
+    // console.log(searchedChef);
+    // return searchedChef;
     // return result
 };
 
@@ -44,11 +45,16 @@ export const login = async (email, password) => {
         password
     });
 
-    
     return result;
 };
 
 export const logout = () => request.get(`${authUrl}/logout`, null, false);
+
+export const edit = async(data, userId)=> {
+    const result = await request.put(`${profileUrl}/${userId}`, data);
+console.log(result);
+    return result
+}
 
 
 
