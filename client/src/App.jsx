@@ -47,7 +47,7 @@ function App() {
 							<Route path='/:commentId/edit-comment' element={<EditComment />} />
 							<Route path='/our-team' element={<OurTeam />} />
 							<Route path='/:_ownerId/profile' element={<ChefProfile />} />
-							<Route path='/:profileId/edit-profile' element={<EditProfile />} />
+							<Route path='/:userId/edit-profile' element={<EditProfile />} />
 							<Route path='/:userId/set-profile' element={<SetProfile />} />
 							<Route path='/:userId/view-profile' element={<ChefProfile />} />
 							<Route path='/:userFirstName/dishes' element={<BlogDishes />} />

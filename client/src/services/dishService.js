@@ -13,6 +13,7 @@ export const getAll = async (searchedCategory) => {
     if (searchedCategory) {
         return dishesArray.filter((d) => d.category == searchedCategory);
     }
+    // console.log(dishesArray);
     return dishesArray;
 }
 

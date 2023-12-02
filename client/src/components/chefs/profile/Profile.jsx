@@ -9,7 +9,6 @@ function Profile() {
     const { userId, isAuthenticated, username } = useContext(AuthContext);
     const [currentUser, setCurrentUser] = useState(null);
 
-
     useEffect(() => {
         if (userId) {
             chefService.getOne(userId)
@@ -19,27 +18,28 @@ function Profile() {
                     }
                 });
         }
-    }, []);
+    }, [userId]);
 
-    if (!isAuthenticated  ) {
-        return null
-    }
-
-    if (!currentUser ) {
+    if (!isAuthenticated) {
+        // User is not authenticated, render a message or redirect to login
         return (
             <div className={styles.profile}>
-                 <div className={styles.chefProfileLinkContainer}>
-                <Link to={`/${userId}/set-profile`} className={styles.chefProfileLink}> Set Profile </Link>
+                <p>Please log in to view your profile.</p>
             </div>
+        );
+    }
+
+    if (!currentUser) {
+        return (
+            <div className={styles.profile}>
+                <div className={styles.chefProfileLinkContainer}>
+                    <Link to={`/${userId}/set-profile`} className={styles.chefProfileLink}> Set Profile </Link>
+                </div>
             </div>
-        )
+        );
     }
 
     return (
-
-       ( isAuthenticated || currentUser) && (
-
-        
         <div className={styles.profile}>
             <div className={styles.banner}>
                 <p>Chef {username}</p>
@@ -50,19 +50,13 @@ function Profile() {
             </div>
 
             <div className={styles.chefProfileLinkContainer}>
-                <Link to={`/${userId}/dishes`} className={styles.chefProfileLink}> View Chef {currentUser.username} recipies</Link>
+                <Link to={`/${userId}/dishes`} className={styles.chefProfileLink}> View Chef {username} recipes</Link>
             </div>
 
             <div className={styles.chefProfileLinkContainer}>
-                <Link to={`/${userId}/profile`} className={styles.chefProfileLink}> View Chef {currentUser.firstName} profile</Link>
+                <Link to={`/${userId}/profile`} className={styles.chefProfileLink}> View Chef {username} profile</Link>
             </div>
         </div>
-        )
-
-
-
-
-
     );
 }
 

@@ -26,12 +26,13 @@ export const getOne = async (userId) => {
     return chefsArray.length > 0 ? chefsArray[0] : null; // Return the first chef or null if not found
 };
 
-export const getChefRecipies = async (currentAuthor) => {
+export const getChefRecipies = async (userId) => {
 
     const allDishes = await dishService.getAll();
+    console.log(allDishes);
 
-    if (currentAuthor) {
-        return allDishes.filter(dish => dish.author === currentAuthor)
+    if (userId) {
+        return allDishes.filter(dish => dish._ownerId === userId)
     }
     return allDishes;
 
