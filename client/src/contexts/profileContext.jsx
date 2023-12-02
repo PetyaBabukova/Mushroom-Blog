@@ -12,30 +12,44 @@ export const ProfileProvider = ({ children }) => {
     const { userId } = useContext(AuthContext);
     const [profile, setProfile] = usePersistedState('profile', {});
     
-    const onEditProfileSubmit = async (values) => {
+    const onSetProfileSubmit = async (values) => {
         try {
-            const editedProfile = await chefService.edit({
+            const setedProfile = await chefService.setProfile({
                 ...values,
             });
-            editedProfile._ownerId = userId
-            setProfile(state => ({ ...state, editedProfile }));
-            navigate(`/${editedProfile._ownerId}/view-profile`);
+            setedProfile._ownerId = userId
+            setProfile(state => ({ ...state, setedProfile }));
+            navigate(`/${setedProfile._ownerId}/view-profile`);
             // console.log("_ownerId: ", editedProfile._ownerId);
             // console.log("Edited Profile: ", editedProfile);
         } catch (error) {
             console.error('Error updating profile:', error);
         }
     };
+    // const onEditProfileSubmit = async (values, profileId) => {
+    //     try {
+    //         await chefService.editProfile({
+    //             ...values, 
+    //             profileId
+    //         });
+    //         navigate(`${userId}/view-profile`)
+           
+    //     } catch (error) {
+    //         console.error('Error updating profile:', error);
+    //     }
+    // };
+
 
     const values = {
-        onEditProfileSubmit,
+        onSetProfileSubmit,
+        // onEditProfileSubmit,
         name: profile.name,
         bio: profile.bio,
         spec: profile.spec,
         imageUrl: profile.imageUrl,
         motto:profile.motto,
         _ownerId: profile._ownerId,
-        setProfile,
+        profile,
     };
 
     return (

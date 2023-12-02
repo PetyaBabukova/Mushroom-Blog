@@ -22,7 +22,7 @@ function EditDishForm() {
 
 
 	useEffect(() => {
-		if (dishId) { // Check if dishId is not undefined
+		if (dishId) { 
 			dishService.getOne(dishId)
 				.then(searchedDish => setDish(searchedDish))
 		}

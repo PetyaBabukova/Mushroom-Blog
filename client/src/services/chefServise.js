@@ -50,7 +50,8 @@ export const login = async (email, password) => {
 
 export const logout = () => request.get(`${authUrl}/logout`, null, false);
 
-export const edit = async (data) => {
+
+export const setProfile = async (data) => {
     // console.log(data);
     let result;
     try {
@@ -60,4 +61,10 @@ export const edit = async (data) => {
     } catch (error) {
         console.log(error);
     }
+};
+
+
+export const editProfile = async (profileId, data ) => {
+    const result = await request.put(`${profileUrl}/${profileId}`, data);
+    return result;
 };

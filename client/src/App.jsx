@@ -23,6 +23,7 @@ import EditComment from './components/comments/editComment/EditComment.jsx';
 import LogoutUser from './components/chefs/logoutUser/LogoutUser.jsx';
 import EditProfile from './components/chefs/editProfile/EditProfile.jsx';
 import { ProfileProvider } from './contexts/profileContext.jsx';
+import SetProfile from './components/chefs/setProfile/SetProfile.jsx';
 
 function App() {
 	return (
@@ -46,7 +47,8 @@ function App() {
 							<Route path='/:commentId/edit-comment' element={<EditComment />} />
 							<Route path='/our-team' element={<OurTeam />} />
 							<Route path='/:_ownerId/profile' element={<ChefProfile />} />
-							<Route path='/:userId/edit-profile' element={<EditProfile />} />
+							<Route path='/:profileId/edit-profile' element={<EditProfile />} />
+							<Route path='/:userId/set-profile' element={<SetProfile />} />
 							<Route path='/:userId/view-profile' element={<ChefProfile />} />
 							<Route path='/:userFirstName/dishes' element={<BlogDishes />} />
 							<Route path='/:userId/dishes' element={<BlogDishes />} />
