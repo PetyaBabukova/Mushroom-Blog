@@ -1395,32 +1395,26 @@ const http = require('http');
         },
 
         teams: {
-            "34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
+            "1664e85f-cd69-476d-bb9a-d359f8113a4b": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Storm Troopers",
-                imageUrl: "/assets/atat.png",
-                bio: "These ARE the droids we're looking for",
-                motto: 'Motto',
-                spec: "Speciality...",
-                _createdOn: 1615737591748,
-                _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1"
+                name: "Peter",
+                imageUrl: "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/Peter.png",
+                spec: "Balkan dishes",
+                bio: "Chef Peter, renowned for her innovative approach to traditional Balkan cuisine, has earned accolades worldwide. With a passion for organic ingredients and a farm-to-table philosophy, she brings a fresh twist to classic dishes",
+                motto: "Cooking is an art, flavored with passion and served with love",
+                _createdOn: 1701506568376,
+                _id: "1664e85f-cd69-476d-bb9a-d359f8113a4b"
             },
-            "dc888b1a-400f-47f3-9619-07607966feb8": {
+            "d422b730-9d14-440f-b6b8-31409909520d": {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Team Rocket",
-                logoUrl: "/assets/rocket.png",
-                description: "Gotta catch 'em all!",
-                _createdOn: 1615737655083,
-                _id: "dc888b1a-400f-47f3-9619-07607966feb8"
+                name: "George",
+                imageUrl: "https://filedn.com/lL84jfUjkOJ5JauGvrOlJsV/React_Assignment_public/George.png",
+                spec: "Europian gourmet",
+                bio: "Chef George`s culinary journey began in the cobblestone streets of old Europe and led him to the fusion kitchens of Tokyo. Combining precision and artistry, his sushi rolls are as visually stunning as they are delicious",
+                motto: "Simplicity is the ultimate sophistication in the kitchen",
+                _createdOn: 1701507256535,
+                _id: "d422b730-9d14-440f-b6b8-31409909520d"
             },
-            "733fa9a1-26b6-490d-b299-21f120b2f53a": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Minions",
-                logoUrl: "/assets/hydrant.png",
-                description: "Friendly neighbourhood jelly beans, helping evil-doers succeed.",
-                _createdOn: 1615737688036,
-                _id: "733fa9a1-26b6-490d-b299-21f120b2f53a"
-            }
         },
         members: {
             "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d": {

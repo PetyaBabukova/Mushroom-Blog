@@ -32,7 +32,6 @@ export const create = async (data) => {
         return response;
     } catch (error) {
         console.log( error);
-        console.log( response);
     }
 };
 

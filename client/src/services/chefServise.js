@@ -14,16 +14,16 @@ export const getAll = async () => {
     return result;
 };
 
-export const getOne = async (chefId) => {
-    const response = await request.get(`${profileUrl}/${_ownerId}`, "");
-    // const result = await response.json();
-    console.log(response);
-    // const chefsArray = Object.values(result)
-    // const searchedChef = chefsArray.filter(c => c._id == chefId)
-    // console.log(chefsArray);
-    // console.log(searchedChef);
-    // return searchedChef;
-    // return result
+export const getOne = async (userId) => {
+    const profileUrl = `http://localhost:3030/data/teams?where=_ownerId%3D"${userId}"`; // URL with the query parameter
+    const response = await fetch(profileUrl);
+
+    if (!response.ok) {
+        throw new Error('Network response was not ok.');
+    }
+
+    const chefsArray = await response.json(); // Correctly wait for the JSON conversion
+    return chefsArray.length > 0 ? chefsArray[0] : null; // Return the first chef or null if not found
 };
 
 export const getChefRecipies = async (currentAuthor) => {
@@ -50,13 +50,14 @@ export const login = async (email, password) => {
 
 export const logout = () => request.get(`${authUrl}/logout`, null, false);
 
-export const edit = async(data, userId)=> {
-    const result = await request.put(`${profileUrl}/${userId}`, data);
-console.log(result);
-    return result
-}
-
-
-
-
-
+export const edit = async (data) => {
+    // console.log(data);
+    let result;
+    try {
+        result = await request.post(`${profileUrl}`, data);
+        // console.log(result);
+        return result;
+    } catch (error) {
+        console.log(error);
+    }
+};

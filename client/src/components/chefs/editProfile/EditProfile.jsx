@@ -1,11 +1,11 @@
 import styles from './EditProfile.module.css';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useForm } from '../../../hooks/useForm';
 import ProfileContext from '../../../contexts/profileContext';
-import { useParams } from 'react-router-dom';
 
 function EditProfile() {
     const { onEditProfileSubmit } = useContext(ProfileContext);
+
     const initialValues = {
         name: '',
         imageUrl: '',
@@ -13,13 +13,9 @@ function EditProfile() {
         bio: '',
         motto: '',
     };
-
-	
-
     const { values, changeHandler, onSubmit } = useForm(initialValues, onEditProfileSubmit);
 
-
-
+	
 	return (
 
 		<form className={styles.formContainer} onSubmit={onSubmit}>
@@ -90,8 +86,7 @@ function EditProfile() {
 			</div>
 
 		</form>
-
 	);
-}
+};
 
 export default EditProfile;

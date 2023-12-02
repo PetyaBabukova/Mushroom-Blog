@@ -45,7 +45,7 @@ function App() {
 							<Route path='/:dishId/create-comment' element={<CreateComment />} />
 							<Route path='/:commentId/edit-comment' element={<EditComment />} />
 							<Route path='/our-team' element={<OurTeam />} />
-							<Route path='/:userId/profile' element={<ChefProfile />} />
+							<Route path='/:_ownerId/profile' element={<ChefProfile />} />
 							<Route path='/:userId/edit-profile' element={<EditProfile />} />
 							<Route path='/:userId/view-profile' element={<ChefProfile />} />
 							<Route path='/:userFirstName/dishes' element={<BlogDishes />} />

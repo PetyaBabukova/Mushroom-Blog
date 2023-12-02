@@ -1,30 +1,35 @@
 import { useContext, useEffect, useState } from 'react';
 import styles from './ChefProfile.module.css';
-import * as chefService from '../../../services/chefServise'
+import * as chefService from '../../../services/chefServise';
 import AuthContext from '../../../contexts/authContext';
-import { useParams } from 'react-router-dom';
 
 function ChefProfile() {
-  const {userId} = useParams()
+    const { userId } = useContext(AuthContext);
     const [chef, setChef] = useState({});
 
     useEffect(() => {
         chefService.getOne(userId)
-            .then(res=> console.log(res))
-            .then(result => {
-                setChef(result[0])
-                // console.log(result);
-                // console.log(chef);
+            .then(chefProfile => {
+                if (chefProfile) {
+                    setChef(chefProfile);
+                } else {
+                    console.log('Chef profile not found');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching chef profile:', error);
             });
-    }, [])
+    }, [userId]);
+
+    // console.log(chef);
 
     return (
         <div className={styles.chefProfile}>
             <div className={styles.imageContainer}>
-        <img src={chef.image} alt='Chef Image' />
+        <img src={chef.imageUrl} alt='Chef Image' />
       </div>
       <div className={styles.details}>
-        <h2>Chef {chef.firstName} {chef.lastName}</h2>
+        <h2>Chef {chef.name}</h2>
         <p className={styles.motto}>motto: {chef.motto}</p>
         <p className={styles.bio}>{chef.bio}</p>
         <div className={styles.actions}>
