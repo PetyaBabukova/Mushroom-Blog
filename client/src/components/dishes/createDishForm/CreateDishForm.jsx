@@ -99,7 +99,7 @@ function CreateDishForm() {
                 value={values.subtitle} 
                 onChange={changeHandler} 
             	/>
-            	{errors.title && <div className={styles.errorMsg}>{errors.title}</div>}
+            	{errors.subtitle && <div className={styles.errorMsg}>{errors.subtitle}</div>}
 			</div>
 
 			<div className={styles.formInput}>
@@ -108,13 +108,14 @@ function CreateDishForm() {
                 name='category' 
                 value={values.category} 
                 onChange={changeHandler}>
-					<option value="main-dishes">Main Dish</option>
+					<option value="null" >Please Select Category</option>
+					<option value="main-dishes" >Main Dish</option>
 					<option value="appetizers">Appetizer</option>
 					<option value="soups">Soup</option>
 					<option value="salads">Salad</option>
 					<option value="desserts">Dessert</option>
 				</select>
-                {errors.category && <div className={styles.errorMsg}>{errors.category}</div>}
+				{errors.category && <div className={styles.errorMsg}>{errors.category}</div>}
 			</div>
 
 			<div className={styles.formInput}>
@@ -125,7 +126,7 @@ function CreateDishForm() {
                 value={values.image} 
                 onChange={changeHandler} 
                 />
-                {errors.title && <div className={styles.errorMsg}>{errors.title}</div>}
+                {errors.image && <div className={styles.errorMsg}>{errors.image}</div>}
 			</div>
 
 			<div className={styles.formInput}>
