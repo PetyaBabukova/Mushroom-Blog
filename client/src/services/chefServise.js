@@ -15,21 +15,21 @@ export const getAll = async () => {
 };
 
 export const getOne = async (userId) => {
-    const profileUrl = `http://localhost:3030/data/teams?where=_ownerId%3D"${userId}"`; // URL with the query parameter
+    const profileUrl = `http://localhost:3030/data/teams?where=_ownerId%3D"${userId}"`; 
     const response = await fetch(profileUrl);
 
     if (!response.ok) {
         throw new Error('Network response was not ok.');
     }
 
-    const chefsArray = await response.json(); // Correctly wait for the JSON conversion
-    return chefsArray.length > 0 ? chefsArray[0] : null; // Return the first chef or null if not found
+    const chefsArray = await response.json(); 
+    return chefsArray.length > 0 ? chefsArray[0] : null; 
 };
 
 export const getChefRecipies = async (userId) => {
 
     const allDishes = await dishService.getAll();
-    console.log(allDishes);
+    // console.log(allDishes);
 
     if (userId) {
         return allDishes.filter(dish => dish._ownerId === userId)
@@ -69,3 +69,5 @@ export const editProfile = async (profileId, data ) => {
     const result = await request.put(`${profileUrl}/${profileId}`, data);
     return result;
 };
+
+export const deleteProfile = async(profileId) => await request.del(`${profileUrl}/${profileId}`);

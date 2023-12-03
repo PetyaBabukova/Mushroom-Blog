@@ -1,7 +1,6 @@
 import styles from './EditProfile.module.css';
 import { useContext, useEffect, useState } from 'react';
 import * as chefService from '../../../services/chefServise';
-import ProfileContext from '../../../contexts/profileContext';
 import { useNavigate, useParams } from 'react-router-dom';
 import AuthContext from '../../../contexts/authContext';
 
@@ -9,6 +8,8 @@ function EditProfile() {
   const { userId } = useContext(AuthContext);
   const { profileId } = useParams();
   const navigate = useNavigate();
+
+  console.log(profileId);
 
   // Initialize profile state with default values
   const [profile, setProfile] = useState({

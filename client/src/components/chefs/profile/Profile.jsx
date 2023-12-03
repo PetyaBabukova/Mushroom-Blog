@@ -42,7 +42,7 @@ function Profile() {
     return (
         <div className={styles.profile}>
             <div className={styles.banner}>
-                <p>Chef {username}</p>
+                <p>Hello, Chef {username}</p>
             </div>
             <img src={currentUser.imageUrl} alt="Chef image" className={styles.photo} />
             <div className={styles.description}>
