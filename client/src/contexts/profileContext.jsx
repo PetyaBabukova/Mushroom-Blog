@@ -14,16 +14,32 @@ export const ProfileProvider = ({ children }) => {
     const [profile, setProfile] = usePersistedState('profile', {});
     
     const onSetProfileSubmit = async (values) => {
+        // Validation
+        const validationErrors = {};
+        Object.keys(values).forEach(key => {
+            const isImageUrl = key === 'imageUrl';
+            const error = validations.validateProfileField(values[key], isImageUrl);
+            if (error) {
+                validationErrors[key] = error;
+            }
+        });
+
+        if (Object.keys(validationErrors).length > 0) {
+            // Return errors without submitting
+            return { isValid: false, errors: validationErrors };
+        }
+
         try {
             const setedProfile = await chefService.setProfile({
                 ...values,
             });
-            setedProfile._ownerId = userId
+            setedProfile._ownerId = userId;
             setProfile(state => ({ ...state, setedProfile }));
             navigate(`/${setedProfile._ownerId}/view-profile`);
-           
+            return { isValid: true }; // Indicate successful submission
         } catch (error) {
             console.error('Error updating profile:', error);
+            return { isValid: false, errors: { server: 'Error updating profile' }};
         }
     };
     
