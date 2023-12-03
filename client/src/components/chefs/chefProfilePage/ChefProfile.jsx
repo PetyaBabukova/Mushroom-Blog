@@ -5,8 +5,6 @@ import * as chefService from '../../../services/chefServise';
 import AuthContext from '../../../contexts/authContext';
 import ProfileContext from '../../../contexts/profileContext';
 
-
-
 function ChefProfile() {
   const navigate = useNavigate()
   const { userId } = useContext(AuthContext);
@@ -36,7 +34,6 @@ function ChefProfile() {
         .then(setChef({}))
       } catch (error) {
         console.error("Error deleting dish: ", error);
-        // handle error (show error message to user, etc.)
       }
       navigate('/');
 };
@@ -57,7 +54,6 @@ console.log(userId);
           <button className={styles.chefProfileBtn} onClick={() => onDeleteDeleteProfileClick(profileId)}>Delete Profile</button>
         </div>
         <div className={styles.footer}>
-          {/* <span className={styles.dishes}>Dishes</span> */}
         </div>
       </div>
     </div>

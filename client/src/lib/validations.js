@@ -36,8 +36,8 @@ export const validateLoginPassword = (password) => {
 const forbiddenWords = ["www", "http", "https", "post", "get", "put", ".js", "<", ">"];
 
 export const validateProfileField = (field, isImageUrl = false) => {
-    if (field.length < 4) {
-        return 'Field must be at least 4 characters long';
+    if (field.length < 3) {
+        return 'Field must be at least 3 characters long';
     }
 
     if (!isImageUrl) {

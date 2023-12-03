@@ -1,5 +1,3 @@
-// useForm.js
-
 import { useState } from "react";
 import * as validations from '../lib/validations';
 
@@ -11,7 +9,6 @@ export const useForm = (initialValues, onSubmitHandler) => {
     const validate = () => {
         let tempErrors = {};
 
-        // Apply relevant validations based on the initialValues
         if (values.username !== undefined && !validations.validateName(values.username)) {
             tempErrors.username = 'Name should be at least 4 characters';
         }
@@ -41,9 +38,9 @@ export const useForm = (initialValues, onSubmitHandler) => {
         if (validate()) {
             try {
                 await onSubmitHandler(values);
-                setServerError(''); // Clear previous server error
+                setServerError(''); 
             } catch (error) {
-                setServerError(error.message); // Set the server error message
+                setServerError(error.message); 
             }
         }
     };
