@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import styles from './ChefProfile.module.css';
 import * as chefService from '../../../services/chefServise';
 import AuthContext from '../../../contexts/authContext';
+import ProfileContext from '../../../contexts/profileContext';
+
 
 function ChefProfile() {
   const navigate = useNavigate()
@@ -30,9 +32,11 @@ function ChefProfile() {
         .then(setChef({}))
       } catch (error) {
         console.error("Error deleting dish: ", error);
+        // handle error (show error message to user, etc.)
       }
       navigate('/');
 };
+
 
   return (
     <div className={styles.chefProfile}>
