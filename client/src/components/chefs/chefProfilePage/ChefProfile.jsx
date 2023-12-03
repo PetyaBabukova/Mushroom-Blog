@@ -6,6 +6,7 @@ import AuthContext from '../../../contexts/authContext';
 import ProfileContext from '../../../contexts/profileContext';
 
 
+
 function ChefProfile() {
   const navigate = useNavigate()
   const { userId } = useContext(AuthContext);
@@ -24,6 +25,9 @@ function ChefProfile() {
       });
   }, [userId]);
 
+  const profileId = chef._id;
+  console.log(profileId);
+
 
   const onDeleteDeleteProfileClick = async (profileId) => {
     try {
@@ -37,6 +41,7 @@ function ChefProfile() {
       navigate('/');
 };
 
+console.log(userId);
 
   return (
     <div className={styles.chefProfile}>
@@ -49,12 +54,10 @@ function ChefProfile() {
         <p className={styles.bio}>{chef.bio}</p>
         <div className={styles.actions}>
         <Link to={`/${profileId}/edit-profile`} className={styles.chefProfileBtn} > Edit Profile </Link>
-          <button className={styles.chefProfileBtn} onClick={() => onDeleteDeleteProfileClick(profileId)}>delete</button>
-          <button className={styles.chefProfileBtn}>like</button>
+          <button className={styles.chefProfileBtn} onClick={() => onDeleteDeleteProfileClick(profileId)}>Delete Profile</button>
         </div>
         <div className={styles.footer}>
-          <span className={styles.rating}>Rating: {chef.rating}</span>
-          <span className={styles.dishes}>Dishes</span>
+          {/* <span className={styles.dishes}>Dishes</span> */}
         </div>
       </div>
     </div>
