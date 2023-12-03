@@ -27,3 +27,8 @@ margin-bottom: 10px;
     width: 25%;
     margin-left: auto;
 }
+
+.errorMsg{
+    font-size: 0.8em;
+    color: red
+}

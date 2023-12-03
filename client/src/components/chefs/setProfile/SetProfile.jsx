@@ -30,7 +30,6 @@ function SetProfile() {
         <form className={styles.formContainer} onSubmit={onSubmit}>
             <h2>Set Profile</h2>
 
-            {/* Name input field */}
             <div className={styles.registerFormDiv}>
                 <label htmlFor="name">Name</label>
                 <input
@@ -45,7 +44,6 @@ function SetProfile() {
                 {errors.name && <div className={styles.errorMsg}>{errors.name}</div>}
             </div>
 
-            {/* ImageUrl input field */}
             <div className={styles.registerFormDiv}>
                 <label htmlFor="imageUrl">ImageUrl</label>
                 <input
@@ -60,7 +58,6 @@ function SetProfile() {
                 {errors.imageUrl && <div className={styles.errorMsg}>{errors.imageUrl}</div>}
             </div>
 
-            {/* Specialization input field */}
             <div className={styles.registerFormDiv}>
                 <label htmlFor="spec">Specialization</label>
                 <input
@@ -75,7 +72,6 @@ function SetProfile() {
                 {errors.spec && <div className={styles.errorMsg}>{errors.spec}</div>}
             </div>
 
-            {/* BIO input field */}
             <div className={styles.registerFormDiv}>
                 <label htmlFor="bio">BIO</label>
                 <input
@@ -90,7 +86,6 @@ function SetProfile() {
                 {errors.bio && <div className={styles.errorMsg}>{errors.bio}</div>}
             </div>
 
-            {/* Motto input field */}
             <div className={styles.registerFormDiv}>
                 <label htmlFor="motto">Motto</label>
                 <input

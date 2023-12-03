@@ -36,21 +36,24 @@ export const validateLoginPassword = (password) => {
 const forbiddenWords = ["www", "http", "https", "post", "get", "put", ".js", "<", ">"];
 
 export const validateProfileField = (field, isImageUrl = false) => {
-    if (field.length < 3) {
+    // Convert field to string to avoid errors
+    const fieldValue = String(field);
+
+    if (fieldValue.length < 3) {
         return 'Field must be at least 3 characters long';
     }
 
     if (!isImageUrl) {
-        const containsForbidden = forbiddenWords.some(word => field.includes(word));
+        const containsForbidden = forbiddenWords.some(word => fieldValue.includes(word));
         if (containsForbidden) {
             return 'Field contains forbidden characters or words';
         }
     } else {
         // Special handling for imageUrl field
         const imageUrlForbiddenWords = forbiddenWords.filter(word => word !== "http" && word !== "https");
-        const containsForbidden = imageUrlForbiddenWords.some(word => field.includes(word));
+        const containsForbidden = imageUrlForbiddenWords.some(word => fieldValue.includes(word));
         if (containsForbidden) {
-            return 'Field contains forbidden characters or words';
+            return 'ImageUrl contains forbidden characters or words';
         }
     }
 

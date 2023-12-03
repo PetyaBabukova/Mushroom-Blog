@@ -14,7 +14,7 @@ export const ProfileProvider = ({ children }) => {
     const [profile, setProfile] = usePersistedState('profile', {});
     
     const onSetProfileSubmit = async (values) => {
-        // Validation
+
         const validationErrors = {};
         Object.keys(values).forEach(key => {
             const isImageUrl = key === 'imageUrl';
@@ -25,7 +25,6 @@ export const ProfileProvider = ({ children }) => {
         });
 
         if (Object.keys(validationErrors).length > 0) {
-            // Return errors without submitting
             return { isValid: false, errors: validationErrors };
         }
 
@@ -36,7 +35,7 @@ export const ProfileProvider = ({ children }) => {
             setedProfile._ownerId = userId;
             setProfile(state => ({ ...state, setedProfile }));
             navigate(`/${setedProfile._ownerId}/view-profile`);
-            return { isValid: true }; // Indicate successful submission
+            return { isValid: true }; 
         } catch (error) {
             console.error('Error updating profile:', error);
             return { isValid: false, errors: { server: 'Error updating profile' }};
@@ -45,7 +44,6 @@ export const ProfileProvider = ({ children }) => {
     
     const values = {
         onSetProfileSubmit,
-        // onEditProfileSubmit,
         name: profile.name,
         bio: profile.bio,
         spec: profile.spec,
