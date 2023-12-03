@@ -19,7 +19,7 @@ function SetProfile() {
 	return (
 
 		<form className={styles.formContainer} onSubmit={onSubmit}>
-			<h2>Edit Profile</h2>
+			<h2>Set Profile</h2>
 
 			<div className={styles.registerFormDiv}>
 				<label htmlFor="name">Name</label>

@@ -43,7 +43,12 @@ export const AuthProvider = ({
 			navigate(Path.HOME);
 
 		} catch (error) {
-			console.log("Unsuccessful login!", error);
+			// Assuming the error object has a message field
+			if (error.response && error.response.status === 403) {
+				throw new Error(error.response.data.message);
+			} else {
+				throw new Error("Email or Password do not match!");
+			}
 		}
 	};
 
