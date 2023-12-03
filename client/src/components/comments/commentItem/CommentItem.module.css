@@ -15,7 +15,7 @@
 }
 
 .commentBlock{
-    width: 35%;
+    width:100%;
     margin-bottom: 20px;
 }
 
@@ -31,7 +31,7 @@
     color: gray;
     padding: 0 1% ;
     border-radius: 2px;
-    width: 150px;
+    width: 350px;
     padding: 0 8px
 }
 
