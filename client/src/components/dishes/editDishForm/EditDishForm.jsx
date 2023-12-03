@@ -7,7 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 function EditDishForm() {
 	const navigate = useNavigate();
-	const  { dishId } = useParams()
+	const { dishId } = useParams()
 	const [dish, setDish] = useState(
 		{
 			author: "",
@@ -22,7 +22,7 @@ function EditDishForm() {
 
 
 	useEffect(() => {
-		if (dishId) { 
+		if (dishId) {
 			dishService.getOne(dishId)
 				.then(searchedDish => setDish(searchedDish))
 		}
@@ -33,7 +33,7 @@ function EditDishForm() {
 		const data = Object.fromEntries(new FormData(e.currentTarget));
 
 		try {
-			await dishService.update(dishId, data); 
+			await dishService.update(dishId, data);
 			navigate(`/${dishId}/details`);
 		} catch (error) {
 			console.log("Error updating dish:", error);
@@ -61,11 +61,6 @@ function EditDishForm() {
 					<label className={styles.label}>Subtitle:</label>
 					<input className={styles.input} type="text" name="subtitle" value={dish.subtitle} onChange={changeHandler} />
 				</div>
-
-				{/* <div className={styles.formInput}>
-					<label className={styles.label}>Category:</label>
-					<input className={styles.input} type="text" name="category" value={values.category} onChange={changeHandler} />
-				</div> */}
 
 				<div className={styles.formInput}>
 					<label className={styles.label}>Category:</label>
@@ -104,8 +99,7 @@ function EditDishForm() {
 			</form>
 		</div>
 	);
-}
-
+};
 
 export default EditDishForm;
 
