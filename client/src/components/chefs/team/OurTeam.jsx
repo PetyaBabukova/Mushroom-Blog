@@ -31,7 +31,7 @@ function OurTeam() {
             lastName={chef.lastName}
             email={chef.email}
             phoneNumber={chef.phoneNumber}
-            image={chef.image}
+            imageUrl={chef.imageUrl}
             bio={chef.bio}
             motto={chef.motto}
             spec={chef.specializing}

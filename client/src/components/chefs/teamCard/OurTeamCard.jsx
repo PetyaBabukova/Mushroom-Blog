@@ -1,23 +1,33 @@
+import { useContext } from 'react';
 import styles from './OurTeamCard.module.css';
+import { Link } from 'react-router-dom';
+import AuthContext from '../../../contexts/authContext';
+
+
 
 function OurTeamCard({
-    firstName,
-    lastName,
-    email,
-    phoneNumber,
-    image,
-    bio,
-    motto,
-    spec
+  firstName,
+  lastName,
+  email,
+  phoneNumber,
+  imageUrl,
+  bio,
+  motto,
+  spec
 }) {
+
+  const { userId, username } = useContext(AuthContext)
 
   return (
     <div className={styles.chefCard} >
-      <img src={image} alt="Image" />
+      <img src={imageUrl} alt="Image" />
       <h2>{firstName} {lastName}</h2>
       <h4 className={styles.motto}>{motto}</h4>
       {/* <h3>{spec}</h3> */}
       <p>{bio}</p>
+      {/* <div className={styles.chefProfileLinkContainer}>
+        <Link to={`/${userId}/dishes`} className={styles.chefProfileLink}> View Chef {username} recipes</Link>
+      </div> */}
     </div>
   );
 }

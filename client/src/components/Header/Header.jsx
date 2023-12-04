@@ -13,14 +13,11 @@ function Header() {
 	const { isAuthenticated, username } = useContext(AuthContext)
 	// console.log(isAuthenticated);
 
-	const navItems = ['Dishes', 'Salads', 'Appetizers', 'Soups', 'Main Dishes', 'Desserts', 'Our Team'];
-
-
 	return (
 		<header className={styles.header}>
 			<div className={styles.topBar}>
 				<div className={styles.searchArea}>
-					<Search />
+					{/* <Search /> */}
 				</div>
 				<div className={styles.authLinks}>
 					{!isAuthenticated && (
