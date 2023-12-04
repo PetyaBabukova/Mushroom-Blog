@@ -13,6 +13,7 @@ export const getAll = async (searchedCategory) => {
     if (searchedCategory) {
         return dishesArray.filter((d) => d.category == searchedCategory);
     }
+    // console.log(dishesArray);
     return dishesArray;
 }
 
@@ -32,7 +33,6 @@ export const create = async (data) => {
         return response;
     } catch (error) {
         console.log( error);
-        console.log( response);
     }
 };
 

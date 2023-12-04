@@ -1,58 +1,56 @@
 import Form from 'react-bootstrap/Form';
-
 import styles from './CreateComment.module.css';
-
 import { useContext, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-
 import * as commentService from '../../../services/commentService';
+import * as validations from '../../../lib/validations'; // Assuming this path is correct
 import AuthContext from '../../../contexts/authContext';
 
 function CreateComment() {
-
     const { dishId } = useParams();
     const navigate = useNavigate();
-    const [comments, setComments] = useState("");
-    const {username} = useContext(AuthContext)
+    const { username } = useContext(AuthContext);
+    const [comment, setComment] = useState("");
+    const [error, setError] = useState("");
 
     const createCommentHandler = async (e) => {
         e.preventDefault();
 
-        const formData = new FormData(e.currentTarget);
-        const comment = Object.fromEntries(formData);
-        // console.log(comment);
+        // Validation
+        const validationError = validations.validateProfileField(comment);
+        if (validationError) {
+            setError(validationError);
+            return; // Prevent submission if there is a validation error
+        }
 
-        const chef = username;
-
-        const newComment = await commentService.create(dishId, chef, comment.comment)
-            .then(setComments(comments => [...comments, newComment]))
-            .then(navigate(`/${dishId}/details`))
-
-        setComments(state => [...state, newComment])
-        // console.log(newComment);
-    }
+        try {
+            const newComment = await commentService.create(dishId, username, comment);
+            // Assuming setComments should update an array of comments
+            setComment(currentComments => [...currentComments, newComment]);
+            navigate(`/${dishId}/details`);
+        } catch (error) {
+            console.log("Error creating comment:", error);
+        }
+    };
 
     const changeHandler = (e) => {
-        // console.log(e.target.value);
-        setComments(state => ({
-            ...state,
-            [e.target.name]: e.target.value
-        }))
-    }
+        setComment(e.target.value);
+        setError(""); // Clear error when the user starts editing
+    };
 
     return (
         <Form className={styles.formContainer} onSubmit={createCommentHandler}>
-
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
                 <h2 className={styles.heading}>Create Comment</h2>
                 <Form.Label>Give a Comment</Form.Label>
                 <Form.Control
                     type="text"
                     placeholder="Comment"
                     name='comment'
-                    value={comments.comment}
+                    value={comment}
                     onChange={changeHandler}
                 />
+                {error && <div className={styles.errorMsg}>{error}</div>}
             </Form.Group>
 
             <button className={styles.loginBtn} variant="primary" type="submit">
