@@ -6,7 +6,7 @@ import AuthContext from '../../../contexts/authContext';
 import * as validations from '../../../lib/validations'; 
 
 function EditProfile() {
-  const { userId } = useContext(AuthContext);
+  const { userId, setHasProfile, checkUserProfile  } = useContext(AuthContext);
   const { profileId } = useParams();
   const navigate = useNavigate();
 
@@ -50,16 +50,17 @@ function EditProfile() {
     }
 
     try {
-        const data = {
-            name: profile.name,
-            imageUrl: profile.imageUrl,
-            spec: profile.spec,
-            bio: profile.bio,
-            motto: profile.motto,
-        };
+      const data = {
+        name: profile.name,
+        imageUrl: profile.imageUrl,
+        spec: profile.spec,
+        bio: profile.bio,
+        motto: profile.motto,
+    };
 
-        await chefService.editProfile(profileId, data);
-        navigate(`/${userId}/view-profile`);
+    await chefService.editProfile(profileId, data);
+    await checkUserProfile(); // Update the profile check
+    navigate(`/${userId}/view-profile`);
     } catch (error) {
         console.log('Error updating profile', error);
     }

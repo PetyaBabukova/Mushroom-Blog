@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import styles from './App.module.css';
 import * as chefService from './services/chefServise.js';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
-import { AuthProvider } from './contexts/authContext.jsx';
+import AuthContext, { AuthProvider } from './contexts/authContext.jsx';
 import Path from './paths.js';
 
 import CreateDishForm from './components/dishes/CreateDishForm/CreateDishForm.jsx';
@@ -24,8 +24,10 @@ import LogoutUser from './components/chefs/logoutUser/LogoutUser.jsx';
 import EditProfile from './components/chefs/editProfile/EditProfile.jsx';
 import { ProfileProvider } from './contexts/profileContext.jsx';
 import SetProfile from './components/chefs/setProfile/SetProfile.jsx';
+import ChefList from './components/chefs/chefList/ChefList.jsx';
 
 function App() {
+
 	return (
 		<AuthProvider>
 			<div className="App">
@@ -33,7 +35,8 @@ function App() {
 				<Hero />
 				<div className={styles.container}>
 					<ProfileProvider>
-						<Profile />
+						<ChefList />
+						{/* <Profile /> */}
 						<Routes>
 							<Route path='/' element={<BlogDishes />} />
 							<Route path='/register' element={<Register />} />

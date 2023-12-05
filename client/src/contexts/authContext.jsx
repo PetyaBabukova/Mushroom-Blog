@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -14,6 +14,25 @@ export const AuthProvider = ({
 })=>{
     const navigate = useNavigate();
     const [auth, setAuth] = usePersistedState('auth', {});
+	const [hasProfile, setHasProfile] = useState();
+
+	const checkUserProfile = async () => {
+        if (auth._id) {
+            const chef = await chefService.getOne(auth._id);
+            setHasProfile(!!chef);
+        }
+    };
+
+	useEffect(() => {
+        if (auth._id) {
+            chefService.getOne(auth._id)
+                .then(chef => {
+                    setHasProfile(!!chef);
+                });
+        } else {
+            setHasProfile(false);
+        }
+    }, [auth._id]);
 
     const onRegisterSubmit = async (values) => {
 		try {
@@ -55,6 +74,7 @@ export const AuthProvider = ({
 	const logoutHandler = () => {
 		localStorage.removeItem('accessToken');
 		setAuth({});
+		setHasProfile(false);
 	}
 
 
@@ -62,17 +82,14 @@ export const AuthProvider = ({
 		logoutHandler,
 		onRegisterSubmit,
 		onLoginSubmit,
+		hasProfile,
+		setHasProfile,
+		checkUserProfile,
 		username: auth.username || auth.email,
 		email: auth.email,
 		isAuthenticated: !!auth.accessToken,
 		userId: auth._id
 	}
-
-	// console.log("userId: ", auth._id);
-	// console.log("email: ", auth.email);
-	// console.log("username: ", auth.username);
-	// console.log("email: ", auth.email);
-	
 
     return (
         <AuthContext.Provider value = {values}>

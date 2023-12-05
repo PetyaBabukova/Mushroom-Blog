@@ -1,18 +1,18 @@
 import styles from './Header.module.css';
-import Search from '../Search/Search';
-import logo from '../../assets/wild-mushrooms-logo.png';
+import { useContext } from 'react';
 
 import { Link } from 'react-router-dom';
+// import Search from '../Search/Search';
 
-import Path from '../../paths'
-import { useContext } from 'react';
 import AuthContext from '../../contexts/authContext';
+import logo from '../../assets/wild-mushrooms-logo.png';
+import Path from '../../paths'
 
 
 function Header() {
-	const { isAuthenticated, username } = useContext(AuthContext)
-	// console.log(isAuthenticated);
+	const { isAuthenticated, username, userId, hasProfile } = useContext(AuthContext)
 
+	console.log(hasProfile);
 	return (
 		<header className={styles.header}>
 			<div className={styles.topBar}>
@@ -22,18 +22,27 @@ function Header() {
 				<div className={styles.authLinks}>
 					{!isAuthenticated && (
 						<>
-							<Link to={Path.REGISTER} >Register </Link>
-							 | 
-							<Link to={Path.LOGIN} > Login</Link>
+							<Link to={Path.REGISTER} className={styles.headerLinks}>Register </Link>
+							|
+							<Link to={Path.LOGIN} className={styles.headerLinks}> Login</Link>
 						</>
 					)}
-					{isAuthenticated && (
-						<Link to={Path.LOGOUT} >{username} | Logout</Link>
+					{isAuthenticated && !hasProfile && (
+						<Link to={`/${userId}/set-profile`} className={styles.setProfileLink}>Set Profile</Link>
 					)}
+
+					{isAuthenticated && hasProfile && (
+						<Link to={`/${userId}/view-profile`} className={styles.setProfileLink}>View Profile</Link>
+					)}
+
+					{isAuthenticated && (
+						<Link to={Path.LOGOUT} className={styles.headerLinks}>{username} | Logout</Link>
+					)}
+
 				</div>
 			</div>
 			<div className={styles.logoContainer}>
-				<img src={logo} alt="Wild Mushrooms Gourmet Recipes" className={styles.logo} />
+				<Link to='/'><img src={logo} alt="Wild Mushrooms Gourmet Recipes" className={styles.logo} /></Link>
 			</div>
 			<nav className={styles.navBar}>
 				<ul className={styles.navList}>

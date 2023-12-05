@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import styles from './ChefProfile.module.css';
 import * as chefService from '../../../services/chefServise';
 import AuthContext from '../../../contexts/authContext';
-import ProfileContext from '../../../contexts/profileContext';
 
 function ChefProfile() {
   const navigate = useNavigate()
-  const { userId } = useContext(AuthContext);
+  const { userId, checkUserProfile } = useContext(AuthContext);
   const [chef, setChef] = useState({});
+
   useEffect(() => {
     chefService.getOne(userId)
       .then(chefProfile => {
@@ -29,16 +29,18 @@ function ChefProfile() {
 
   const onDeleteDeleteProfileClick = async (profileId) => {
     try {
-        const confirmRemoveProfile = confirm(`Do you whant to delete your profile?`)
-        await chefService.deleteProfile(profileId)
-        .then(setChef({}))
-      } catch (error) {
-        console.error("Error deleting dish: ", error);
+      const confirmRemoveProfile = confirm(`Do you want to delete your profile?`);
+      if (confirmRemoveProfile) {
+        await chefService.deleteProfile(profileId);
+        await checkUserProfile(); 
+        navigate('/');
       }
-      navigate('/');
-};
+    } catch (error) {
+      console.error("Error deleting profile: ", error);
+    }
+  };
 
-console.log(userId);
+// console.log(userId);
 
   return (
     <div className={styles.chefProfile}>

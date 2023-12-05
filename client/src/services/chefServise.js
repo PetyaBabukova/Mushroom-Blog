@@ -9,8 +9,7 @@ import * as request from '../lib/requests';
 export const getAll = async () => {
     const result = await request.get(profileUrl, "");
     // const result = await response.json();
-
-    console.log(result);
+    // console.log(result);
     return result;
 };
 

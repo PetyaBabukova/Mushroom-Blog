@@ -10,7 +10,7 @@ const ProfileContext = createContext();
 
 export const ProfileProvider = ({ children }) => {
     const navigate = useNavigate();
-    const { userId } = useContext(AuthContext);
+    const { userId, checkUserProfile } = useContext(AuthContext);
     const [profile, setProfile] = usePersistedState('profile', {});
     
     const onSetProfileSubmit = async (values) => {
@@ -31,11 +31,12 @@ export const ProfileProvider = ({ children }) => {
         try {
             const setedProfile = await chefService.setProfile({
                 ...values,
+                _ownerId: userId
             });
-            setedProfile._ownerId = userId;
             setProfile(state => ({ ...state, setedProfile }));
+            await checkUserProfile(); // Update the profile check
             navigate(`/${setedProfile._ownerId}/view-profile`);
-            return { isValid: true }; 
+            return { isValid: true };
         } catch (error) {
             console.error('Error updating profile:', error);
             return { isValid: false, errors: { server: 'Error updating profile' }};

@@ -1,12 +1,13 @@
-// SetProfile.module.css
-
 import React, { useContext, useState } from 'react';
 import styles from './SetProfile.module.css';
 import { useForm } from '../../../hooks/useForm';
 import ProfileContext from '../../../contexts/profileContext';
+import AuthContext from '../../../contexts/authContext';
+
 
 function SetProfile() {
-    const { onSetProfileSubmit } = useContext(ProfileContext);
+    const { onSetProfileSubmit, checkUserProfile } = useContext(ProfileContext);
+    const { setHasProfile } = useContext(AuthContext);
     const [errors, setErrors] = useState({});
 
     const initialValues = {
@@ -19,10 +20,11 @@ function SetProfile() {
 
     const { values, changeHandler, onSubmit } = useForm(initialValues, async (data) => {
         const result = await onSetProfileSubmit(data);
-        if (!result.isValid) {
-            setErrors(result.errors);
+
+        if (result && result.isProfileCreatedOrUpdated) {
+            setHasProfile(true);
         } else {
-            setErrors({});
+            setErrors(result.errors);
         }
     });
 

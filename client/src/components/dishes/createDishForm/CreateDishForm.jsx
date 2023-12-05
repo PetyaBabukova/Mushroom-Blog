@@ -61,8 +61,6 @@ function CreateDishForm() {
 		}
 	};
 	
-	
-
     const changeHandler = (e) => {
         setValues({
             ...values,

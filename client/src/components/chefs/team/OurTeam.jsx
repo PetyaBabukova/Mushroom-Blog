@@ -6,21 +6,19 @@ import OurTeamCard from '../teamCard/OurTeamCard';
 
 
 function OurTeam() {
-
-
     const [chefs, setChefs] = useState([]);
-
+    
     useEffect(() => {
         chefService.getAll()
-            .then(chefs => {
-                // console.log(Object.values(chefs))
-                setChefs(Object.values(chefs))
-            })
+        .then(chefs => {
+            // console.log(Object.values(chefs))
+            setChefs(Object.values(chefs))
+        })
     }, []);
 
+    
     return ( 
     <>
-    
     
     <div className={styles.ourTeamContainer}>
 
