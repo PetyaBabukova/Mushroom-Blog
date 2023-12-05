@@ -11,7 +11,7 @@ function DishDetails() {
 
     const { dishId } = useParams();
     const [comments, setComments] = useState([]);
-    const { userId } = useContext(AuthContext);
+    const { userId, isAuthenticated } = useContext(AuthContext);
     const navigate = useNavigate();
     const [dish, setDish] = useState({});
 
@@ -44,7 +44,7 @@ function DishDetails() {
     return (
         <div className={styles.dishDetailsContainer}>
             <div className={styles.imageContainer}>
-                <img src={dish.image} alt='Dish Image' />
+                <img className={styles.image} src={dish.image} alt='Dish Image' />
             </div>
             <div className={styles.details}>
                 <h2 className={styles.dishTitle}> {dish.title} </h2>
@@ -52,7 +52,8 @@ function DishDetails() {
                 <p className={styles.ingradients}><span className={styles.ingradientsWord}>Instructions: </span>{dish.instructions}</p>
                 <h4 className={styles.author}>{dish.author}</h4>
                 <div className={styles.actions}>
-                    <Link to={`/${dish._id}/create-comment`} className={styles.actionBtn}>Comment</Link>
+
+
 
                     {userId === dish._ownerId &&
                         <>
@@ -61,8 +62,9 @@ function DishDetails() {
                         </>
 
                     }
-                    {/* <button className={styles.actionBtn}>Like</button> */}
-                </div>
+                    {isAuthenticated &&
+                        <Link to={`/${dish._id}/create-comment`} className={styles.actionBtn}>Comment</Link>
+                    }                </div>
                 <div className={styles.comments}>
                     <h5 className={styles.commentsHeading}>Comments: {dish.rating}</h5>
                     <ul className={styles.commentsContainer}>

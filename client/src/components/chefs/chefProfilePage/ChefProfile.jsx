@@ -45,7 +45,7 @@ function ChefProfile() {
   return (
     <div className={styles.chefProfile}>
       <div className={styles.imageContainer}>
-        <img src={chef.imageUrl} alt='Chef Image' />
+        <img className={styles.image} src={chef.imageUrl} alt='Chef Image' />
       </div>
       <div className={styles.details}>
         <h2>Chef {chef.name}</h2>

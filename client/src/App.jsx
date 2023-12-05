@@ -14,7 +14,6 @@ import OurTeam from './components/chefs/team/OurTeam.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import BlogDishes from './components/dishes/blogDishes/BlogDishes.jsx';
 import DishDetails from './components/dishes/DishDetails/DishDetails.jsx';
-import Profile from './components/chefs/profile/Profile.jsx';
 import ChefProfile from './components/chefs/chefProfilePage/ChefProfile.jsx';
 import Login from './components/chefs/login/Login.jsx';
 import Register from './components/chefs/register/Register.jsx';
@@ -36,7 +35,6 @@ function App() {
 				<div className={styles.container}>
 					<ProfileProvider>
 						<ChefList />
-						{/* <Profile /> */}
 						<Routes>
 							<Route path='/' element={<BlogDishes />} />
 							<Route path='/register' element={<Register />} />

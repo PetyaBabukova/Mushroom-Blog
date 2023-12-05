@@ -25,14 +25,13 @@ function OurTeam() {
         {chefs.map(chef => (
             <OurTeamCard
             key={chef._id}
-            firstName={chef.firstName}
-            lastName={chef.lastName}
+            name={chef.name}
             email={chef.email}
             phoneNumber={chef.phoneNumber}
             imageUrl={chef.imageUrl}
             bio={chef.bio}
             motto={chef.motto}
-            spec={chef.specializing}
+            spec={chef.spec}
             />
             ))}
                 </div>

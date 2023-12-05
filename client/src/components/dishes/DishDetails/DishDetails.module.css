@@ -11,11 +11,12 @@
 	flex: 1;
 	text-align: center;
 	margin-right: 5%;
+	width: 60%;
 }
 
 .image {
-	max-width: 70%;
 	height: auto;
+	width: 100%;
 }
 
 .dishTitle {
