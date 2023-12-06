@@ -14,14 +14,15 @@ export const ProfileProvider = ({ children }) => {
     const [profile, setProfile] = usePersistedState('profile', {});
 
     const [chefs, setChefs] = useState([]);
-    
-    // useEffect(() => {
-    //     chefService.getAll()
-    //     .then(chefs => {
-    //         // console.log(Object.values(chefs))
-    //         setChefs(Object.values(chefs))
-    //     })
-    // }, []);
+    const [isLoading, setIsLoading] = useState(true); 
+
+    useEffect(() => {
+        chefService.getAll()
+            .then(chefs => {
+                setChefs(Object.values(chefs));
+                setIsLoading(false);  
+            });
+    }, []);
     
     const onSetProfileSubmit = async (values) => {
 
@@ -52,11 +53,12 @@ export const ProfileProvider = ({ children }) => {
             return { isValid: false, errors: { server: 'Error updating profile' }};
         }
     };
-    // console.log(chefs);
+    console.log(chefs);
     
     const values = {
         onSetProfileSubmit,
-        chefs
+        chefs,
+        isLoading 
     };
 
     return (

@@ -1,21 +1,13 @@
 import styles from './OurTeam.module.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import * as chefService from '../../../services/chefServise'
 import OurTeamCard from '../ourTeamCard/OurTeamCard';
+import ProfileContext from '../../../contexts/profileContext';
 
 
 
 function OurTeam() {
-    const [chefs, setChefs] = useState([]);
-    
-    useEffect(() => {
-        chefService.getAll()
-        .then(chefs => {
-            setChefs(Object.values(chefs))
-        })
-    }, []);
-
-    
+    const {chefs, isLoading} = useContext(ProfileContext)   
     return ( 
     <>
     
@@ -25,8 +17,6 @@ function OurTeam() {
             <OurTeamCard
             key={chef._id}
             name={chef.name}
-            email={chef.email}
-            phoneNumber={chef.phoneNumber}
             imageUrl={chef.imageUrl}
             bio={chef.bio}
             motto={chef.motto}

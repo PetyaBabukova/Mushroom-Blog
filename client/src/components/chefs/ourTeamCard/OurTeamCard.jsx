@@ -9,8 +9,6 @@ import ProfileContext from '../../../contexts/profileContext';
 
 function OurTeamCard({
   name,
-  email,
-  phoneNumber,
   imageUrl,
   bio,
   motto,
