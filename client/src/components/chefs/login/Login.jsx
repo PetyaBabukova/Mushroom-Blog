@@ -1,5 +1,3 @@
-// Login.js
-
 import React, { useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 import styles from './Login.module.css';

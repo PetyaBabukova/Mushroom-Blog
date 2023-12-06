@@ -1,7 +1,9 @@
-import { useContext } from 'react';
 import styles from './OurTeamCard.module.css';
+import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../../contexts/authContext';
+import * as chefService from '../../../services/chefServise';
+import ProfileContext from '../../../contexts/profileContext';
 
 
 
@@ -12,11 +14,11 @@ function OurTeamCard({
   imageUrl,
   bio,
   motto,
-  spec
+  spec,
+  _ownerId
 }) {
 
-  const { userId, username } = useContext(AuthContext)
-
+// const {_ownerId} = useContext(ProfileContext)
   return (
     <div className={styles.chefCard} >
       <img src={imageUrl} alt="Image" />
@@ -25,7 +27,7 @@ function OurTeamCard({
       <h5 className={styles.spec}>{spec}</h5>
       <p>{bio}</p>
       <div className={styles.chefProfileLinkContainer}>
-        <Link to={`/${userId}/dishes`} className={styles.chefProfileLink}> View Chef {username} recipes</Link>
+        <Link to={`/${_ownerId}/dishes`} className={styles.chefProfileLink} > Chef {name} recipes</Link>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import styles from './EditComment.module.css';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import * as commentService from '../../../services/commentService';
-import * as validations from '../../../lib/validations'; // Assuming this path is correct
+import * as validations from '../../../lib/validations'; 
 
 function EditComment() {
     const { commentId } = useParams();
@@ -23,11 +23,10 @@ function EditComment() {
     const editCommentHandler = async (e) => {
         e.preventDefault();
 
-        // Validation
         const validationError = validations.validateProfileField(comment.comment);
         if (validationError) {
             setError(validationError);
-            return; // Prevent submission if there is a validation error
+            return; 
         }
 
         try {
@@ -40,7 +39,7 @@ function EditComment() {
 
     const changeHandler = (e) => {
         setComment({ ...comment, [e.target.name]: e.target.value });
-        setError(''); // Clear error when the user starts editing
+        setError(''); 
     };
 
     return (

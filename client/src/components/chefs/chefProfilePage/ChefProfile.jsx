@@ -24,8 +24,7 @@ function ChefProfile() {
   }, [userId]);
 
   const profileId = chef._id;
-  console.log(profileId);
-
+  // console.log(profileId);
 
   const onDeleteDeleteProfileClick = async (profileId) => {
     try {

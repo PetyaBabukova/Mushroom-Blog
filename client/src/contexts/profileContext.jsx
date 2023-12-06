@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as chefService from '../services/chefServise';
@@ -12,6 +12,16 @@ export const ProfileProvider = ({ children }) => {
     const navigate = useNavigate();
     const { userId, checkUserProfile } = useContext(AuthContext);
     const [profile, setProfile] = usePersistedState('profile', {});
+
+    const [chefs, setChefs] = useState([]);
+    
+    // useEffect(() => {
+    //     chefService.getAll()
+    //     .then(chefs => {
+    //         // console.log(Object.values(chefs))
+    //         setChefs(Object.values(chefs))
+    //     })
+    // }, []);
     
     const onSetProfileSubmit = async (values) => {
 
@@ -42,16 +52,11 @@ export const ProfileProvider = ({ children }) => {
             return { isValid: false, errors: { server: 'Error updating profile' }};
         }
     };
+    // console.log(chefs);
     
     const values = {
         onSetProfileSubmit,
-        name: profile.name,
-        bio: profile.bio,
-        spec: profile.spec,
-        imageUrl: profile.imageUrl,
-        motto:profile.motto,
-        _ownerId: profile._ownerId,
-        profile,
+        chefs
     };
 
     return (

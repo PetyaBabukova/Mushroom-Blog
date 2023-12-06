@@ -1,8 +1,5 @@
 const baseUrl = "http://localhost:3030/data/recipes";
-
 import * as request from '../lib/requests'
-
-
 
 export const getAll = async (searchedCategory) => {
     const response = await fetch(baseUrl);

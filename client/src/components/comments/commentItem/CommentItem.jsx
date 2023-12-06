@@ -15,8 +15,8 @@ function CommentItem({ comment, chef, _id, dishId, _ownerId, onDelete }) {
         if (isConfirmed) {
             try {
                 await commentService.del(commentId);
-                onDelete(commentId); // Call the function passed from the parent to handle deletion
-                navigate(`/${dishId}/details`); // Redirect to dish details
+                onDelete(commentId); 
+                navigate(`/${dishId}/details`); 
             } catch (error) {
                 console.error("Error deleting comment: ", error);
             }

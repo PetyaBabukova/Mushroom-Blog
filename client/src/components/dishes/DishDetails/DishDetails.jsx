@@ -33,7 +33,6 @@ function DishDetails() {
             navigate('/');
         } catch (error) {
             console.error("Error deleting dish: ", error);
-            // handle error (show error message to user, etc.)
         }
     };
 
@@ -70,7 +69,6 @@ function DishDetails() {
                     <ul className={styles.commentsContainer}>
                         {comments.map(comment => (<CommentItem key={comment._id} {...comment} onDelete={commentDeleteHandler} />))}
                     </ul >
-                    {/* <span className={styles.dishes}>Dishes</span> */}
                 </div>
             </div>
         </div>

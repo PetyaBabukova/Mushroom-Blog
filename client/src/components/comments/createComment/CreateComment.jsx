@@ -3,7 +3,7 @@ import styles from './CreateComment.module.css';
 import { useContext, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import * as commentService from '../../../services/commentService';
-import * as validations from '../../../lib/validations'; // Assuming this path is correct
+import * as validations from '../../../lib/validations'; 
 import AuthContext from '../../../contexts/authContext';
 
 function CreateComment() {
@@ -20,12 +20,12 @@ function CreateComment() {
         const validationError = validations.validateProfileField(comment);
         if (validationError) {
             setError(validationError);
-            return; // Prevent submission if there is a validation error
+            return; 
         }
 
         try {
             const newComment = await commentService.create(dishId, username, comment);
-            // Assuming setComments should update an array of comments
+           
             setComment(currentComments => [...currentComments, newComment]);
             navigate(`/${dishId}/details`);
         } catch (error) {
@@ -35,7 +35,7 @@ function CreateComment() {
 
     const changeHandler = (e) => {
         setComment(e.target.value);
-        setError(""); // Clear error when the user starts editing
+        setError(""); 
     };
 
     return (

@@ -1,7 +1,7 @@
 import styles from './OurTeam.module.css';
 import { useState, useEffect } from 'react';
 import * as chefService from '../../../services/chefServise'
-import OurTeamCard from '../teamCard/OurTeamCard';
+import OurTeamCard from '../ourTeamCard/OurTeamCard';
 
 
 
@@ -11,7 +11,6 @@ function OurTeam() {
     useEffect(() => {
         chefService.getAll()
         .then(chefs => {
-            // console.log(Object.values(chefs))
             setChefs(Object.values(chefs))
         })
     }, []);
@@ -32,6 +31,7 @@ function OurTeam() {
             bio={chef.bio}
             motto={chef.motto}
             spec={chef.spec}
+            _ownerId={chef._ownerId}
             />
             ))}
                 </div>

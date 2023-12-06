@@ -12,7 +12,7 @@ import Path from '../../paths'
 function Header() {
 	const { isAuthenticated, username, userId, hasProfile } = useContext(AuthContext)
 
-	console.log(hasProfile);
+	// console.log(hasProfile);
 	return (
 		<header className={styles.header}>
 			<div className={styles.topBar}>
@@ -46,7 +46,7 @@ function Header() {
 			</div>
 			<nav className={styles.navBar}>
 				<ul className={styles.navList}>
-					<Link to='/' className={styles.navItem}>Dishes</Link>
+					<Link to='/' className={styles.navItem}>All Dishes</Link>
 					<Link to='/salads' className={styles.navItem}>Salads</Link>
 					<Link to='/appetizers' className={styles.navItem}>Appetizers</Link>
 					<Link to='/soups' className={styles.navItem}>Soups</Link>

@@ -2,7 +2,7 @@ import styles from './EditDishForm.module.css';
 import * as dishService from '../../../services/dishService';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import * as validations from '../../../lib/validations'; // Assuming this path is correct
+import * as validations from '../../../lib/validations'; 
 
 function EditDishForm() {
 	const navigate = useNavigate();
@@ -39,7 +39,7 @@ function EditDishForm() {
 
 		if (Object.keys(validationErrors).length > 0) {
 			setErrors(validationErrors);
-			return; // Prevent submission if there are validation errors
+			return; 
 		}
 
 		try {
@@ -55,7 +55,7 @@ function EditDishForm() {
 			...state,
 			[e.target.name]: e.target.value
 		}));
-		setErrors({ ...errors, [e.target.name]: "" }); // Clear error for the current field
+		setErrors({ ...errors, [e.target.name]: "" }); 
 	};
 
 	return (

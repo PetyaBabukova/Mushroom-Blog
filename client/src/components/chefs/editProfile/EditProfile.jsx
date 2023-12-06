@@ -59,7 +59,7 @@ function EditProfile() {
     };
 
     await chefService.editProfile(profileId, data);
-    await checkUserProfile(); // Update the profile check
+    await checkUserProfile(); 
     navigate(`/${userId}/view-profile`);
     } catch (error) {
         console.log('Error updating profile', error);
