@@ -14,15 +14,15 @@ export const ProfileProvider = ({ children }) => {
     const [profile, setProfile] = usePersistedState('profile', {});
 
     const [chefs, setChefs] = useState([]);
-    const [isLoading, setIsLoading] = useState(true); 
+    const [isLoading, setIsLoading] = useState(true);
+    const [profileUpdated, setProfileUpdated] = useState(false);
 
     useEffect(() => {
         chefService.getAll()
             .then(chefs => {
                 setChefs(Object.values(chefs));
-                setIsLoading(false);  
             });
-    }, []);
+    }, [profileUpdated]);
     
     const onSetProfileSubmit = async (values) => {
 
@@ -45,21 +45,63 @@ export const ProfileProvider = ({ children }) => {
                 _ownerId: userId
             });
             setProfile(state => ({ ...state, setedProfile }));
-            await checkUserProfile(); // Update the profile check
+            // setProfileUpdated(prev => !prev);  
+            await checkUserProfile(); 
+            chefService.getAll().then(chefs => setChefs(Object.values(chefs)));
             navigate(`/${setedProfile._ownerId}/view-profile`);
             return { isValid: true };
         } catch (error) {
             console.error('Error updating profile:', error);
             return { isValid: false, errors: { server: 'Error updating profile' }};
         }
+
     };
-    console.log(chefs);
+    // console.log(chefs);
+
+    const onEditProfile = async (profileId, profileData) => {
+        const validationErrors = {};
+        Object.keys(profileData).forEach(key => {
+            const isImageUrl = key === 'imageUrl';
+            const error = validations.validateProfileField(profileData[key], isImageUrl);
+            if (error) {
+                validationErrors[key] = error;
+            }
+        });
+
+        if (Object.keys(validationErrors).length > 0) {
+            return { isValid: false, errors: validationErrors };
+        }
+
+        try {
+            await chefService.editProfile(profileId, profileData);
+            await checkUserProfile(); // Update hasProfile in AuthContext
+            // Refresh chefs list
+            chefService.getAll().then(chefs => setChefs(Object.values(chefs)));
+            return { isValid: true };
+        } catch (error) {
+            console.error('Error updating profile:', error);
+            return { isValid: false, errors: { server: 'Error updating profile' }};
+        }
+    };
+
+    const onDeleteProfile = async (profileId) => {
+        try {
+            await chefService.deleteProfile(profileId);
+            await checkUserProfile();
+            chefService.getAll().then(chefs => setChefs(Object.values(chefs)));
+        } catch (error) {
+            console.error("Error deleting profile: ", error);
+        }
+    };
     
     const values = {
         onSetProfileSubmit,
+        onDeleteProfile,
+        onEditProfile,
         chefs,
         isLoading 
     };
+    
 
     return (
         <ProfileContext.Provider value={values}>

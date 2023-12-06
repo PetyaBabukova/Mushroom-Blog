@@ -10,7 +10,7 @@ import Path from '../../paths'
 
 
 function Header() {
-	const { isAuthenticated, username, userId, hasProfile } = useContext(AuthContext)
+    const { isAuthenticated, username, userId, hasProfile } = useContext(AuthContext);
 
 	// console.log(hasProfile);
 	return (

@@ -14,7 +14,7 @@ import OurTeam from './components/chefs/ourTeam/OurTeam.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import BlogDishes from './components/dishes/blogDishes/BlogDishes.jsx';
 import DishDetails from './components/dishes/DishDetails/DishDetails.jsx';
-import ChefProfile from './components/chefs/chefProfilePage/ChefProfile.jsx';
+import ChefProfile from './components/chefs/chefProfile/ChefProfile.jsx';
 import Login from './components/chefs/login/Login.jsx';
 import Register from './components/chefs/register/Register.jsx';
 import CreateComment from './components/comments/CreateComment/CreateComment.jsx';

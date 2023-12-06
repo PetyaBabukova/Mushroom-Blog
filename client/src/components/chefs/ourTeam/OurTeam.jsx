@@ -7,26 +7,26 @@ import ProfileContext from '../../../contexts/profileContext';
 
 
 function OurTeam() {
-    const {chefs, isLoading} = useContext(ProfileContext)   
-    return ( 
-    <>
+    const { chefs, isLoading } = useContext(ProfileContext)
     
-    <div className={styles.ourTeamContainer}>
+    return (
+        <>
+            <div className={styles.ourTeamContainer}>
 
-        {chefs.map(chef => (
-            <OurTeamCard
-            key={chef._id}
-            name={chef.name}
-            imageUrl={chef.imageUrl}
-            bio={chef.bio}
-            motto={chef.motto}
-            spec={chef.spec}
-            _ownerId={chef._ownerId}
-            />
-            ))}
-                </div>
-            </>
-        );
+                {chefs.map(chef => (
+                    <OurTeamCard
+                        key={chef._id}
+                        name={chef.name}
+                        imageUrl={chef.imageUrl}
+                        bio={chef.bio}
+                        motto={chef.motto}
+                        spec={chef.spec}
+                        _ownerId={chef._ownerId}
+                    />
+                ))}
+            </div>
+        </>
+    );
 };
 
 

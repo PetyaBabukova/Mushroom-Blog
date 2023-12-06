@@ -3,10 +3,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import styles from './ChefProfile.module.css';
 import * as chefService from '../../../services/chefServise';
 import AuthContext from '../../../contexts/authContext';
+import ProfileContext from '../../../contexts/profileContext';
 
 function ChefProfile() {
   const navigate = useNavigate()
   const { userId, checkUserProfile } = useContext(AuthContext);
+  const { onDeleteProfile } = useContext(ProfileContext);
   const [chef, setChef] = useState({});
 
   useEffect(() => {
@@ -24,20 +26,15 @@ function ChefProfile() {
   }, [userId]);
 
   const profileId = chef._id;
-  // console.log(profileId);
+  console.log(profileId);
 
-  const onDeleteDeleteProfileClick = async (profileId) => {
-    try {
-      const confirmRemoveProfile = confirm(`Do you want to delete your profile?`);
-      if (confirmRemoveProfile) {
-        await chefService.deleteProfile(profileId);
-        await checkUserProfile(); 
+  const onDeleteProfileClick = async () => {
+    const confirmRemoveProfile = confirm(`Do you want to delete your profile?`);
+    if (confirmRemoveProfile) {
+        await onDeleteProfile(chef._id);
         navigate('/');
-      }
-    } catch (error) {
-      console.error("Error deleting profile: ", error);
     }
-  };
+};
 
 // console.log(userId);
 
@@ -52,7 +49,7 @@ function ChefProfile() {
         <p className={styles.bio}>{chef.bio}</p>
         <div className={styles.actions}>
         <Link to={`/${profileId}/edit-profile`} className={styles.chefProfileBtn} > Edit Profile </Link>
-          <button className={styles.chefProfileBtn} onClick={() => onDeleteDeleteProfileClick(profileId)}>Delete Profile</button>
+          <button className={styles.chefProfileBtn} onClick={() => onDeleteProfileClick(profileId)}>Delete Profile</button>
         </div>
         <div className={styles.footer}>
         </div>

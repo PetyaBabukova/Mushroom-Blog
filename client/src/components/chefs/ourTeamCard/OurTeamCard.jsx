@@ -1,11 +1,6 @@
 import styles from './OurTeamCard.module.css';
 import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import AuthContext from '../../../contexts/authContext';
-import * as chefService from '../../../services/chefServise';
-import ProfileContext from '../../../contexts/profileContext';
-
-
 
 function OurTeamCard({
   name,
@@ -16,7 +11,6 @@ function OurTeamCard({
   _ownerId
 }) {
 
-// const {_ownerId} = useContext(ProfileContext)
   return (
     <div className={styles.chefCard} >
       <img src={imageUrl} alt="Image" />
@@ -29,6 +23,6 @@ function OurTeamCard({
       </div>
     </div>
   );
-}
+};
 
 export default OurTeamCard;

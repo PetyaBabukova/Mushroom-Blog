@@ -3,20 +3,14 @@ import styles from './ChefList.module.css'
 import * as chefService from '../../../services/chefServise';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../../contexts/authContext';
+import ProfileContext from '../../../contexts/profileContext';
 
 function ChefList() {
-    const [chefs, setChefs] = useState([]);
-    const {userId, hasProfile} = useContext(AuthContext)
+    // const [chefs, setChefs] = useState([]);
+    const {userId, hasProfile} = useContext(AuthContext);
+    const {chefs} = useContext(ProfileContext)
 
-    useEffect(() => {
-        chefService.getAll()
-            .then(chefs => {
-                // console.log(Object.values(chefs))
-                setChefs(Object.values(chefs))
-            })
-    }, [hasProfile]);
-
-    return (
+       return (
         <>
             <div className={styles.list}>
             <h4 className={styles.ChefsListHeading}>Our Chefs</h4>

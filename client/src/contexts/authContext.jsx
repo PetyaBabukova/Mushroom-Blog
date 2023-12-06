@@ -1,11 +1,9 @@
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 import * as chefService from '../services/chefServise';
 import Path from "../paths";
 import usePersistedState from "../hooks/usePersistedState";
-
 
 const AuthContext = createContext();
 
@@ -15,11 +13,15 @@ export const AuthProvider = ({
     const navigate = useNavigate();
     const [auth, setAuth] = usePersistedState('auth', {});
 	const [hasProfile, setHasProfile] = useState();
+	const [profileStatusUpdated, setProfileStatusUpdated] = useState(false);
+
 
 	const checkUserProfile = async () => {
         if (auth._id) {
             const chef = await chefService.getOne(auth._id);
             setHasProfile(!!chef);
+        } else {
+            setHasProfile(false);
         }
     };
 
@@ -32,7 +34,7 @@ export const AuthProvider = ({
         } else {
             setHasProfile(false);
         }
-    }, [auth._id]);
+    }, [auth._id, profileStatusUpdated]);
 
     const onRegisterSubmit = async (values) => {
 		try {
@@ -76,7 +78,6 @@ export const AuthProvider = ({
 		setAuth({});
 		setHasProfile(false);
 	}
-
 
 	const values = {
 		logoutHandler,
