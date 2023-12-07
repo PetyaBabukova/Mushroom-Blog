@@ -24,6 +24,7 @@ import EditProfile from './components/chefs/editProfile/EditProfile.jsx';
 import { ProfileProvider } from './contexts/profileContext.jsx';
 import SetProfile from './components/chefs/setProfile/SetProfile.jsx';
 import ChefList from './components/chefs/chefList/ChefList.jsx';
+import AuthGuard from './components/guards/AuthGuard.jsx';
 
 function App() {
 
@@ -42,17 +43,19 @@ function App() {
 							<Route path='/logout' element={<LogoutUser />} />
 							<Route path='/:category' element={<BlogDishes />} />
 							<Route path='/:dishId/details' element={<DishDetails />} />
-							<Route path='/:dishId/edit-dish' element={<EditDishForm />} />
-							<Route path='/create-dish' element={<CreateDishForm />} />
-							<Route path='/:dishId/create-comment' element={<CreateComment />} />
-							<Route path='/:commentId/edit-comment' element={<EditComment />} />
-							<Route path='/our-team' element={<OurTeam />} />
-							<Route path='/:_ownerId/profile' element={<ChefProfile />} />
-							<Route path='/:profileId/edit-profile' element={<EditProfile />} />
-							<Route path='/:userId/set-profile' element={<SetProfile />} />
-							<Route path='/:userId/view-profile' element={<ChefProfile />} />
+							<Route element={<AuthGuard />} >
+								<Route path='/:dishId/edit-dish' element={<EditDishForm />} />
+								<Route path='/create-dish' element={<CreateDishForm />} />
+								<Route path='/:dishId/create-comment' element={<CreateComment />} />
+								<Route path='/:commentId/edit-comment' element={<EditComment />} />
+								<Route path='/:_ownerId/profile' element={<ChefProfile />} />
+								<Route path='/:profileId/edit-profile' element={<EditProfile />} />
+								<Route path='/:userId/set-profile' element={<SetProfile />} />
+								<Route path='/:userId/view-profile' element={<ChefProfile />} />
+							</Route>
 							<Route path='/:userFirstName/dishes' element={<BlogDishes />} />
 							<Route path='/:userId/dishes' element={<BlogDishes />} />
+							<Route path='/our-team' element={<OurTeam />} />
 						</Routes>
 					</ProfileProvider>
 				</div>

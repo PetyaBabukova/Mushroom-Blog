@@ -14,6 +14,7 @@ function Login() {
 
     return (
         <Form className={styles.formContainer} onSubmit={onSubmit}>
+             <h2>Login</h2>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
