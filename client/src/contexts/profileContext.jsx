@@ -45,7 +45,6 @@ export const ProfileProvider = ({ children }) => {
                 _ownerId: userId
             });
             setProfile(state => ({ ...state, setedProfile }));
-            // setProfileUpdated(prev => !prev);  
             await checkUserProfile(); 
             chefService.getAll().then(chefs => setChefs(Object.values(chefs)));
             navigate(`/${setedProfile._ownerId}/view-profile`);
@@ -74,8 +73,7 @@ export const ProfileProvider = ({ children }) => {
 
         try {
             await chefService.editProfile(profileId, profileData);
-            await checkUserProfile(); // Update hasProfile in AuthContext
-            // Refresh chefs list
+            await checkUserProfile(); 
             chefService.getAll().then(chefs => setChefs(Object.values(chefs)));
             return { isValid: true };
         } catch (error) {

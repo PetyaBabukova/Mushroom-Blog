@@ -1,13 +1,11 @@
 import styles from './EditProfile.module.css';
 import { useContext, useEffect, useState } from 'react';
-import * as chefService from '../../../services/chefServise';
 import { useNavigate, useParams } from 'react-router-dom';
-import * as validations from '../../../lib/validations';
 import AuthContext from '../../../contexts/authContext';
 import ProfileContext from '../../../contexts/profileContext';
 
 function EditProfile() {
-    const { userId, setHasProfile, checkUserProfile } = useContext(AuthContext);
+    const { userId } = useContext(AuthContext);
     const { onEditProfile } = useContext(ProfileContext);
     const { profileId } = useParams();
     const navigate = useNavigate();

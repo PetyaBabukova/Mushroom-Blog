@@ -7,7 +7,7 @@ import ProfileContext from '../../../contexts/profileContext';
 
 function ChefProfile() {
   const navigate = useNavigate()
-  const { userId, checkUserProfile } = useContext(AuthContext);
+  const { userId } = useContext(AuthContext);
   const { onDeleteProfile } = useContext(ProfileContext);
   const [chef, setChef] = useState({});
 

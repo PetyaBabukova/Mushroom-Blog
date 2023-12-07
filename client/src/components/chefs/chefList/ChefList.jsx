@@ -1,13 +1,9 @@
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import styles from './ChefList.module.css'
-import * as chefService from '../../../services/chefServise';
 import { Link } from 'react-router-dom';
-import AuthContext from '../../../contexts/authContext';
 import ProfileContext from '../../../contexts/profileContext';
 
 function ChefList() {
-    // const [chefs, setChefs] = useState([]);
-    const {userId, hasProfile} = useContext(AuthContext);
     const {chefs} = useContext(ProfileContext)
 
        return (
