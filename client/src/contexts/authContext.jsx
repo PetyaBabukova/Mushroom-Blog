@@ -45,13 +45,15 @@ export const AuthProvider = ({
 				);
 			console.log(result);
 			setAuth(result);
-			// console.log(auth);
-			// console.log(result.accessToken);
 			localStorage.setItem('accessToken', result.accessToken);
 			navigate(Path.HOME);
 
 		} catch (error) {
-			console.log('Unsuccessful register', error);
+			if (error.response && error.response.status === 409) {
+				throw new Error(error.response.data.message);
+			} else {
+				throw new Error("You can not register this email");
+			}
 		}
 
 	};
@@ -64,7 +66,6 @@ export const AuthProvider = ({
 			navigate(Path.HOME);
 
 		} catch (error) {
-			// Assuming the error object has a message field
 			if (error.response && error.response.status === 403) {
 				throw new Error(error.response.data.message);
 			} else {
