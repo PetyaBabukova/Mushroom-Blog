@@ -43,7 +43,7 @@ export const AuthProvider = ({
 				values.email, 
 				values.password, 
 				);
-			console.log(result);
+			// console.log(result);
 			setAuth(result);
 			localStorage.setItem('accessToken', result.accessToken);
 			navigate(Path.HOME);

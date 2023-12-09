@@ -13,7 +13,7 @@ function Register() {
         repeatPassword: '',
     };
 
-    const { values, errors, changeHandler, onSubmit } = useForm(initialValues, onRegisterSubmit);
+    const { values, errors, serverError, changeHandler, onSubmit } = useForm(initialValues,  onRegisterSubmit);
 
     return (
         <form className={styles.formContainer} onSubmit={onSubmit}>
@@ -73,6 +73,8 @@ function Register() {
                     onChange={changeHandler}
                 />
                 {errors.repeatPassword && <p className={styles.errorMsg}>{errors.repeatPassword}</p>}
+                {serverError && <div className={styles.errorMsg}>{serverError}</div>}
+
             </div>
 
             <div className={styles.registerFormDiv}>
