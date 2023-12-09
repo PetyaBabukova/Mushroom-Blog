@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './ChefProfile.module.css';
-import * as chefService from '../../../services/chefServise';
+import * as chefService from '../../../services/chefService';
 import AuthContext from '../../../contexts/authContext';
 import ProfileContext from '../../../contexts/profileContext';
 

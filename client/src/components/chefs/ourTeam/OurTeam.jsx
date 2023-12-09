@@ -1,6 +1,6 @@
 import styles from './OurTeam.module.css';
 import { useState, useEffect, useContext } from 'react';
-import * as chefService from '../../../services/chefServise'
+import * as chefService from '../../../services/chefService'
 import OurTeamCard from '../ourTeamCard/OurTeamCard';
 import ProfileContext from '../../../contexts/profileContext';
 

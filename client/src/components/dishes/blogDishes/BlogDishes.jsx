@@ -5,7 +5,7 @@ import DishCard from '../dishViewCard/DishCard';
 import styles from './BlogDishes.module.css';
 
 import * as dishService from '../../../services/dishService';
-import * as chefService from '../../../services/chefServise';
+import * as chefService from '../../../services/chefService';
 import AuthContext from '../../../contexts/authContext';
 
 

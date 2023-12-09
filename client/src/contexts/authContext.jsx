@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import * as chefService from '../services/chefServise';
+import * as chefService from '../services/chefService';
 import Path from "../paths";
 import usePersistedState from "../hooks/usePersistedState";
 

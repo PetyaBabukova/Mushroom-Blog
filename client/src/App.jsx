@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import styles from './App.module.css';
-import * as chefService from './services/chefServise.js';
+import * as chefService from './services/chefService.js';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import AuthContext, { AuthProvider } from './contexts/authContext.jsx';
