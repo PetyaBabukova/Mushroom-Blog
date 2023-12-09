@@ -8,7 +8,7 @@ import AuthContext from '../../../contexts/authContext';
 jest.mock('../../../services/commentService');
 window.confirm = jest.fn();
 
-// Correctly import and mock useNavigate
+// Import and mock useNavigate
 import { useNavigate as useNavigateMock } from 'react-router-dom';
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
